@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className="bg-stone-900 text-stone-400 py-12">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-        
+
         <div className="text-center md:text-left">
           <h3 className="text-xl font-serif text-stone-100 tracking-widest uppercase">
             Cristina VC | Ethos

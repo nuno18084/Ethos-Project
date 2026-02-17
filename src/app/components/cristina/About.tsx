@@ -37,7 +37,7 @@ export function About() {
           >
             About The Vision
           </motion.span>
-          
+
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -47,7 +47,7 @@ export function About() {
           >
             We curate spaces and mindsets for the modern soul.
           </motion.h2>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -55,10 +55,10 @@ export function About() {
             transition={{ delay: 0.3 }}
             className="text-stone-600 leading-relaxed text-lg"
           >
-            Cristina VC | Ethos was born from a desire to merge aesthetic discipline with inner clarity. 
+            Cristina VC | Ethos was born from a desire to merge aesthetic discipline with inner clarity.
             In a world of noise, we offer silence. In a culture of hurry, we offer presence.
           </motion.p>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -66,8 +66,8 @@ export function About() {
             transition={{ delay: 0.4 }}
             className="text-stone-600 leading-relaxed"
           >
-            Whether through personal coaching, brand strategy, or interior curation, our mission remains 
-            constant: to reveal the essential and discard the superfluous. We believe that true luxury 
+            Whether through personal coaching, brand strategy, or interior curation, our mission remains
+            constant: to reveal the essential and discard the superfluous. We believe that true luxury
             lies in simplicity and intentionality.
           </motion.p>
 

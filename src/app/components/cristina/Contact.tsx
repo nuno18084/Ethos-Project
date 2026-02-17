@@ -41,7 +41,7 @@ export function Contact() {
               Start the Conversation
             </h2>
             <p className="text-stone-600 leading-relaxed mb-8">
-              Whether you are looking for guidance, strategy, or creative direction, 
+              Whether you are looking for guidance, strategy, or creative direction,
               we are here to listen.
             </p>
 
@@ -81,7 +81,7 @@ export function Contact() {
             />
             {errors.name && <span className="text-red-400 text-xs">Required</span>}
           </div>
-          
+
           <div>
             <label className="block text-xs uppercase tracking-widest text-stone-500 mb-2">
               Email
@@ -93,7 +93,7 @@ export function Contact() {
             />
             {errors.email && <span className="text-red-400 text-xs">Valid email required</span>}
           </div>
-          
+
           <div>
             <label className="block text-xs uppercase tracking-widest text-stone-500 mb-2">
               Message
