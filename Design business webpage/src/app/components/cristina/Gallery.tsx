@@ -1,4 +1,3 @@
-import React from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { motion } from "motion/react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";

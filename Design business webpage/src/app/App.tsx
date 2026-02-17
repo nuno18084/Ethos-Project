@@ -1,4 +1,3 @@
-import React from "react";
 import { Toaster } from "sonner";
 import { Navbar } from "./components/cristina/Navbar";
 import { Hero } from "./components/cristina/Hero";

@@ -19,5 +19,10 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    rules: {
+      // Work around an upstream crash when no options are provided.
+      // See: @typescript-eslint/no-unused-expressions wrapping eslint's no-unused-expressions
+      '@typescript-eslint/no-unused-expressions': ['error', {}],
+    },
   },
 ])
