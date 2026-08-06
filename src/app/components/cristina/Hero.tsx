@@ -13,7 +13,7 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="text-sm uppercase tracking-[0.2em] text-stone-500 mb-4"
         >
-          Cristina VC | Ethos
+          Cristina | Ethos
         </motion.span>
 
         <motion.h1
@@ -32,7 +32,8 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-lg text-stone-600 mb-10 max-w-md leading-relaxed"
         >
-          A boutique consultancy for those seeking alignment, aesthetic living, and mindful business practices.
+          A boutique consultancy for those seeking alignment, aesthetic living,
+          and mindful business practices.
         </motion.p>
 
         <motion.div
