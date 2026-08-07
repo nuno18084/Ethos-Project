@@ -13,10 +13,10 @@ export function Reviews() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-xs font-bold tracking-[0.2em] uppercase text-amber-600">
+          <span className="section-eyebrow">
             {t.reviews.eyebrow}
           </span>
-          <h2 className="text-3xl md:text-4xl font-serif text-stone-900 mt-4">
+          <h2 className="section-title mt-4">
             {t.reviews.title}{" "}
             <span className="text-amber-600">{t.reviews.titleAccent}</span>
           </h2>
@@ -32,14 +32,14 @@ export function Reviews() {
               transition={{ delay: index * 0.15 }}
               className="bg-white p-8 border border-stone-200 flex flex-col justify-between space-y-6"
             >
-              <p className="font-serif italic text-stone-600 leading-relaxed text-lg">
+              <p className="quote-text">
                 &ldquo;{review.quote}&rdquo;
               </p>
               <footer className="border-t border-stone-100 pt-6">
-                <cite className="not-italic block text-sm font-medium text-stone-900">
+                <cite className="not-italic block text-base font-medium text-stone-900">
                   {review.author}
                 </cite>
-                <span className="text-xs uppercase tracking-widest text-stone-400 mt-1 block">
+                <span className="meta-text mt-1 block">
                   {review.role}
                 </span>
               </footer>

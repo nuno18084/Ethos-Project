@@ -24,7 +24,7 @@ export function About() {
             />
           </motion.div>
           <div className="absolute -bottom-8 -right-6 bg-white p-6 shadow-xl max-w-[220px] hidden md:block">
-            <p className="font-serif italic text-base text-stone-600">
+            <p className="quote-text">
               &ldquo;{t.about.quote}&rdquo;
             </p>
           </div>
@@ -36,7 +36,7 @@ export function About() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-xs font-bold tracking-[0.2em] uppercase text-amber-600"
+            className="section-eyebrow"
           >
             {t.about.eyebrow}
           </motion.span>
@@ -46,7 +46,7 @@ export function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-3xl md:text-4xl font-serif leading-tight"
+            className="section-title"
           >
             {t.about.title}{" "}
             <span className="text-amber-600">{t.about.titleAccent}</span>
@@ -57,7 +57,7 @@ export function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="text-stone-600 leading-relaxed text-base"
+            className="section-body"
           >
             {t.about.paragraph1}
           </motion.p>
@@ -67,7 +67,7 @@ export function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="text-stone-600 leading-relaxed text-sm"
+            className="section-body"
           >
             {t.about.paragraph2Prefix}
             <span className="text-amber-600 font-medium">{t.about.paragraph2Highlight}</span>
@@ -81,7 +81,7 @@ export function About() {
           >
             <a
               href="#contact"
-              className="inline-block px-8 py-3 border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white transition-colors duration-300 uppercase tracking-widest text-xs font-medium"
+              className="inline-block px-8 py-3 border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white transition-colors duration-300 btn-label"
             >
               {t.about.cta}
             </a>

@@ -65,13 +65,13 @@ export function Partners() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-xs font-bold tracking-[0.2em] uppercase text-amber-600">
+          <span className="section-eyebrow">
             {t.partners.eyebrow}
           </span>
-          <h2 className="text-3xl md:text-4xl font-serif text-stone-900 mt-4">
+          <h2 className="section-title mt-4">
             {t.partners.title}
           </h2>
-          <p className="text-stone-600 mt-4 max-w-2xl mx-auto leading-relaxed">
+          <p className="section-lead mt-4 max-w-2xl mx-auto">
             {t.partners.description}
           </p>
         </motion.div>

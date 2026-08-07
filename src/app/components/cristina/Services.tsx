@@ -42,7 +42,7 @@ export function Services() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-serif text-stone-900 mb-4"
+              className="section-title mb-4"
             >
               {t.services.title}
             </motion.h2>
@@ -70,13 +70,13 @@ export function Services() {
                 <div className="p-4 bg-amber-50 rounded-full group-hover:bg-amber-100 transition-colors">
                   {icons[index]}
                 </div>
-                <h3 className="text-xl font-serif text-stone-800 w-full text-center">
+                <h3 className="card-title w-full text-center">
                   {service.title}
                 </h3>
-                <p className="text-stone-600 leading-relaxed text-sm w-full text-center">
+                <p className="card-body w-full text-center">
                   {service.description}
                 </p>
-                <span className="text-xs uppercase tracking-widest text-stone-400 group-hover:text-amber-600 transition-colors border-b border-transparent group-hover:border-amber-600 pb-1">
+                <span className="meta-text group-hover:text-amber-600 transition-colors border-b border-transparent group-hover:border-amber-600 pb-1">
                   {t.services.learnMore}
                 </span>
               </motion.button>
@@ -122,12 +122,12 @@ export function Services() {
 
               <h3
                 id="service-modal-title"
-                className="text-2xl md:text-4xl font-serif text-stone-900 mb-6 pr-10"
+                className="text-2xl md:text-3xl font-serif text-stone-900 mb-6 pr-10"
               >
                 {selected.title}
               </h3>
 
-              <p className="text-stone-600 text-base md:text-lg leading-relaxed mb-8">
+              <p className="section-body mb-8">
                 {selected.details}
               </p>
 
@@ -135,7 +135,7 @@ export function Services() {
                 {selected.highlights.map((highlight) => (
                   <li
                     key={highlight}
-                    className="flex items-start gap-3 text-base text-stone-600"
+                    className="flex items-start gap-3 section-body"
                   >
                     <span className="mt-2 w-1.5 h-1.5 rounded-full bg-amber-600 shrink-0" />
                     {highlight}
@@ -146,7 +146,7 @@ export function Services() {
               <a
                 href="#contact"
                 onClick={closeModal}
-                className="inline-block px-10 py-4 bg-amber-600 text-white hover:bg-amber-500 transition-colors duration-300 uppercase tracking-widest text-xs font-medium"
+                className="inline-block px-10 py-4 bg-amber-600 text-white hover:bg-amber-500 transition-colors duration-300 btn-label"
               >
                 {t.services.modalCta}
               </a>

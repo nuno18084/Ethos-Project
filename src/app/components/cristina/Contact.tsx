@@ -50,26 +50,26 @@ export function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-amber-600">
+            <span className="section-eyebrow">
               {t.contact.eyebrow}
             </span>
-            <h2 className="text-3xl md:text-4xl font-serif text-stone-900 mt-4 mb-6">
+            <h2 className="section-title mt-4 mb-6">
               {t.contact.title}
             </h2>
-            <p className="text-stone-600 leading-relaxed mb-8">
+            <p className="section-lead mb-8">
               {t.contact.description}
             </p>
 
             <div className="space-y-4">
-              <div className="flex items-center space-x-4 text-stone-600">
+              <div className="flex items-center space-x-4 section-body">
                 <Mail className="w-5 h-5 text-amber-600 shrink-0" />
                 <span>cristina.carvalho@ethosprogram.com</span>
               </div>
-              <div className="flex items-center space-x-4 text-stone-600">
+              <div className="flex items-center space-x-4 section-body">
                 <Instagram className="w-5 h-5 text-amber-600 shrink-0" />
                 <span>@cristinavc_ethos</span>
               </div>
-              <div className="flex items-center space-x-4 text-stone-600">
+              <div className="flex items-center space-x-4 section-body">
                 <MapPin className="w-5 h-5 text-amber-600 shrink-0" />
                 <span>{t.contact.location}</span>
               </div>
@@ -86,7 +86,7 @@ export function Contact() {
           className="space-y-6"
         >
           <div>
-            <label className="block text-xs uppercase tracking-widest text-stone-500 mb-2">
+            <label className="block form-label mb-2">
               {t.contact.name}
             </label>
             <input
@@ -101,7 +101,7 @@ export function Contact() {
           </div>
 
           <div>
-            <label className="block text-xs uppercase tracking-widest text-stone-500 mb-2">
+            <label className="block form-label mb-2">
               {t.contact.email}
             </label>
             <input
@@ -117,7 +117,7 @@ export function Contact() {
           </div>
 
           <div>
-            <label className="block text-xs uppercase tracking-widest text-stone-500 mb-2">
+            <label className="block form-label mb-2">
               {t.contact.message}
             </label>
             <textarea
@@ -135,7 +135,7 @@ export function Contact() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="px-8 py-3 bg-amber-600 text-white hover:bg-amber-500 transition-colors duration-300 uppercase tracking-widest text-xs font-medium w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-8 py-3 bg-amber-600 text-white hover:bg-amber-500 transition-colors duration-300 btn-label w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? t.contact.sending : t.contact.submit}
           </button>
