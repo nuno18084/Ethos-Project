@@ -63,11 +63,23 @@ export function Contact() {
             <div className="space-y-4">
               <div className="flex items-center space-x-4 section-body">
                 <Mail className="w-5 h-5 text-amber-600 shrink-0" />
-                <span>cristina.carvalho@ethosprogram.com</span>
+                <a
+                  href="mailto:cristina.carvalho@ethosprogram.com"
+                  className="hover:text-amber-600 transition-colors"
+                >
+                  cristina.carvalho@ethosprogram.com
+                </a>
               </div>
               <div className="flex items-center space-x-4 section-body">
                 <Instagram className="w-5 h-5 text-amber-600 shrink-0" />
-                <span>@cristinavc_ethos</span>
+                <a
+                  href="https://www.instagram.com/cristinavc_ethos/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-amber-600 transition-colors"
+                >
+                  @cristinavc_ethos
+                </a>
               </div>
               <div className="flex items-center space-x-4 section-body">
                 <MapPin className="w-5 h-5 text-amber-600 shrink-0" />
