@@ -187,3 +187,13 @@
 .site-align-left {
   padding-left: max(0px, calc((100vw - min(100vw, 80rem)) / 2));
 }
+
+.site-align-right {
+  padding-right: max(0px, calc((100vw - min(100vw, 80rem)) / 2));
+}
+
+@media (max-width: 767px) {
+  .site-align-left-mobile {
+    padding-left: max(0px, calc((100vw - min(100vw, 80rem)) / 2));
+  }
+}

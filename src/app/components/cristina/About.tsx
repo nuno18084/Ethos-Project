@@ -6,16 +6,16 @@ export function About() {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="py-32 bg-stone-50 text-stone-900">
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+    <section id="about" className="py-36 bg-stone-50 text-stone-900">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 lg:gap-10 items-center">
         {/* Left: Image with text overlap */}
-        <div className="relative">
+        <div className="relative max-w-sm md:max-w-md mx-auto md:mx-0 w-full">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="w-full aspect-[3/4] overflow-hidden"
+            className="w-full aspect-[4/5] overflow-hidden"
           >
             <ImageWithFallback
               src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=1080&auto=format&fit=crop"
@@ -23,15 +23,15 @@ export function About() {
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
             />
           </motion.div>
-          <div className="absolute -bottom-10 -right-10 bg-white p-8 shadow-xl max-w-xs hidden md:block">
-            <p className="font-serif italic text-lg text-stone-600">
+          <div className="absolute -bottom-8 -right-6 bg-white p-6 shadow-xl max-w-[220px] hidden md:block">
+            <p className="font-serif italic text-base text-stone-600">
               &ldquo;{t.about.quote}&rdquo;
             </p>
           </div>
         </div>
 
         {/* Right: Text Content */}
-        <div className="space-y-8">
+        <div className="space-y-6">
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -46,7 +46,7 @@ export function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-4xl md:text-5xl font-serif leading-tight"
+            className="text-3xl md:text-4xl font-serif leading-tight"
           >
             {t.about.title}{" "}
             <span className="text-amber-600">{t.about.titleAccent}</span>
@@ -57,7 +57,7 @@ export function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="text-stone-600 leading-relaxed text-lg"
+            className="text-stone-600 leading-relaxed text-base"
           >
             {t.about.paragraph1}
           </motion.p>
@@ -67,7 +67,7 @@ export function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="text-stone-600 leading-relaxed"
+            className="text-stone-600 leading-relaxed text-sm"
           >
             {t.about.paragraph2Prefix}
             <span className="text-amber-600 font-medium">{t.about.paragraph2Highlight}</span>
