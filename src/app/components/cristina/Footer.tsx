@@ -17,7 +17,13 @@ export function Footer() {
         </div>
 
         <div className="flex space-x-6">
-          <a href="#" className="hover:text-amber-400 transition-colors">
+          <a
+            href="https://www.instagram.com/cristinavc_ethos/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="hover:text-amber-400 transition-colors"
+          >
             <Instagram size={20} />
           </a>
           <a href="#" className="hover:text-amber-400 transition-colors">

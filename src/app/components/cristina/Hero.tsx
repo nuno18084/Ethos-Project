@@ -45,7 +45,7 @@ export function Hero() {
         >
           <a
             href="#contact"
-            className="group inline-flex items-center text-sm uppercase tracking-widest text-amber-600 border-b border-amber-600 pb-1 hover:text-amber-500 hover:border-amber-500 transition-all"
+            className="group inline-flex items-center px-8 py-3 border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white uppercase tracking-widest text-xs font-medium transition-colors duration-300"
           >
             {t.hero.cta}
             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
