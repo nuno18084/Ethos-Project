@@ -59,14 +59,18 @@ export function Hero() {
           initial={{ opacity: 0, scale: 1.1 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2 }}
-          className="w-full h-full"
+          className="relative w-full h-full"
         >
           <ImageWithFallback
             src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop"
             alt="Moment of reflection"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-stone-900/10 mix-blend-multiply md:hidden" />
+          <div
+            className="absolute inset-x-0 top-0 h-28 md:h-32 pointer-events-none bg-gradient-to-b from-[#F5F5F0] via-[#F5F5F0]/55 to-transparent"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-stone-900/10 mix-blend-multiply md:hidden pointer-events-none" />
         </motion.div>
       </div>
     </section>

@@ -8,12 +8,16 @@ const languages: { code: Language; label: string }[] = [
   { code: "pt", label: "Português" },
 ];
 
-export function LanguageSelector() {
+export function LanguageSelector({ scrolled = true }: { scrolled?: boolean }) {
   const { language, setLanguage } = useLanguage();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   const current = languages.find((l) => l.code === language)!;
+
+  const triggerClass = scrolled
+    ? "text-stone-900 hover:text-stone-600"
+    : "text-amber-800 hover:text-amber-700";
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -34,7 +38,7 @@ export function LanguageSelector() {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className="flex items-center gap-1.5 text-xs uppercase tracking-widest text-stone-600 hover:text-stone-900 transition-colors"
+        className={`flex items-center gap-1.5 text-xs uppercase tracking-widest transition-colors ${triggerClass}`}
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-label="Select language"

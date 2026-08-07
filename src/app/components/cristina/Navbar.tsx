@@ -13,6 +13,7 @@ export function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -23,6 +24,14 @@ export function Navbar() {
     { name: t.nav.gallery, href: "#gallery" },
     { name: t.nav.contact, href: "#contact" },
   ];
+
+  const linkClass = scrolled
+    ? "text-sm uppercase tracking-widest text-stone-900 hover:text-stone-600 transition-colors"
+    : "text-sm uppercase tracking-widest text-amber-800 hover:text-amber-700 transition-colors";
+
+  const menuButtonClass = scrolled
+    ? "text-stone-900 focus:outline-none transition-colors"
+    : "text-amber-800 hover:text-amber-700 focus:outline-none transition-colors";
 
   return (
     <nav
@@ -35,7 +44,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <a
           href="#"
-          className="text-2xl font-serif tracking-widest text-stone-800"
+          className="text-2xl font-serif tracking-widest text-stone-900"
         >
           ETHOS
         </a>
@@ -43,22 +52,18 @@ export function Navbar() {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm uppercase tracking-widest text-stone-600 hover:text-stone-900 transition-colors"
-            >
+            <a key={link.href} href={link.href} className={linkClass}>
               {link.name}
             </a>
           ))}
-          <LanguageSelector />
+          <LanguageSelector scrolled={scrolled} />
         </div>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center space-x-4">
-          <LanguageSelector />
+          <LanguageSelector scrolled={scrolled} />
           <button
-            className="text-stone-800 focus:outline-none"
+            className={menuButtonClass}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
