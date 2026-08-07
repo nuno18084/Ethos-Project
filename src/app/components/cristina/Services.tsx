@@ -1,11 +1,11 @@
 import { motion } from "motion/react";
-import { Palette, Compass, PenTool } from "lucide-react";
+import { Compass, Heart, Lightbulb } from "lucide-react";
 import { useLanguage } from "../../../i18n/LanguageContext";
 
 const icons = [
-  <PenTool className="w-8 h-8 text-stone-500" />,
   <Compass className="w-8 h-8 text-stone-500" />,
-  <Palette className="w-8 h-8 text-stone-500" />,
+  <Heart className="w-8 h-8 text-stone-500" />,
+  <Lightbulb className="w-8 h-8 text-stone-500" />,
 ];
 
 export function Services() {

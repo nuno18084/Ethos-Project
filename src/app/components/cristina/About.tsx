@@ -18,8 +18,8 @@ export function About() {
             className="w-full aspect-[3/4] overflow-hidden"
           >
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1754490792240-39e2809b8d82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMG5hdHVyZSUyMHRleHR1cmUlMjBzYWdlJTIwZ3JlZW58ZW58MXx8fHwxNzcxMzUzMzg2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-              alt="Abstract Texture"
+              src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=1080&auto=format&fit=crop"
+              alt="Books and nature"
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
             />
           </motion.div>

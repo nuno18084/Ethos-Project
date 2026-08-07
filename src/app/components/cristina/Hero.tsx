@@ -10,14 +10,14 @@ export function Hero() {
     <section className="relative w-full h-screen flex flex-col md:flex-row items-center bg-[#F5F5F0] overflow-hidden">
       {/* Text Content */}
       <div className="w-full md:w-1/2 h-full flex flex-col justify-center px-8 md:px-16 lg:px-24 z-10">
-        <motion.span
+        {/* <motion.span
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-sm uppercase tracking-[0.2em] text-stone-500 mb-4"
         >
           {t.hero.eyebrow}
-        </motion.span>
+        </motion.span> */}
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -62,8 +62,8 @@ export function Hero() {
           className="w-full h-full"
         >
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1573497620166-aef748c8c792?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Cristina VC"
+            src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop"
+            alt="Moment of reflection"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-stone-900/10 mix-blend-multiply md:hidden" />
