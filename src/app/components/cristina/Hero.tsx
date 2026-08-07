@@ -4,7 +4,7 @@ import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { useLanguage } from "../../../i18n/LanguageContext";
 
 export function Hero() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <section className="relative w-full h-screen flex flex-col md:flex-row items-center bg-[#F5F5F0] overflow-hidden">
@@ -26,14 +26,18 @@ export function Hero() {
           className="text-5xl md:text-6xl lg:text-7xl font-serif text-stone-900 leading-tight mb-8"
         >
           {t.hero.titleLine1} <br />
-          <span className="italic text-amber-600">{t.hero.titleLine2}</span>
+          <span
+            className={`italic text-amber-600${language === "pt" ? " whitespace-nowrap" : ""}`}
+          >
+            {t.hero.titleLine2}
+          </span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg text-stone-600 mb-10 max-w-md leading-relaxed"
+          className="text-sm text-stone-600 mb-10 max-w-md leading-relaxed"
         >
           {t.hero.description}
         </motion.p>

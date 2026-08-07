@@ -87,7 +87,7 @@ export function Services() {
 
       <AnimatePresence>
         {selected && selectedIndex !== null && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-6">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -105,39 +105,39 @@ export function Services() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 24, scale: 0.98 }}
               transition={{ duration: 0.25 }}
-              className="relative bg-white w-full max-w-lg max-h-[90vh] overflow-y-auto p-8 md:p-10 shadow-xl"
+              className="relative bg-white w-full max-w-3xl max-h-[90vh] overflow-y-auto p-10 md:p-14 lg:p-16 shadow-xl"
             >
               <button
                 type="button"
                 onClick={closeModal}
-                className="absolute top-4 right-4 text-stone-400 hover:text-stone-900 transition-colors"
+                className="absolute top-6 right-6 text-stone-400 hover:text-stone-900 transition-colors"
                 aria-label="Close"
               >
-                <X size={20} />
+                <X size={22} />
               </button>
 
-              <div className="p-4 bg-amber-50 rounded-full w-fit mb-6">
+              <div className="p-5 bg-amber-50 rounded-full w-fit mb-8">
                 {icons[selectedIndex]}
               </div>
 
               <h3
                 id="service-modal-title"
-                className="text-2xl md:text-3xl font-serif text-stone-900 mb-4 pr-8"
+                className="text-2xl md:text-4xl font-serif text-stone-900 mb-6 pr-10"
               >
                 {selected.title}
               </h3>
 
-              <p className="text-stone-600 leading-relaxed mb-6">
+              <p className="text-stone-600 text-base md:text-lg leading-relaxed mb-8">
                 {selected.details}
               </p>
 
-              <ul className="space-y-2 mb-8">
+              <ul className="space-y-3 mb-10">
                 {selected.highlights.map((highlight) => (
                   <li
                     key={highlight}
-                    className="flex items-start gap-2 text-sm text-stone-600"
+                    className="flex items-start gap-3 text-base text-stone-600"
                   >
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-amber-600 shrink-0" />
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-amber-600 shrink-0" />
                     {highlight}
                   </li>
                 ))}
@@ -146,7 +146,7 @@ export function Services() {
               <a
                 href="#contact"
                 onClick={closeModal}
-                className="inline-block px-8 py-3 bg-amber-600 text-white hover:bg-amber-500 transition-colors duration-300 uppercase tracking-widest text-xs font-medium"
+                className="inline-block px-10 py-4 bg-amber-600 text-white hover:bg-amber-500 transition-colors duration-300 uppercase tracking-widest text-xs font-medium"
               >
                 {t.services.modalCta}
               </a>

@@ -14,7 +14,7 @@ export const translations = {
       titleLine1: "A space to pause,",
       titleLine2: "reflect, and realign.",
       description:
-        "ETHOS is a human-centred leadership programme for leaders and teams. Rooted in classical philosophy and practical business frameworks, it supports ethical decision-making, strategic clarity, and organisational well-being.",
+        "A human-centred leadership programme for leaders and teams. Rooted in classical philosophy and practical business frameworks, it supports ethical decision-making, strategic clarity, and organisational well-being.",
       cta: "Start the conversation",
     },
     about: {
@@ -150,7 +150,7 @@ export const translations = {
       titleLine1: "Um espaço para pausar,",
       titleLine2: "refletir e realinhar.",
       description:
-        "O ETHOS é um programa de liderança human-centred para líderes e equipas. Inspirado na filosofia clássica e em frameworks práticos de negócio, apoia a tomada de decisão ética, a clareza estratégica e o bem-estar organizacional.",
+        "Um programa de liderança human-centred para líderes e equipas. Inspirado na filosofia clássica e em frameworks práticos de negócio, apoia a tomada de decisão ética, a clareza estratégica e o bem-estar organizacional.",
       cta: "Iniciar a conversa",
     },
     about: {
