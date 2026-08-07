@@ -79,9 +79,12 @@ export function About() {
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
           >
-            <button className="px-8 py-3 border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white transition-colors duration-300 uppercase tracking-widest text-xs font-medium">
+            <a
+              href="#contact"
+              className="inline-block px-8 py-3 border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white transition-colors duration-300 uppercase tracking-widest text-xs font-medium"
+            >
               {t.about.cta}
-            </button>
+            </a>
           </motion.div>
         </div>
       </div>
