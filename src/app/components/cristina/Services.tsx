@@ -35,7 +35,7 @@ export function Services() {
 
   return (
     <>
-      <section id="services" className="py-24 bg-stone-100">
+      <section id="services" className="py-32 bg-stone-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <motion.h2

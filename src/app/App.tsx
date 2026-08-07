@@ -3,7 +3,8 @@ import { Navbar } from "./components/cristina/Navbar";
 import { Hero } from "./components/cristina/Hero";
 import { About } from "./components/cristina/About";
 import { Services } from "./components/cristina/Services";
-import { Gallery } from "./components/cristina/Gallery";
+import { Reviews } from "./components/cristina/Reviews";
+import { Partners } from "./components/cristina/Partners";
 import { Contact } from "./components/cristina/Contact";
 import { Footer } from "./components/cristina/Footer";
 
@@ -15,7 +16,8 @@ export default function App() {
       <Hero />
       <About />
       <Services />
-      <Gallery />
+      <Reviews />
+      <Partners />
       <Contact />
       <Footer />
     </div>

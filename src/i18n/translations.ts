@@ -5,7 +5,8 @@ export const translations = {
     nav: {
       about: "About",
       services: "Services",
-      gallery: "Gallery",
+      reviews: "Reviews",
+      partners: "Partners",
       contact: "Contact",
     },
     hero: {
@@ -71,10 +72,43 @@ export const translations = {
         },
       ],
     },
-    gallery: {
-      eyebrow: "The journey",
-      title: "Growing from the",
-      titleAccent: "inside out",
+    reviews: {
+      eyebrow: "Testimonials",
+      title: "Voices of",
+      titleAccent: "transformation",
+      items: [
+        {
+          quote:
+            "ETHOS gave me a space to pause and reflect. I returned to my work with more clarity, purpose, and a renewed sense of balance between professional and personal life.",
+          author: "Luza ETHOS Participant",
+          role: "Technology Sector",
+        },
+        {
+          quote:
+            "More than a coaching programme — it is a journey inward. The sessions helped me explore my ethics, inner freedom, and what truly matters in my leadership.",
+          author: "Team Leader",
+          role: "Corporate Environment",
+        },
+        {
+          quote:
+            "Small, powerful transformations. No buzzwords — just genuine growth from the inside out, with practical frameworks I could apply immediately.",
+          author: "Senior Manager",
+          role: "International Company",
+        },
+      ],
+    },
+    partners: {
+      eyebrow: "Collaborations",
+      title: "Our Partners",
+      description:
+        "Organisations that trust ETHOS to support their people's growth, well-being, and leadership development.",
+      items: [
+        { name: "Luza Tecnologia", logo: "/partners/luza.svg" },
+        { name: "Microsoft", logo: "/partners/microsoft.svg" },
+        { name: "ETHOS", logo: "/partners/ethos.svg" },
+        { name: "Cisco", logo: "/partners/cisco.svg" },
+        { name: "Mobileum", logo: "/partners/mobileum.svg" },
+      ],
     },
     contact: {
       eyebrow: "Get in touch",
@@ -107,7 +141,8 @@ export const translations = {
     nav: {
       about: "Sobre",
       services: "Serviços",
-      gallery: "Galeria",
+      reviews: "Testemunhos",
+      partners: "Parceiros",
       contact: "Contacto",
     },
     hero: {
@@ -173,10 +208,43 @@ export const translations = {
         },
       ],
     },
-    gallery: {
-      eyebrow: "A jornada",
-      title: "Crescer de",
-      titleAccent: "dentro para fora",
+    reviews: {
+      eyebrow: "Testemunhos",
+      title: "Vozes de",
+      titleAccent: "transformação",
+      items: [
+        {
+          quote:
+            "O ETHOS deu-me um espaço para pausar e refletir. Regressei ao trabalho com mais clareza, propósito e um sentido renovado de equilíbrio entre vida profissional e pessoal.",
+          author: "Participante Luza ETHOS",
+          role: "Sector Tecnológico",
+        },
+        {
+          quote:
+            "Mais do que um programa de coaching — é uma jornada interior. As sessões ajudaram-me a explorar a minha ética, liberdade interior e o que realmente importa na minha liderança.",
+          author: "Team Leader",
+          role: "Ambiente Corporativo",
+        },
+        {
+          quote:
+            "Pequenas transformações poderosas. Sem buzzwords — apenas crescimento genuíno de dentro para fora, com frameworks práticos que pude aplicar de imediato.",
+          author: "Senior Manager",
+          role: "Empresa Internacional",
+        },
+      ],
+    },
+    partners: {
+      eyebrow: "Colaborações",
+      title: "Os Nossos Parceiros",
+      description:
+        "Organizações que confiam no ETHOS para apoiar o crescimento, bem-estar e desenvolvimento de liderança das suas pessoas.",
+      items: [
+        { name: "Luza Tecnologia", logo: "/partners/luza.svg" },
+        { name: "Microsoft", logo: "/partners/microsoft.svg" },
+        { name: "ETHOS", logo: "/partners/ethos.svg" },
+        { name: "Cisco", logo: "/partners/cisco.svg" },
+        { name: "Mobileum", logo: "/partners/mobileum.svg" },
+      ],
     },
     contact: {
       eyebrow: "Entre em contacto",

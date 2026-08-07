@@ -21,7 +21,8 @@ export function Navbar() {
   const links = [
     { name: t.nav.about, href: "#about" },
     { name: t.nav.services, href: "#services" },
-    { name: t.nav.gallery, href: "#gallery" },
+    { name: t.nav.reviews, href: "#reviews" },
+    { name: t.nav.partners, href: "#partners" },
     { name: t.nav.contact, href: "#contact" },
   ];
 

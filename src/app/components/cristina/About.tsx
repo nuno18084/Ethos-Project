@@ -6,7 +6,7 @@ export function About() {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="py-24 bg-stone-50 text-stone-900">
+    <section id="about" className="py-32 bg-stone-50 text-stone-900">
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
         {/* Left: Image with text overlap */}
         <div className="relative">
