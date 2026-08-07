@@ -41,14 +41,14 @@ export function Contact() {
               Start the Conversation
             </h2>
             <p className="text-stone-600 leading-relaxed mb-8">
-              Whether you are looking for guidance, strategy, or creative direction,
-              we are here to listen.
+              Whether you are looking for guidance, strategy, or creative
+              direction, we are here to listen.
             </p>
 
             <div className="space-y-4">
               <div className="flex items-center space-x-4 text-stone-600">
                 <Mail className="w-5 h-5" />
-                <span>hello@cristinavc-ethos.com</span>
+                <span>cristina.carvalho@ethosprogram.com</span>
               </div>
               <div className="flex items-center space-x-4 text-stone-600">
                 <Instagram className="w-5 h-5" />
@@ -56,7 +56,7 @@ export function Contact() {
               </div>
               <div className="flex items-center space-x-4 text-stone-600">
                 <MapPin className="w-5 h-5" />
-                <span>Los Angeles, CA / Remote</span>
+                <span>Cascais, Portugal / Remote</span>
               </div>
             </div>
           </motion.div>
@@ -79,7 +79,9 @@ export function Contact() {
               className="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-stone-800 transition-colors bg-transparent placeholder-stone-300"
               placeholder="Jane Doe"
             />
-            {errors.name && <span className="text-red-400 text-xs">Required</span>}
+            {errors.name && (
+              <span className="text-red-400 text-xs">Required</span>
+            )}
           </div>
 
           <div>
@@ -91,7 +93,9 @@ export function Contact() {
               className="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-stone-800 transition-colors bg-transparent placeholder-stone-300"
               placeholder="jane@example.com"
             />
-            {errors.email && <span className="text-red-400 text-xs">Valid email required</span>}
+            {errors.email && (
+              <span className="text-red-400 text-xs">Valid email required</span>
+            )}
           </div>
 
           <div>
@@ -104,7 +108,9 @@ export function Contact() {
               className="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-stone-800 transition-colors bg-transparent placeholder-stone-300 resize-none"
               placeholder="Tell us about your project..."
             />
-            {errors.message && <span className="text-red-400 text-xs">Required</span>}
+            {errors.message && (
+              <span className="text-red-400 text-xs">Required</span>
+            )}
           </div>
 
           <button

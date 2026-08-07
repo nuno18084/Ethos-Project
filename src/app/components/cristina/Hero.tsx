@@ -13,7 +13,7 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="text-sm uppercase tracking-[0.2em] text-stone-500 mb-4"
         >
-          Cristina | Ethos
+          Ethos Program
         </motion.span>
 
         <motion.h1
@@ -60,7 +60,7 @@ export function Hero() {
           className="w-full h-full"
         >
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1761001311910-7b29541488f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b21hbiUyMHBvcnRyYWl0JTIwYXJ0aXN0aWMlMjBuYXR1cmFsJTIwbGlnaHR8ZW58MXx8fHwxNzcxMzUzMzg2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            src="https://images.unsplash.com/photo-1573497620166-aef748c8c792?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Cristina VC"
             className="w-full h-full object-cover"
           />
