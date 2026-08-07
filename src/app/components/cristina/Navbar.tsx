@@ -25,9 +25,8 @@ export function Navbar() {
     { name: t.nav.contact, href: "#contact" },
   ];
 
-  const linkClass = scrolled
-    ? "text-sm uppercase tracking-widest text-stone-900 hover:text-stone-600 transition-colors"
-    : "text-sm uppercase tracking-widest text-amber-600 hover:text-amber-500 transition-colors";
+  const linkClass =
+    "text-sm uppercase tracking-widest text-stone-900 hover:text-stone-600 transition-colors";
 
   const menuButtonClass = scrolled
     ? "text-stone-900 focus:outline-none transition-colors"
@@ -56,12 +55,12 @@ export function Navbar() {
               {link.name}
             </a>
           ))}
-          <LanguageSelector scrolled={scrolled} />
+          <LanguageSelector />
         </div>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center space-x-4">
-          <LanguageSelector scrolled={scrolled} />
+          <LanguageSelector />
           <button
             className={menuButtonClass}
             onClick={() => setIsOpen(!isOpen)}
