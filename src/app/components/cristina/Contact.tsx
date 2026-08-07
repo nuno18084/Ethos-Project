@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { motion } from "motion/react";
 import { Mail, Instagram, MapPin } from "lucide-react";
 import { useLanguage } from "../../../i18n/LanguageContext";
+import { sendContactEmail } from "../../../lib/emailjs";
 
 type FormData = {
   name: string;
@@ -12,6 +14,7 @@ type FormData = {
 
 export function Contact() {
   const { t } = useLanguage();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const {
     register,
     handleSubmit,
@@ -19,10 +22,22 @@ export function Contact() {
     formState: { errors },
   } = useForm<FormData>();
 
-  const onSubmit = (data: FormData) => {
-    console.log(data);
-    toast.success(t.contact.successToast);
-    reset();
+  const onSubmit = async (data: FormData) => {
+    setIsSubmitting(true);
+
+    try {
+      await sendContactEmail(data);
+      toast.success(t.contact.successToast);
+      reset();
+    } catch (error) {
+      const message =
+        error instanceof Error && error.message === "MISSING_CONFIG"
+          ? t.contact.configErrorToast
+          : t.contact.errorToast;
+      toast.error(message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -76,7 +91,8 @@ export function Contact() {
             </label>
             <input
               {...register("name", { required: true })}
-              className="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-amber-600 transition-colors bg-transparent placeholder-stone-300"
+              disabled={isSubmitting}
+              className="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-amber-600 transition-colors bg-transparent placeholder-stone-300 disabled:opacity-50"
               placeholder={t.contact.namePlaceholder}
             />
             {errors.name && (
@@ -90,7 +106,9 @@ export function Contact() {
             </label>
             <input
               {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
-              className="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-amber-600 transition-colors bg-transparent placeholder-stone-300"
+              type="email"
+              disabled={isSubmitting}
+              className="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-amber-600 transition-colors bg-transparent placeholder-stone-300 disabled:opacity-50"
               placeholder={t.contact.emailPlaceholder}
             />
             {errors.email && (
@@ -105,7 +123,8 @@ export function Contact() {
             <textarea
               {...register("message", { required: true })}
               rows={4}
-              className="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-amber-600 transition-colors bg-transparent placeholder-stone-300 resize-none"
+              disabled={isSubmitting}
+              className="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-amber-600 transition-colors bg-transparent placeholder-stone-300 resize-none disabled:opacity-50"
               placeholder={t.contact.messagePlaceholder}
             />
             {errors.message && (
@@ -115,9 +134,10 @@ export function Contact() {
 
           <button
             type="submit"
-            className="px-8 py-3 bg-amber-600 text-white hover:bg-amber-500 transition-colors duration-300 uppercase tracking-widest text-xs font-medium w-full md:w-auto"
+            disabled={isSubmitting}
+            className="px-8 py-3 bg-amber-600 text-white hover:bg-amber-500 transition-colors duration-300 uppercase tracking-widest text-xs font-medium w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {t.contact.submit}
+            {isSubmitting ? t.contact.sending : t.contact.submit}
           </button>
         </motion.form>
       </div>

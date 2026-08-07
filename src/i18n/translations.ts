@@ -91,7 +91,11 @@ export const translations = {
       required: "Required",
       validEmailRequired: "Valid email required",
       submit: "Send message",
+      sending: "Sending...",
       successToast: "Thank you for reaching out. We will be in touch shortly.",
+      errorToast: "Something went wrong. Please try again later.",
+      configErrorToast:
+        "Contact form is not configured yet. Please try again later.",
     },
     footer: {
       rights: "All Rights Reserved.",
@@ -189,7 +193,11 @@ export const translations = {
       required: "Obrigatório",
       validEmailRequired: "Email válido obrigatório",
       submit: "Enviar mensagem",
+      sending: "A enviar...",
       successToast: "Obrigado pelo contacto. Responderemos em breve.",
+      errorToast: "Algo correu mal. Por favor, tente novamente mais tarde.",
+      configErrorToast:
+        "O formulário ainda não está configurado. Por favor, tente mais tarde.",
     },
     footer: {
       rights: "Todos os Direitos Reservados.",
