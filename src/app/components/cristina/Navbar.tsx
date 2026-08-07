@@ -27,7 +27,7 @@ export function Navbar() {
   ];
 
   const linkClass =
-    "text-sm uppercase tracking-widest text-stone-900 hover:text-stone-600 transition-colors";
+    "text-xs uppercase tracking-widest text-stone-900 hover:text-stone-600 transition-colors";
 
   const menuButtonClass = scrolled
     ? "text-stone-900 focus:outline-none transition-colors"
