@@ -1,9 +1,22 @@
 import { Instagram, Linkedin } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useLanguage } from "../../../i18n/LanguageContext";
 
 export function Footer() {
   const { t } = useLanguage();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === "/";
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!isHome) return;
+
+    e.preventDefault();
+    if (location.hash) {
+      navigate("/", { replace: true });
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
 
   const links = [
     { name: t.nav.about, href: "/#about" },
@@ -20,9 +33,13 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-6">
           <div className="text-center md:text-left">
-            <h3 className="text-lg font-serif text-stone-100 tracking-widest uppercase">
-              Ethos
-            </h3>
+            <Link
+              to="/"
+              onClick={handleLogoClick}
+              className="inline-block text-2xl font-serif text-stone-100 tracking-widest uppercase"
+            >
+              ETHOS
+            </Link>
             <p className="meta-text text-stone-500 mt-2">
               © {new Date().getFullYear()} {t.footer.rights}
             </p>
