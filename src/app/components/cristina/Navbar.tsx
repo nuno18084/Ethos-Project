@@ -41,10 +41,10 @@ export function Navbar() {
           : "bg-transparent py-6"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto flex justify-between items-center">
         <a
           href="#"
-          className="text-2xl font-serif tracking-widest text-stone-900"
+          className="text-3xl font-serif tracking-widest text-stone-900"
         >
           ETHOS
         </a>

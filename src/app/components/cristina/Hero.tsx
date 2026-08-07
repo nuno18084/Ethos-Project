@@ -9,7 +9,7 @@ export function Hero() {
   return (
     <section className="relative w-full h-screen flex flex-col md:flex-row items-center bg-[#F5F5F0] overflow-hidden">
       {/* Text Content */}
-      <div className="w-full md:w-1/2 h-full flex flex-col justify-center px-8 md:px-16 lg:px-24 z-10">
+      <div className="w-full md:w-1/2 h-full flex flex-col justify-center site-align-left pr-6 md:pr-12 z-10">
         {/* <motion.span
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
