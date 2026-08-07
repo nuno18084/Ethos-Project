@@ -9,12 +9,15 @@ import "../../../styles/burger-menu.css";
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
   const { t } = useLanguage();
   const location = useLocation();
   const navigate = useNavigate();
   const isHome = location.pathname === "/";
 
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    setIsOpen(false);
+
     if (!isHome) return;
 
     e.preventDefault();
@@ -26,50 +29,60 @@ export function Navbar() {
 
   useEffect(() => {
     if (!isHome) return;
+
+    const sectionIds = ["about", "services", "reviews", "partners", "contact"];
+
+    const updateActiveSection = () => {
+      const offset = 120;
+      const scrollPos = window.scrollY + offset;
+
+      let current: string | null = null;
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= scrollPos) {
+          current = id;
+        }
+      }
+      setActiveSection(current);
+    };
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
+      updateActiveSection();
     };
+
     handleScroll();
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHome]);
 
   useEffect(() => {
     if (!isOpen) return;
 
-    const scrollY = window.scrollY;
-    const { style: bodyStyle } = document.body;
-    const { style: htmlStyle } = document.documentElement;
+    const htmlStyle = document.documentElement.style;
+    const bodyStyle = document.body.style;
 
-    bodyStyle.position = "fixed";
-    bodyStyle.top = `-${scrollY}px`;
-    bodyStyle.left = "0";
-    bodyStyle.right = "0";
-    bodyStyle.width = "100%";
-    bodyStyle.overflow = "hidden";
     htmlStyle.overflow = "hidden";
+    bodyStyle.overflow = "hidden";
+    bodyStyle.touchAction = "none";
 
     return () => {
-      bodyStyle.position = "";
-      bodyStyle.top = "";
-      bodyStyle.left = "";
-      bodyStyle.right = "";
-      bodyStyle.width = "";
-      bodyStyle.overflow = "";
       htmlStyle.overflow = "";
-      window.scrollTo(0, scrollY);
+      bodyStyle.overflow = "";
+      bodyStyle.touchAction = "";
     };
   }, [isOpen]);
 
   const links = [
-    { name: t.nav.about, href: "/#about" },
-    { name: t.nav.services, href: "/#services" },
-    { name: t.nav.reviews, href: "/#reviews" },
-    { name: t.nav.partners, href: "/#partners" },
-    { name: t.nav.contact, href: "/#contact" },
+    { name: t.nav.about, href: "/#about", id: "about" },
+    { name: t.nav.services, href: "/#services", id: "services" },
+    { name: t.nav.reviews, href: "/#reviews", id: "reviews" },
+    { name: t.nav.partners, href: "/#partners", id: "partners" },
+    { name: t.nav.contact, href: "/#contact", id: "contact" },
   ];
 
   const showSolidNav = !isHome || scrolled || isOpen;
+  const currentSection = isHome ? activeSection : null;
 
   const linkClass = isHome
     ? "text-xs uppercase tracking-widest text-stone-900 hover:text-stone-600 transition-colors"
@@ -99,7 +112,10 @@ export function Navbar() {
             key={link.href}
             href={link.href}
             onClick={() => setIsOpen(false)}
-            className="ethos-bm-item"
+            className={`ethos-bm-item${
+              currentSection === link.id ? " ethos-bm-item--active" : ""
+            }`}
+            aria-current={currentSection === link.id ? "true" : undefined}
           >
             {link.name}
           </a>
