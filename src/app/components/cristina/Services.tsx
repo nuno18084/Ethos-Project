@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, cloneElement } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Compass, Heart, Lightbulb, X } from "lucide-react";
 import { useLanguage } from "../../../i18n/LanguageContext";
@@ -105,51 +105,55 @@ export function Services() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 24, scale: 0.98 }}
               transition={{ duration: 0.25 }}
-              className="relative bg-white w-full max-w-3xl max-h-[90vh] overflow-y-auto p-6 sm:p-10 md:p-14 lg:p-16 shadow-xl"
+              className="relative bg-white w-full max-w-3xl max-h-[76vh] md:max-h-[90vh] overflow-y-auto px-5 pt-5 pb-8 sm:px-10 sm:pt-10 sm:pb-12 md:p-14 lg:p-16 shadow-xl"
             >
               <button
                 type="button"
                 onClick={closeModal}
-                className="absolute top-6 right-6 text-stone-400 hover:text-stone-900 transition-colors"
+                className="absolute top-4 right-4 md:top-6 md:right-6 text-stone-400 hover:text-stone-900 transition-colors"
                 aria-label="Close"
               >
                 <X size={22} />
               </button>
 
-              <div className="p-5 bg-amber-50 rounded-full w-fit mb-8">
-                {icons[selectedIndex]}
+              <div className="p-2.5 md:p-5 bg-amber-50 rounded-full w-fit mb-3 md:mb-8">
+                {cloneElement(icons[selectedIndex], {
+                  className: "w-6 h-6 md:w-8 md:h-8 text-amber-600",
+                })}
               </div>
 
               <h3
                 id="service-modal-title"
-                className="text-2xl md:text-3xl font-serif text-stone-900 mb-6 pr-10"
+                className="text-xl md:text-3xl font-serif text-stone-900 mb-3.5 md:mb-6 pr-8 md:pr-10"
               >
                 {selected.title}
               </h3>
 
-              <p className="section-body mb-8">
+              <p className="section-body mb-4 md:mb-8 text-[0.9375rem] md:text-base">
                 {selected.details}
               </p>
 
-              <ul className="space-y-3 mb-10">
+              <ul className="space-y-2 md:space-y-3 mb-6 md:mb-10">
                 {selected.highlights.map((highlight) => (
                   <li
                     key={highlight}
-                    className="flex items-start gap-3 section-body"
+                    className="flex items-start gap-3 section-body text-[0.9375rem] md:text-base"
                   >
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-amber-600 shrink-0" />
+                    <span className="mt-1.5 md:mt-2 w-1.5 h-1.5 rounded-full bg-amber-600 shrink-0" />
                     {highlight}
                   </li>
                 ))}
               </ul>
 
-              <a
-                href="#contact"
-                onClick={closeModal}
-                className="inline-block px-10 py-4 bg-amber-600 text-white hover:bg-amber-500 transition-colors duration-300 btn-label"
-              >
-                {t.services.modalCta}
-              </a>
+              <div className="text-center md:text-left">
+                <a
+                  href="#contact"
+                  onClick={closeModal}
+                  className="inline-block px-8 pt-3 pb-4 md:px-10 md:py-4 bg-amber-600 text-white hover:bg-amber-500 transition-colors duration-300 btn-label"
+                >
+                  {t.services.modalCta}
+                </a>
+              </div>
             </motion.div>
           </div>
         )}
