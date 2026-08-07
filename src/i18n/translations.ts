@@ -31,21 +31,43 @@ export const translations = {
     services: {
       title: "What ETHOS offers",
       learnMore: "Learn more",
+      modalCta: "Start the conversation",
       items: [
         {
           title: "Coaching & Mentoring",
           description:
             "Personalised support for leaders and teams. A guided space to explore ethics, inner freedom, and the balance between work and life.",
+          details:
+            "Through one-on-one and team sessions, ETHOS creates a conscious pause — a strategic space to reflect, gain clarity, and return with renewed purpose. Each journey is tailored to the individual or team, combining timeless philosophical principles with practical business application.",
+          highlights: [
+            "Individual mentoring for leaders",
+            "Team coaching sessions",
+            "Ethics, resilience & well-being",
+          ],
         },
         {
           title: "Leadership & Culture",
           description:
             "Building human-centred organisations through ethical leadership, critical thinking, and cultural transformation inspired by classical philosophy.",
+          details:
+            "ETHOS supports organisations that want to align performance with values and long-term vision. We work on cultural transformation from the inside out — strengthening ethical leadership, critical thinking, and a human-centred way of working.",
+          highlights: [
+            "Cultural transformation programmes",
+            "Ethical leadership development",
+            "Philosophy-inspired frameworks",
+          ],
         },
         {
           title: "Strategic Advisory",
           description:
             "Strategic clarity and purpose-driven execution for executives. Aligning inner values with business performance, communication, and team culture.",
+          details:
+            "For executives navigating complexity, ETHOS offers a steady, informed approach to strategic decision-making. We help align inner values with outer expression — connecting purpose, communication, and team culture to business performance.",
+          highlights: [
+            "Executive strategic clarity",
+            "Purpose-driven execution",
+            "Communication & culture alignment",
+          ],
         },
       ],
     },
@@ -107,21 +129,43 @@ export const translations = {
     services: {
       title: "O que o ETHOS oferece",
       learnMore: "Saber mais",
+      modalCta: "Iniciar a conversa",
       items: [
         {
           title: "Coaching & Mentoring",
           description:
             "Acompanhamento personalizado para líderes e equipas. Um espaço guiado para explorar a ética, a liberdade interior e o equilíbrio entre trabalho e vida.",
+          details:
+            "Através de sessões individuais e em equipa, o ETHOS cria uma pausa consciente — um espaço estratégico para refletir, ganhar clareza e regressar com propósito renovado. Cada jornada é adaptada à pessoa ou equipa, combinando princípios filosóficos intemporais com aplicação prática de negócio.",
+          highlights: [
+            "Mentoring individual para líderes",
+            "Sessões de coaching em equipa",
+            "Ética, resiliência e bem-estar",
+          ],
         },
         {
           title: "Liderança & Cultura",
           description:
             "Construir organizações human-centred através de liderança ética, pensamento crítico e transformação cultural inspirada na filosofia clássica.",
+          details:
+            "O ETHOS apoia organizações que querem alinhar performance com valores e visão de longo prazo. Trabalhamos a transformação cultural de dentro para fora — reforçando liderança ética, pensamento crítico e uma forma human-centred de trabalhar.",
+          highlights: [
+            "Programas de transformação cultural",
+            "Desenvolvimento de liderança ética",
+            "Frameworks inspirados na filosofia",
+          ],
         },
         {
           title: "Consultoria Estratégica",
           description:
             "Clareza estratégica e execução orientada por propósito para executivos. Alinhar valores interiores com performance, comunicação e cultura de equipa.",
+          details:
+            "Para executivos que navegam a complexidade, o ETHOS oferece uma abordagem estável e informada à tomada de decisão estratégica. Ajudamos a alinhar valores interiores com expressão exterior — ligando propósito, comunicação e cultura de equipa à performance de negócio.",
+          highlights: [
+            "Clareza estratégica para executivos",
+            "Execução orientada por propósito",
+            "Alinhamento de comunicação e cultura",
+          ],
         },
       ],
     },
