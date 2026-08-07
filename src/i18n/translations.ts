@@ -135,6 +135,81 @@ export const translations = {
       rights: "All Rights Reserved.",
       privacy: "Privacy",
       terms: "Terms",
+      credit: "Website by Nuno Colaço",
+    },
+    privacy: {
+      title: "Privacy Policy",
+      lastUpdated: "Last updated: August 2026",
+      backHome: "Back to home",
+      sections: [
+        {
+          title: "Introduction",
+          body: "ETHOS respects your privacy. This policy explains how we collect, use, and protect personal information when you visit our website or contact us through the contact form.",
+        },
+        {
+          title: "Information we collect",
+          body: "When you submit the contact form, we collect the information you provide: your name, email address, and message. We do not use analytics or advertising cookies on this website.",
+        },
+        {
+          title: "How we use your information",
+          body: "We use your contact details solely to respond to your enquiry and to communicate with you about ETHOS coaching and mentoring services. We do not sell or share your data for marketing purposes.",
+        },
+        {
+          title: "Third-party services",
+          body: "Messages submitted through the contact form are processed via EmailJS, a third-party email delivery service. Data is transmitted securely according to their privacy practices. We recommend reviewing EmailJS policies for further details.",
+        },
+        {
+          title: "Data retention",
+          body: "We retain contact form submissions only for as long as necessary to respond to your enquiry and maintain a relevant record of our communication.",
+        },
+        {
+          title: "Your rights",
+          body: "Under applicable data protection law, including the GDPR, you may request access to, correction of, or deletion of your personal data. To exercise these rights, contact us at cristina.carvalho@ethosprogram.com.",
+        },
+        {
+          title: "Contact",
+          body: "For any questions about this Privacy Policy, please contact:\nCristina Vidal de Carvalho\ncristina.carvalho@ethosprogram.com",
+        },
+      ],
+    },
+    terms: {
+      title: "Terms of Use",
+      lastUpdated: "Last updated: August 2026",
+      backHome: "Back to home",
+      sections: [
+        {
+          title: "Acceptance of terms",
+          body: "By accessing and using this website, you agree to these Terms of Use. If you do not agree, please do not use the site.",
+        },
+        {
+          title: "Use of the website",
+          body: "This website provides information about the ETHOS coaching and mentoring programme. You agree to use the site lawfully and not to attempt to disrupt its operation or access restricted areas.",
+        },
+        {
+          title: "Services",
+          body: "Information on this website is for general purposes only and does not constitute a binding offer. Coaching and mentoring services are subject to separate agreement between ETHOS and the client or organisation.",
+        },
+        {
+          title: "Intellectual property",
+          body: "All content on this website — including text, branding, and design — is the property of ETHOS or its licensors and may not be reproduced without prior written consent.",
+        },
+        {
+          title: "Limitation of liability",
+          body: "ETHOS makes reasonable efforts to keep information accurate and up to date but does not guarantee completeness. To the extent permitted by law, ETHOS is not liable for any loss arising from use of this website.",
+        },
+        {
+          title: "External links",
+          body: "This website may contain links to third-party sites. ETHOS is not responsible for the content or privacy practices of those external websites.",
+        },
+        {
+          title: "Changes",
+          body: "We may update these Terms of Use from time to time. Continued use of the website after changes are published constitutes acceptance of the revised terms.",
+        },
+        {
+          title: "Contact",
+          body: "For questions about these Terms of Use, please contact:\nCristina Vidal de Carvalho\ncristina.carvalho@ethosprogram.com",
+        },
+      ],
     },
   },
   pt: {
@@ -271,6 +346,81 @@ export const translations = {
       rights: "Todos os Direitos Reservados.",
       privacy: "Privacidade",
       terms: "Termos",
+      credit: "Website por Nuno Colaço",
+    },
+    privacy: {
+      title: "Política de Privacidade",
+      lastUpdated: "Última atualização: agosto de 2026",
+      backHome: "Voltar ao início",
+      sections: [
+        {
+          title: "Introdução",
+          body: "O ETHOS respeita a sua privacidade. Esta política explica como recolhemos, utilizamos e protegemos os dados pessoais quando visita o nosso website ou entra em contacto connosco através do formulário.",
+        },
+        {
+          title: "Informação que recolhemos",
+          body: "Quando submete o formulário de contacto, recolhemos a informação que nos fornece: nome, endereço de email e mensagem. Não utilizamos cookies de analítica ou publicidade neste website.",
+        },
+        {
+          title: "Como utilizamos a sua informação",
+          body: "Utilizamos os seus dados de contacto exclusivamente para responder ao seu pedido e comunicar consigo sobre os serviços de coaching e mentoring do ETHOS. Não vendemos nem partilhamos os seus dados para fins de marketing.",
+        },
+        {
+          title: "Serviços de terceiros",
+          body: "As mensagens enviadas através do formulário são processadas via EmailJS, um serviço externo de entrega de email. Os dados são transmitidos de forma segura de acordo com as práticas desse serviço. Recomendamos a consulta das respetivas políticas de privacidade.",
+        },
+        {
+          title: "Conservação de dados",
+          body: "Conservamos os dados do formulário de contacto apenas pelo tempo necessário para responder ao seu pedido e manter um registo relevante da nossa comunicação.",
+        },
+        {
+          title: "Os seus direitos",
+          body: "Nos termos da legislação aplicável, incluindo o RGPD, pode solicitar o acesso, retificação ou eliminação dos seus dados pessoais. Para exercer estes direitos, contacte cristina.carvalho@ethosprogram.com.",
+        },
+        {
+          title: "Contacto",
+          body: "Para questões sobre esta Política de Privacidade, contacte:\nCristina Vidal de Carvalho\ncristina.carvalho@ethosprogram.com",
+        },
+      ],
+    },
+    terms: {
+      title: "Termos de Utilização",
+      lastUpdated: "Última atualização: agosto de 2026",
+      backHome: "Voltar ao início",
+      sections: [
+        {
+          title: "Aceitação dos termos",
+          body: "Ao aceder e utilizar este website, concorda com estes Termos de Utilização. Se não concordar, por favor não utilize o site.",
+        },
+        {
+          title: "Utilização do website",
+          body: "Este website disponibiliza informação sobre o programa de coaching e mentoring ETHOS. Compromete-se a utilizar o site de forma lícita e a não perturbar o seu funcionamento nem aceder a áreas restritas.",
+        },
+        {
+          title: "Serviços",
+          body: "A informação neste website é apenas para fins informativos e não constitui uma oferta vinculativa. Os serviços de coaching e mentoring estão sujeitos a acordo separado entre o ETHOS e o cliente ou organização.",
+        },
+        {
+          title: "Propriedade intelectual",
+          body: "Todo o conteúdo deste website — incluindo textos, marca e design — é propriedade do ETHOS ou dos respetivos licenciadores e não pode ser reproduzido sem consentimento prévio por escrito.",
+        },
+        {
+          title: "Limitação de responsabilidade",
+          body: "O ETHOS envida esforços razoáveis para manter a informação precisa e atualizada, mas não garante a sua completude. Na medida permitida por lei, o ETHOS não se responsabiliza por perdas resultantes da utilização deste website.",
+        },
+        {
+          title: "Ligações externas",
+          body: "Este website pode conter ligações para sites de terceiros. O ETHOS não é responsável pelo conteúdo ou práticas de privacidade desses websites externos.",
+        },
+        {
+          title: "Alterações",
+          body: "Podemos atualizar estes Termos de Utilização periodicamente. A utilização continuada do website após a publicação de alterações constitui aceitação dos termos revistos.",
+        },
+        {
+          title: "Contacto",
+          body: "Para questões sobre estes Termos de Utilização, contacte:\nCristina Vidal de Carvalho\ncristina.carvalho@ethosprogram.com",
+        },
+      ],
     },
   },
 } as const;

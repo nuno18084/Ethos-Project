@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { ChevronDown, Check } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
 import type { Language } from "./translations";
@@ -12,6 +13,7 @@ export function LanguageSelector() {
   const { language, setLanguage } = useLanguage();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const isHome = useLocation().pathname === "/";
 
   const current = languages.find((l) => l.code === language)!;
 
@@ -34,7 +36,9 @@ export function LanguageSelector() {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className="flex items-center gap-1.5 text-xs uppercase tracking-widest text-stone-900 hover:text-stone-600 transition-colors"
+        className={`flex items-center gap-1.5 text-xs uppercase tracking-widest text-stone-900 transition-colors ${
+          isHome ? "hover:text-stone-600" : "hover:text-amber-600"
+        }`}
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-label="Select language"

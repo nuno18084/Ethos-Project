@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "../../../i18n/LanguageContext";
@@ -8,46 +9,70 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { t } = useLanguage();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === "/";
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!isHome) return;
+
+    e.preventDefault();
+    if (location.hash) {
+      navigate("/", { replace: true });
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
 
   useEffect(() => {
+    if (!isHome) return;
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHome]);
 
   const links = [
-    { name: t.nav.about, href: "#about" },
-    { name: t.nav.services, href: "#services" },
-    { name: t.nav.reviews, href: "#reviews" },
-    { name: t.nav.partners, href: "#partners" },
-    { name: t.nav.contact, href: "#contact" },
+    { name: t.nav.about, href: "/#about" },
+    { name: t.nav.services, href: "/#services" },
+    { name: t.nav.reviews, href: "/#reviews" },
+    { name: t.nav.partners, href: "/#partners" },
+    { name: t.nav.contact, href: "/#contact" },
   ];
 
-  const linkClass =
-    "text-xs uppercase tracking-widest text-stone-900 hover:text-stone-600 transition-colors";
+  const showSolidNav = !isHome || scrolled;
 
-  const menuButtonClass = scrolled
+  const linkClass = isHome
+    ? "text-xs uppercase tracking-widest text-stone-900 hover:text-stone-600 transition-colors"
+    : "text-xs uppercase tracking-widest text-stone-900 hover:text-amber-600 transition-colors";
+
+  const mobileLinkClass = isHome
+    ? "text-2xl font-serif text-stone-800 hover:text-stone-500 transition-colors"
+    : "text-2xl font-serif text-stone-800 hover:text-amber-600 transition-colors";
+
+  const menuButtonClass = showSolidNav
     ? "text-stone-900 focus:outline-none transition-colors"
     : "text-amber-600 hover:text-amber-500 focus:outline-none transition-colors";
 
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
+        showSolidNav
           ? "bg-white/90 backdrop-blur-md shadow-sm py-4"
           : "bg-transparent py-6"
       }`}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <a
-          href="#"
-          className="text-3xl font-serif tracking-widest text-stone-900"
+        <Link
+          to="/"
+          onClick={handleLogoClick}
+          className={`text-3xl font-serif tracking-widest text-stone-900 transition-colors${
+            isHome ? "" : " hover:text-amber-600"
+          }`}
         >
           ETHOS
-        </a>
+        </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
@@ -91,7 +116,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-2xl font-serif text-stone-800 hover:text-stone-500 transition-colors"
+                className={mobileLinkClass}
               >
                 {link.name}
               </a>

@@ -1,25 +1,18 @@
-import { Toaster } from "sonner";
-import { Navbar } from "./components/cristina/Navbar";
-import { Hero } from "./components/cristina/Hero";
-import { About } from "./components/cristina/About";
-import { Services } from "./components/cristina/Services";
-import { Reviews } from "./components/cristina/Reviews";
-import { Partners } from "./components/cristina/Partners";
-import { Contact } from "./components/cristina/Contact";
-import { Footer } from "./components/cristina/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HomePage } from "./HomePage";
+import { PrivacyPage } from "./pages/PrivacyPage";
+import { TermsPage } from "./pages/TermsPage";
+import { ScrollToTop } from "./ScrollToTop";
 
 export default function App() {
   return (
-    <div className="bg-[#FAF9F6] min-h-screen font-sans">
-      <Toaster position="top-center" richColors />
-      <Navbar />
-      <Hero />
-      <About />
-      <Services />
-      <Reviews />
-      <Partners />
-      <Contact />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/terms" element={<TermsPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }

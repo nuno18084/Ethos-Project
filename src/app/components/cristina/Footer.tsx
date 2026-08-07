@@ -1,4 +1,5 @@
 import { Instagram, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useLanguage } from "../../../i18n/LanguageContext";
 
 export function Footer() {
@@ -14,6 +15,14 @@ export function Footer() {
           <p className="meta-text text-stone-500 mt-2">
             © {new Date().getFullYear()} {t.footer.rights}
           </p>
+          <a
+            href="https://www.linkedin.com/in/nuno-cola%C3%A7o-836163174/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[10px] normal-case tracking-normal text-stone-500 hover:text-amber-600 transition-colors mt-1 inline-block"
+          >
+            {t.footer.credit}
+          </a>
         </div>
 
         <div className="flex space-x-6">
@@ -22,7 +31,7 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="hover:text-amber-400 transition-colors"
+            className="hover:text-amber-600 transition-colors"
           >
             <Instagram size={20} />
           </a>
@@ -31,19 +40,19 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="hover:text-amber-400 transition-colors"
+            className="hover:text-amber-600 transition-colors"
           >
             <Linkedin size={20} />
           </a>
         </div>
 
         <div className="meta-text text-stone-600 flex space-x-4">
-          <a href="#" className="hover:text-amber-400 transition-colors">
+          <Link to="/privacy" className="hover:text-amber-600 transition-colors">
             {t.footer.privacy}
-          </a>
-          <a href="#" className="hover:text-amber-400 transition-colors">
+          </Link>
+          <Link to="/terms" className="hover:text-amber-600 transition-colors">
             {t.footer.terms}
-          </a>
+          </Link>
         </div>
       </div>
     </footer>
