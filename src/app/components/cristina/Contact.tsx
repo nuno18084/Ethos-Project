@@ -50,41 +50,12 @@ export function Contact() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="space-y-8"
+          className="order-1 lg:col-start-1 lg:row-start-1"
         >
-          <div>
-            <span className="section-eyebrow">{t.contact.eyebrow}</span>
-            <h2 className="section-title mt-4 mb-6">{t.contact.title}</h2>
-            <div className="w-12 h-0.5 bg-amber-600 mb-8" />
-            <p className="section-lead">{t.contact.description}</p>
-          </div>
-
-          <div className="space-y-5 border-t border-stone-100 pt-10">
-            <div className="flex items-start gap-4">
-              <Mail className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-              <a
-                href="mailto:cristina.carvalho@ethosprogram.com"
-                className="section-body hover:text-amber-600 transition-colors break-all"
-              >
-                cristina.carvalho@ethosprogram.com
-              </a>
-            </div>
-            <div className="flex items-start gap-4">
-              <Instagram className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-              <a
-                href="https://www.instagram.com/cristinavc_ethos/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="section-body hover:text-amber-600 transition-colors"
-              >
-                @cristinavc_ethos
-              </a>
-            </div>
-            <div className="flex items-start gap-4">
-              <MapPin className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-              <span className="section-body">{t.contact.location}</span>
-            </div>
-          </div>
+          <span className="section-eyebrow">{t.contact.eyebrow}</span>
+          <h2 className="section-title mt-4 mb-6">{t.contact.title}</h2>
+          <div className="w-12 h-0.5 bg-amber-600 mb-8" />
+          <p className="section-lead">{t.contact.description}</p>
         </motion.div>
 
         <motion.form
@@ -93,7 +64,7 @@ export function Contact() {
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
           onSubmit={handleSubmit(onSubmit)}
-          className="space-y-4 lg:border-l lg:border-stone-100 lg:pl-24"
+          className="order-2 lg:col-start-2 lg:row-start-1 lg:row-span-2 space-y-4 lg:border-l lg:border-stone-100 lg:pl-24"
         >
           <div>
             <label className="block form-label mb-2">{t.contact.name}</label>
@@ -154,6 +125,39 @@ export function Contact() {
             {isSubmitting ? t.contact.sending : t.contact.submit}
           </button>
         </motion.form>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="order-3 lg:col-start-1 lg:row-start-2 space-y-5 border-t border-stone-100 pt-10"
+        >
+          <div className="flex items-start gap-4">
+            <Mail className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+            <a
+              href="mailto:cristina.carvalho@ethosprogram.com"
+              className="section-body hover:text-amber-600 transition-colors break-all"
+            >
+              cristina.carvalho@ethosprogram.com
+            </a>
+          </div>
+          <div className="flex items-start gap-4">
+            <Instagram className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+            <a
+              href="https://www.instagram.com/cristinavc_ethos/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="section-body hover:text-amber-600 transition-colors"
+            >
+              @cristinavc_ethos
+            </a>
+          </div>
+          <div className="flex items-start gap-4">
+            <MapPin className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+            <span className="section-body">{t.contact.location}</span>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
