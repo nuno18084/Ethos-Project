@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
+import { useLanguage } from "../../../i18n/LanguageContext";
+import { LanguageSelector } from "../../../i18n/LanguageSelector";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,10 +18,10 @@ export function Navbar() {
   }, []);
 
   const links = [
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Gallery", href: "#gallery" },
-    { name: "Contact", href: "#contact" },
+    { name: t.nav.about, href: "#about" },
+    { name: t.nav.services, href: "#services" },
+    { name: t.nav.gallery, href: "#gallery" },
+    { name: t.nav.contact, href: "#contact" },
   ];
 
   return (
@@ -38,25 +41,29 @@ export function Navbar() {
         </a>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex items-center space-x-8">
           {links.map((link) => (
             <a
-              key={link.name}
+              key={link.href}
               href={link.href}
               className="text-sm uppercase tracking-widest text-stone-600 hover:text-stone-900 transition-colors"
             >
               {link.name}
             </a>
           ))}
+          <LanguageSelector />
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-stone-800 focus:outline-none"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center space-x-4">
+          <LanguageSelector />
+          <button
+            className="text-stone-800 focus:outline-none"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu Overlay */}
@@ -76,7 +83,7 @@ export function Navbar() {
             </button>
             {links.map((link) => (
               <a
-                key={link.name}
+                key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className="text-2xl font-serif text-stone-800 hover:text-stone-500 transition-colors"

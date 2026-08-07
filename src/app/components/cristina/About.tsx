@@ -1,7 +1,10 @@
 import { motion } from "motion/react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
+import { useLanguage } from "../../../i18n/LanguageContext";
 
 export function About() {
+  const { t } = useLanguage();
+
   return (
     <section id="about" className="py-24 bg-stone-50 text-stone-900">
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
@@ -22,7 +25,7 @@ export function About() {
           </motion.div>
           <div className="absolute -bottom-10 -right-10 bg-white p-8 shadow-xl max-w-xs hidden md:block">
             <p className="font-serif italic text-lg text-stone-600">
-              "Beauty is not just what you see, but how you feel."
+              &ldquo;{t.about.quote}&rdquo;
             </p>
           </div>
         </div>
@@ -35,7 +38,7 @@ export function About() {
             viewport={{ once: true }}
             className="text-xs font-bold tracking-[0.2em] uppercase text-stone-400"
           >
-            About The Vision
+            {t.about.eyebrow}
           </motion.span>
 
           <motion.h2
@@ -45,7 +48,7 @@ export function About() {
             transition={{ delay: 0.2 }}
             className="text-4xl md:text-5xl font-serif leading-tight"
           >
-            We curate spaces and mindsets for the modern soul.
+            {t.about.title}
           </motion.h2>
 
           <motion.p
@@ -55,8 +58,7 @@ export function About() {
             transition={{ delay: 0.3 }}
             className="text-stone-600 leading-relaxed text-lg"
           >
-            Cristina VC | Ethos was born from a desire to merge aesthetic discipline with inner clarity.
-            In a world of noise, we offer silence. In a culture of hurry, we offer presence.
+            {t.about.paragraph1}
           </motion.p>
 
           <motion.p
@@ -66,9 +68,7 @@ export function About() {
             transition={{ delay: 0.4 }}
             className="text-stone-600 leading-relaxed"
           >
-            Whether through personal coaching, brand strategy, or interior curation, our mission remains
-            constant: to reveal the essential and discard the superfluous. We believe that true luxury
-            lies in simplicity and intentionality.
+            {t.about.paragraph2}
           </motion.p>
 
           <motion.div
@@ -78,7 +78,7 @@ export function About() {
             transition={{ delay: 0.5 }}
           >
             <button className="px-8 py-3 border border-stone-800 text-stone-800 hover:bg-stone-800 hover:text-white transition-colors duration-300 uppercase tracking-widest text-xs font-medium">
-              Read More
+              {t.about.cta}
             </button>
           </motion.div>
         </div>

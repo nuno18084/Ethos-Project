@@ -1,6 +1,9 @@
 import { Instagram, Linkedin, Twitter } from "lucide-react";
+import { useLanguage } from "../../../i18n/LanguageContext";
 
 export function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-stone-900 text-stone-400 py-12">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
@@ -9,7 +12,7 @@ export function Footer() {
             Ethos
           </h3>
           <p className="text-xs text-stone-500 mt-2">
-            © {new Date().getFullYear()} All Rights Reserved.
+            © {new Date().getFullYear()} {t.footer.rights}
           </p>
         </div>
 
@@ -27,10 +30,10 @@ export function Footer() {
 
         <div className="text-xs text-stone-600 flex space-x-4 uppercase tracking-widest">
           <a href="#" className="hover:text-stone-400">
-            Privacy
+            {t.footer.privacy}
           </a>
           <a href="#" className="hover:text-stone-400">
-            Terms
+            {t.footer.terms}
           </a>
         </div>
       </div>

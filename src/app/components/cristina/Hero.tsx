@@ -1,8 +1,11 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
+import { useLanguage } from "../../../i18n/LanguageContext";
 
 export function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative w-full h-screen flex flex-col md:flex-row items-center bg-[#F5F5F0] overflow-hidden">
       {/* Text Content */}
@@ -13,7 +16,7 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="text-sm uppercase tracking-[0.2em] text-stone-500 mb-4"
         >
-          Ethos Program
+          {t.hero.eyebrow}
         </motion.span>
 
         <motion.h1
@@ -22,8 +25,8 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-5xl md:text-6xl lg:text-7xl font-serif text-stone-900 leading-tight mb-8"
         >
-          Curating Life, <br />
-          <span className="italic text-stone-600">Elevating Spirit.</span>
+          {t.hero.titleLine1} <br />
+          <span className="italic text-stone-600">{t.hero.titleLine2}</span>
         </motion.h1>
 
         <motion.p
@@ -32,8 +35,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-lg text-stone-600 mb-10 max-w-md leading-relaxed"
         >
-          A boutique consultancy for those seeking alignment, aesthetic living,
-          and mindful business practices.
+          {t.hero.description}
         </motion.p>
 
         <motion.div
@@ -45,7 +47,7 @@ export function Hero() {
             href="#contact"
             className="group inline-flex items-center text-sm uppercase tracking-widest text-stone-900 border-b border-stone-900 pb-1 hover:text-stone-600 hover:border-stone-600 transition-all"
           >
-            Begin the Journey
+            {t.hero.cta}
             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
         </motion.div>

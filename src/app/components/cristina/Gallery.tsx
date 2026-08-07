@@ -1,6 +1,7 @@
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { motion } from "motion/react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
+import { useLanguage } from "../../../i18n/LanguageContext";
 
 const images = [
   "https://images.unsplash.com/photo-1658418467495-134ce7d69430?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwY29mZmVlJTIwYWVzdGhldGljJTIwam91cm5hbCUyMGNlcmFtaWNzfGVufDF8fHx8MTc3MTM1MzQ0NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
@@ -12,6 +13,8 @@ const images = [
 ];
 
 export function Gallery() {
+  const { t } = useLanguage();
+
   return (
     <section id="gallery" className="py-24 bg-stone-50">
       <div className="max-w-7xl mx-auto px-6">
@@ -22,10 +25,10 @@ export function Gallery() {
           className="text-center mb-16"
         >
           <span className="text-xs font-bold tracking-[0.2em] uppercase text-stone-400">
-            Aesthetic
+            {t.gallery.eyebrow}
           </span>
           <h2 className="text-3xl md:text-4xl font-serif text-stone-900 mt-4">
-            Visual Harmony
+            {t.gallery.title}
           </h2>
         </motion.div>
 

@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { motion } from "motion/react";
 import { Mail, Instagram, MapPin } from "lucide-react";
+import { useLanguage } from "../../../i18n/LanguageContext";
 
 type FormData = {
   name: string;
@@ -10,6 +11,7 @@ type FormData = {
 };
 
 export function Contact() {
+  const { t } = useLanguage();
   const {
     register,
     handleSubmit,
@@ -18,9 +20,8 @@ export function Contact() {
   } = useForm<FormData>();
 
   const onSubmit = (data: FormData) => {
-    // Simulate API call
     console.log(data);
-    toast.success("Thank you for your inquiry. We will be in touch shortly.");
+    toast.success(t.contact.successToast);
     reset();
   };
 
@@ -35,14 +36,13 @@ export function Contact() {
             viewport={{ once: true }}
           >
             <span className="text-xs font-bold tracking-[0.2em] uppercase text-stone-400">
-              Get in Touch
+              {t.contact.eyebrow}
             </span>
             <h2 className="text-3xl md:text-4xl font-serif text-stone-900 mt-4 mb-6">
-              Start the Conversation
+              {t.contact.title}
             </h2>
             <p className="text-stone-600 leading-relaxed mb-8">
-              Whether you are looking for guidance, strategy, or creative
-              direction, we are here to listen.
+              {t.contact.description}
             </p>
 
             <div className="space-y-4">
@@ -56,7 +56,7 @@ export function Contact() {
               </div>
               <div className="flex items-center space-x-4 text-stone-600">
                 <MapPin className="w-5 h-5" />
-                <span>Cascais, Portugal / Remote</span>
+                <span>{t.contact.location}</span>
               </div>
             </div>
           </motion.div>
@@ -72,44 +72,44 @@ export function Contact() {
         >
           <div>
             <label className="block text-xs uppercase tracking-widest text-stone-500 mb-2">
-              Name
+              {t.contact.name}
             </label>
             <input
               {...register("name", { required: true })}
               className="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-stone-800 transition-colors bg-transparent placeholder-stone-300"
-              placeholder="Jane Doe"
+              placeholder={t.contact.namePlaceholder}
             />
             {errors.name && (
-              <span className="text-red-400 text-xs">Required</span>
+              <span className="text-red-400 text-xs">{t.contact.required}</span>
             )}
           </div>
 
           <div>
             <label className="block text-xs uppercase tracking-widest text-stone-500 mb-2">
-              Email
+              {t.contact.email}
             </label>
             <input
               {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
               className="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-stone-800 transition-colors bg-transparent placeholder-stone-300"
-              placeholder="jane@example.com"
+              placeholder={t.contact.emailPlaceholder}
             />
             {errors.email && (
-              <span className="text-red-400 text-xs">Valid email required</span>
+              <span className="text-red-400 text-xs">{t.contact.validEmailRequired}</span>
             )}
           </div>
 
           <div>
             <label className="block text-xs uppercase tracking-widest text-stone-500 mb-2">
-              Message
+              {t.contact.message}
             </label>
             <textarea
               {...register("message", { required: true })}
               rows={4}
               className="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-stone-800 transition-colors bg-transparent placeholder-stone-300 resize-none"
-              placeholder="Tell us about your project..."
+              placeholder={t.contact.messagePlaceholder}
             />
             {errors.message && (
-              <span className="text-red-400 text-xs">Required</span>
+              <span className="text-red-400 text-xs">{t.contact.required}</span>
             )}
           </div>
 
@@ -117,7 +117,7 @@ export function Contact() {
             type="submit"
             className="px-8 py-3 bg-stone-900 text-white hover:bg-stone-700 transition-colors duration-300 uppercase tracking-widest text-xs font-medium w-full md:w-auto"
           >
-            Send Message
+            {t.contact.submit}
           </button>
         </motion.form>
       </div>

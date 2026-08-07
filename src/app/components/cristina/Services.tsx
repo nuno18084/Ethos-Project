@@ -1,25 +1,16 @@
 import { motion } from "motion/react";
 import { Palette, Compass, PenTool } from "lucide-react";
+import { useLanguage } from "../../../i18n/LanguageContext";
 
-const services = [
-  {
-    title: "Brand Strategy",
-    description: "Defining the authentic voice of your vision. We build narratives that resonate deeply and endure.",
-    icon: <PenTool className="w-8 h-8 text-stone-500" />,
-  },
-  {
-    title: "Holistic Coaching",
-    description: "Aligning inner values with outer expression. A guided journey towards clarity, purpose, and balance.",
-    icon: <Compass className="w-8 h-8 text-stone-500" />,
-  },
-  {
-    title: "Creative Direction",
-    description: "Curating visuals that speak to the soul. From art direction to interior styling, we create cohesive aesthetics.",
-    icon: <Palette className="w-8 h-8 text-stone-500" />,
-  },
+const icons = [
+  <PenTool className="w-8 h-8 text-stone-500" />,
+  <Compass className="w-8 h-8 text-stone-500" />,
+  <Palette className="w-8 h-8 text-stone-500" />,
 ];
 
 export function Services() {
+  const { t } = useLanguage();
+
   return (
     <section id="services" className="py-24 bg-stone-100">
       <div className="max-w-7xl mx-auto px-6">
@@ -30,7 +21,7 @@ export function Services() {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-serif text-stone-900 mb-4"
           >
-            Our Offerings
+            {t.services.title}
           </motion.h2>
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -42,7 +33,7 @@ export function Services() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-12">
-          {services.map((service, index) => (
+          {t.services.items.map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
@@ -52,14 +43,14 @@ export function Services() {
               className="group p-8 border border-stone-200 bg-white hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center space-y-6"
             >
               <div className="p-4 bg-stone-50 rounded-full group-hover:bg-stone-100 transition-colors">
-                {service.icon}
+                {icons[index]}
               </div>
               <h3 className="text-xl font-serif text-stone-800">{service.title}</h3>
               <p className="text-stone-600 leading-relaxed text-sm">
                 {service.description}
               </p>
               <button className="text-xs uppercase tracking-widest text-stone-400 group-hover:text-stone-800 transition-colors border-b border-transparent group-hover:border-stone-800 pb-1">
-                Learn More
+                {t.services.learnMore}
               </button>
             </motion.div>
           ))}
