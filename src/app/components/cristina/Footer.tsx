@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, Twitter } from "lucide-react";
+import { Instagram, Linkedin } from "lucide-react";
 import { useLanguage } from "../../../i18n/LanguageContext";
 
 export function Footer() {
@@ -26,11 +26,14 @@ export function Footer() {
           >
             <Instagram size={20} />
           </a>
-          <a href="#" className="hover:text-amber-400 transition-colors">
+          <a
+            href="https://www.linkedin.com/in/cristinavidaldecarvalho/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="hover:text-amber-400 transition-colors"
+          >
             <Linkedin size={20} />
-          </a>
-          <a href="#" className="hover:text-amber-400 transition-colors">
-            <Twitter size={20} />
           </a>
         </div>
 
