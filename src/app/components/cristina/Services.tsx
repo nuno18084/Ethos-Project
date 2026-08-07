@@ -35,9 +35,9 @@ export function Services() {
 
   return (
     <>
-      <section id="services" className="py-32 bg-stone-100">
+      <section id="services" className="py-20 md:py-32 bg-stone-100">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 md:mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -55,7 +55,7 @@ export function Services() {
             />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-12">
             {t.services.items.map((service, index) => (
               <motion.button
                 key={index}
@@ -65,7 +65,7 @@ export function Services() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
                 onClick={() => setSelectedIndex(index)}
-                className="group p-8 border border-stone-200 bg-white hover:shadow-lg hover:border-amber-600/20 transition-all duration-300 flex flex-col items-center text-center space-y-6 cursor-pointer text-left w-full"
+                className="group p-6 md:p-8 border border-stone-200 bg-white hover:shadow-lg hover:border-amber-600/20 transition-all duration-300 flex flex-col items-center text-center space-y-4 md:space-y-6 cursor-pointer text-left w-full"
               >
                 <div className="p-4 bg-amber-50 rounded-full group-hover:bg-amber-100 transition-colors">
                   {icons[index]}
@@ -105,7 +105,7 @@ export function Services() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 24, scale: 0.98 }}
               transition={{ duration: 0.25 }}
-              className="relative bg-white w-full max-w-3xl max-h-[90vh] overflow-y-auto p-10 md:p-14 lg:p-16 shadow-xl"
+              className="relative bg-white w-full max-w-3xl max-h-[90vh] overflow-y-auto p-6 sm:p-10 md:p-14 lg:p-16 shadow-xl"
             >
               <button
                 type="button"

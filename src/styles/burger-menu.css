@@ -1,0 +1,51 @@
+@media (min-width: 768px) {
+  .ethos-bm-menu-wrap,
+  .ethos-bm-overlay {
+    display: none !important;
+  }
+}
+
+.ethos-bm-burger-hidden {
+  display: none !important;
+}
+
+.ethos-bm-overlay {
+  background: rgba(28, 25, 23, 0.4);
+}
+
+.ethos-bm-menu {
+  background: #faf9f6;
+  padding: 5.5rem 1.5rem 2rem;
+}
+
+.ethos-bm-cross-button {
+  position: fixed !important;
+  top: 1.25rem !important;
+  right: 1.25rem !important;
+  width: 2.75rem !important;
+  height: 2.75rem !important;
+  z-index: 1300 !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.ethos-bm-cross-button .bm-cross {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.ethos-bm-item {
+  display: block;
+  padding: 0.85rem 0;
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  color: rgb(41 37 36);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ethos-bm-item:hover {
+  color: rgb(217 119 6);
+}

@@ -10,7 +10,7 @@ import { Footer } from "./components/cristina/Footer";
 
 export function HomePage() {
   return (
-    <div className="bg-[#FAF9F6] min-h-screen font-sans">
+    <div className="bg-[#FAF9F6] min-h-screen font-sans overflow-x-hidden">
       <Toaster position="top-center" richColors />
       <Navbar />
       <Hero />

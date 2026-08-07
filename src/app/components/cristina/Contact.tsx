@@ -44,8 +44,8 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-36 bg-white">
-      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24">
+    <section id="contact" className="py-20 md:py-36 bg-white">
+      <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -64,7 +64,7 @@ export function Contact() {
               <Mail className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
               <a
                 href="mailto:cristina.carvalho@ethosprogram.com"
-                className="section-body hover:text-amber-600 transition-colors"
+                className="section-body hover:text-amber-600 transition-colors break-all"
               >
                 cristina.carvalho@ethosprogram.com
               </a>
@@ -149,7 +149,7 @@ export function Contact() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="px-10 py-3.5 bg-amber-600 text-white hover:bg-amber-500 transition-colors duration-300 btn-label disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-10 py-3.5 bg-amber-600 text-white hover:bg-amber-500 transition-colors duration-300 btn-label w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? t.contact.sending : t.contact.submit}
           </button>

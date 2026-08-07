@@ -57,13 +57,13 @@ export function Partners() {
   });
 
   return (
-    <section id="partners" className="py-32 bg-stone-100 overflow-hidden">
+    <section id="partners" className="py-20 md:py-32 bg-stone-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <span className="section-eyebrow">
             {t.partners.eyebrow}

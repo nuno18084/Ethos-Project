@@ -29,9 +29,9 @@ export function Footer() {
   const linkClass = "hover:text-amber-600 transition-colors";
 
   return (
-    <footer className="bg-stone-900 text-stone-400 py-12">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-6">
+    <footer className="bg-stone-900 text-stone-400 py-10 md:py-12">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-8 md:gap-6">
           <div className="text-center md:text-left">
             <Link
               to="/"

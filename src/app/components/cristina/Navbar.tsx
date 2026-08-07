@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { motion, AnimatePresence } from "motion/react";
+import { slide as BurgerMenu } from "react-burger-menu";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "../../../i18n/LanguageContext";
 import { LanguageSelector } from "../../../i18n/LanguageSelector";
+import "../../../styles/burger-menu.css";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,6 +34,33 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHome]);
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const scrollY = window.scrollY;
+    const { style: bodyStyle } = document.body;
+    const { style: htmlStyle } = document.documentElement;
+
+    bodyStyle.position = "fixed";
+    bodyStyle.top = `-${scrollY}px`;
+    bodyStyle.left = "0";
+    bodyStyle.right = "0";
+    bodyStyle.width = "100%";
+    bodyStyle.overflow = "hidden";
+    htmlStyle.overflow = "hidden";
+
+    return () => {
+      bodyStyle.position = "";
+      bodyStyle.top = "";
+      bodyStyle.left = "";
+      bodyStyle.right = "";
+      bodyStyle.width = "";
+      bodyStyle.overflow = "";
+      htmlStyle.overflow = "";
+      window.scrollTo(0, scrollY);
+    };
+  }, [isOpen]);
+
   const links = [
     { name: t.nav.about, href: "/#about" },
     { name: t.nav.services, href: "/#services" },
@@ -41,89 +69,86 @@ export function Navbar() {
     { name: t.nav.contact, href: "/#contact" },
   ];
 
-  const showSolidNav = !isHome || scrolled;
+  const showSolidNav = !isHome || scrolled || isOpen;
 
   const linkClass = isHome
     ? "text-xs uppercase tracking-widest text-stone-900 hover:text-stone-600 transition-colors"
     : "text-xs uppercase tracking-widest text-stone-900 hover:text-amber-600 transition-colors";
-
-  const mobileLinkClass = isHome
-    ? "text-2xl font-serif text-stone-800 hover:text-stone-500 transition-colors"
-    : "text-2xl font-serif text-stone-800 hover:text-amber-600 transition-colors";
 
   const menuButtonClass = showSolidNav
     ? "text-stone-900 focus:outline-none transition-colors"
     : "text-amber-600 hover:text-amber-500 focus:outline-none transition-colors";
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        showSolidNav
-          ? "bg-white/90 backdrop-blur-md shadow-sm py-4"
-          : "bg-transparent py-6"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <Link
-          to="/"
-          onClick={handleLogoClick}
-          className={`text-3xl font-serif tracking-widest text-stone-900 transition-colors${
-            isHome ? "" : " hover:text-amber-600"
-          }`}
-        >
-          ETHOS
-        </Link>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-8">
-          {links.map((link) => (
-            <a key={link.href} href={link.href} className={linkClass}>
-              {link.name}
-            </a>
-          ))}
-          <LanguageSelector />
-        </div>
-
-        {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center space-x-4">
-          <LanguageSelector />
-          <button
-            className={menuButtonClass}
-            onClick={() => setIsOpen(!isOpen)}
+    <>
+      <BurgerMenu
+        right
+        isOpen={isOpen}
+        onStateChange={(state) => setIsOpen(state.isOpen)}
+        customBurgerIcon={false}
+        customCrossIcon={<X size={28} strokeWidth={1.5} className="text-stone-800" />}
+        width="100%"
+        menuClassName="ethos-bm-menu"
+        burgerButtonClassName="ethos-bm-burger-hidden"
+        crossButtonClassName="ethos-bm-cross-button"
+        overlayClassName="ethos-bm-overlay"
+        disableAutoFocus
+      >
+        {links.map((link) => (
+          <a
+            key={link.href}
+            href={link.href}
+            onClick={() => setIsOpen(false)}
+            className="ethos-bm-item"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-      </div>
+            {link.name}
+          </a>
+        ))}
+      </BurgerMenu>
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "100vh" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden absolute top-0 left-0 w-full bg-[#FAF9F6] flex flex-col justify-center items-center space-y-8 z-40"
+      <nav
+        className={`fixed top-0 left-0 w-full transition-all duration-300 ${
+          isOpen ? "z-[1300]" : "z-50"
+        } ${
+          showSolidNav
+            ? "bg-white/90 backdrop-blur-md shadow-sm py-4"
+            : "bg-transparent py-6"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-6">
+          <Link
+            to="/"
+            onClick={handleLogoClick}
+            className={`text-2xl sm:text-3xl font-serif tracking-widest text-stone-900 transition-colors${
+              isHome ? "" : " hover:text-amber-600"
+            }`}
           >
-            <button
-              className="absolute top-6 right-6 text-stone-800"
-              onClick={() => setIsOpen(false)}
-            >
-              <X size={32} />
-            </button>
+            ETHOS
+          </Link>
+
+          <div className="hidden md:flex items-center space-x-8">
             {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className={mobileLinkClass}
-              >
+              <a key={link.href} href={link.href} className={linkClass}>
                 {link.name}
               </a>
             ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+            <LanguageSelector />
+          </div>
+
+          <div className="md:hidden flex items-center space-x-4">
+            <LanguageSelector />
+            <button
+              type="button"
+              className={menuButtonClass}
+              onClick={() => setIsOpen((open) => !open)}
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isOpen}
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+      </nav>
+    </>
   );
 }

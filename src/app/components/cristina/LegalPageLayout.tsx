@@ -24,8 +24,8 @@ export function LegalPageLayout({
   return (
     <div className="bg-[#FAF9F6] min-h-screen font-sans">
       <Navbar />
-      <main className="pt-32 pb-24">
-        <div className="max-w-3xl mx-auto">
+      <main className="pt-28 pb-20 md:pt-32 md:pb-24">
+        <div className="max-w-3xl mx-auto px-6">
           <Link
             to="/"
             className="inline-flex items-center gap-2 section-body hover:text-amber-600 transition-colors mb-8"
