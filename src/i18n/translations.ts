@@ -115,7 +115,7 @@ export const translations = {
       title: "Let's talk",
       description:
         "Whether you are a leader seeking clarity, or an organisation looking to invest in your people's growth — we are here to listen.",
-      location: "Cascais, Portugal / Remote",
+      location: "Portugal / Remote",
       name: "Name",
       email: "Email",
       message: "Message",
@@ -326,7 +326,7 @@ export const translations = {
       title: "Vamos conversar",
       description:
         "Seja líder à procura de clareza, ou organização que queira investir no crescimento das suas pessoas — estamos aqui para ouvir.",
-      location: "Cascais, Portugal / Remoto",
+      location: "Portugal / Remoto",
       name: "Nome",
       email: "Email",
       message: "Mensagem",
