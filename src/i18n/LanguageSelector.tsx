@@ -17,7 +17,7 @@ export function LanguageSelector({ scrolled = true }: { scrolled?: boolean }) {
 
   const triggerClass = scrolled
     ? "text-stone-900 hover:text-stone-600"
-    : "text-amber-800 hover:text-amber-700";
+    : "text-amber-600 hover:text-amber-500";
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {

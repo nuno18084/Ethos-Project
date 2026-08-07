@@ -19,11 +19,13 @@ export const translations = {
     about: {
       quote: "No buzzwords, just small, powerful transformations.",
       eyebrow: "About ETHOS",
-      title: "A conscious pause to return with clarity and purpose.",
+      title: "A conscious pause to return with",
+      titleAccent: "clarity and purpose.",
       paragraph1:
         "ETHOS is an invitation to step back — a strategic time to gain clarity and return with a renewed sense of purpose and focus. It is designed for companies that want to align performance with values, culture, and long-term vision.",
-      paragraph2:
-        "Beyond a programme, ETHOS is a human development journey. It strengthens resilience, unlocks inner freedom, and elevates organisational culture — helping people grow from the inside out.",
+      paragraph2Prefix:
+        "Beyond a programme, ETHOS is a human development journey. It strengthens resilience, unlocks inner freedom, and elevates organisational culture — helping people ",
+      paragraph2Highlight: "grow from the inside out.",
       cta: "Learn more",
     },
     services: {
@@ -49,7 +51,8 @@ export const translations = {
     },
     gallery: {
       eyebrow: "The journey",
-      title: "Growing from the inside out",
+      title: "Growing from the",
+      titleAccent: "inside out",
     },
     contact: {
       eyebrow: "Get in touch",
@@ -92,11 +95,13 @@ export const translations = {
     about: {
       quote: "Sem buzzwords, apenas pequenas transformações poderosas.",
       eyebrow: "Sobre o ETHOS",
-      title: "Uma pausa consciente para regressar com clareza e propósito.",
+      title: "Uma pausa consciente para regressar com",
+      titleAccent: "clareza e propósito.",
       paragraph1:
         "O ETHOS é um convite a recuar — um tempo estratégico para ganhar clareza e regressar com um sentido renovado de propósito e foco. Foi desenhado para empresas que querem alinhar performance com valores, cultura e visão de longo prazo.",
-      paragraph2:
-        "Para além de um programa, o ETHOS é uma jornada de desenvolvimento humano. Reforça a resiliência, liberta a liberdade interior e eleva a cultura organizacional — ajudando as pessoas a crescer de dentro para fora.",
+      paragraph2Prefix:
+        "Para além de um programa, o ETHOS é uma jornada de desenvolvimento humano. Reforça a resiliência, liberta a liberdade interior e eleva a cultura organizacional — ajudando as pessoas a ",
+      paragraph2Highlight: "crescer de dentro para fora.",
       cta: "Saber mais",
     },
     services: {
@@ -122,7 +127,8 @@ export const translations = {
     },
     gallery: {
       eyebrow: "A jornada",
-      title: "Crescer de dentro para fora",
+      title: "Crescer de",
+      titleAccent: "dentro para fora",
     },
     contact: {
       eyebrow: "Entre em contacto",

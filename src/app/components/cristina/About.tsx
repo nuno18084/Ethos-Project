@@ -36,7 +36,7 @@ export function About() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-xs font-bold tracking-[0.2em] uppercase text-stone-400"
+            className="text-xs font-bold tracking-[0.2em] uppercase text-amber-600"
           >
             {t.about.eyebrow}
           </motion.span>
@@ -48,7 +48,8 @@ export function About() {
             transition={{ delay: 0.2 }}
             className="text-4xl md:text-5xl font-serif leading-tight"
           >
-            {t.about.title}
+            {t.about.title}{" "}
+            <span className="text-amber-600">{t.about.titleAccent}</span>
           </motion.h2>
 
           <motion.p
@@ -68,7 +69,8 @@ export function About() {
             transition={{ delay: 0.4 }}
             className="text-stone-600 leading-relaxed"
           >
-            {t.about.paragraph2}
+            {t.about.paragraph2Prefix}
+            <span className="text-amber-600 font-medium">{t.about.paragraph2Highlight}</span>
           </motion.p>
 
           <motion.div
@@ -77,7 +79,7 @@ export function About() {
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
           >
-            <button className="px-8 py-3 border border-stone-800 text-stone-800 hover:bg-stone-800 hover:text-white transition-colors duration-300 uppercase tracking-widest text-xs font-medium">
+            <button className="px-8 py-3 border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white transition-colors duration-300 uppercase tracking-widest text-xs font-medium">
               {t.about.cta}
             </button>
           </motion.div>

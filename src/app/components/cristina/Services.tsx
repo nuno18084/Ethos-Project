@@ -3,9 +3,9 @@ import { Compass, Heart, Lightbulb } from "lucide-react";
 import { useLanguage } from "../../../i18n/LanguageContext";
 
 const icons = [
-  <Compass className="w-8 h-8 text-stone-500" />,
-  <Heart className="w-8 h-8 text-stone-500" />,
-  <Lightbulb className="w-8 h-8 text-stone-500" />,
+  <Compass className="w-8 h-8 text-amber-600" />,
+  <Heart className="w-8 h-8 text-amber-600" />,
+  <Lightbulb className="w-8 h-8 text-amber-600" />,
 ];
 
 export function Services() {
@@ -28,7 +28,7 @@ export function Services() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="w-16 h-0.5 bg-stone-400 mx-auto"
+            className="w-16 h-0.5 bg-amber-600 mx-auto"
           />
         </div>
 
@@ -40,16 +40,16 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
-              className="group p-8 border border-stone-200 bg-white hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center space-y-6"
+              className="group p-8 border border-stone-200 bg-white hover:shadow-lg hover:border-amber-600/20 transition-all duration-300 flex flex-col items-center text-center space-y-6"
             >
-              <div className="p-4 bg-stone-50 rounded-full group-hover:bg-stone-100 transition-colors">
+              <div className="p-4 bg-amber-50 rounded-full group-hover:bg-amber-100 transition-colors">
                 {icons[index]}
               </div>
               <h3 className="text-xl font-serif text-stone-800">{service.title}</h3>
               <p className="text-stone-600 leading-relaxed text-sm">
                 {service.description}
               </p>
-              <button className="text-xs uppercase tracking-widest text-stone-400 group-hover:text-stone-800 transition-colors border-b border-transparent group-hover:border-stone-800 pb-1">
+              <button className="text-xs uppercase tracking-widest text-stone-400 group-hover:text-amber-600 transition-colors border-b border-transparent group-hover:border-amber-600 pb-1">
                 {t.services.learnMore}
               </button>
             </motion.div>

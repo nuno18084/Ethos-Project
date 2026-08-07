@@ -35,7 +35,7 @@ export function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-stone-400">
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-amber-600">
               {t.contact.eyebrow}
             </span>
             <h2 className="text-3xl md:text-4xl font-serif text-stone-900 mt-4 mb-6">
@@ -47,15 +47,15 @@ export function Contact() {
 
             <div className="space-y-4">
               <div className="flex items-center space-x-4 text-stone-600">
-                <Mail className="w-5 h-5" />
+                <Mail className="w-5 h-5 text-amber-600 shrink-0" />
                 <span>cristina.carvalho@ethosprogram.com</span>
               </div>
               <div className="flex items-center space-x-4 text-stone-600">
-                <Instagram className="w-5 h-5" />
+                <Instagram className="w-5 h-5 text-amber-600 shrink-0" />
                 <span>@cristinavc_ethos</span>
               </div>
               <div className="flex items-center space-x-4 text-stone-600">
-                <MapPin className="w-5 h-5" />
+                <MapPin className="w-5 h-5 text-amber-600 shrink-0" />
                 <span>{t.contact.location}</span>
               </div>
             </div>
@@ -76,7 +76,7 @@ export function Contact() {
             </label>
             <input
               {...register("name", { required: true })}
-              className="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-stone-800 transition-colors bg-transparent placeholder-stone-300"
+              className="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-amber-600 transition-colors bg-transparent placeholder-stone-300"
               placeholder={t.contact.namePlaceholder}
             />
             {errors.name && (
@@ -90,7 +90,7 @@ export function Contact() {
             </label>
             <input
               {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
-              className="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-stone-800 transition-colors bg-transparent placeholder-stone-300"
+              className="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-amber-600 transition-colors bg-transparent placeholder-stone-300"
               placeholder={t.contact.emailPlaceholder}
             />
             {errors.email && (
@@ -105,7 +105,7 @@ export function Contact() {
             <textarea
               {...register("message", { required: true })}
               rows={4}
-              className="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-stone-800 transition-colors bg-transparent placeholder-stone-300 resize-none"
+              className="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-amber-600 transition-colors bg-transparent placeholder-stone-300 resize-none"
               placeholder={t.contact.messagePlaceholder}
             />
             {errors.message && (
@@ -115,7 +115,7 @@ export function Contact() {
 
           <button
             type="submit"
-            className="px-8 py-3 bg-stone-900 text-white hover:bg-stone-700 transition-colors duration-300 uppercase tracking-widest text-xs font-medium w-full md:w-auto"
+            className="px-8 py-3 bg-amber-600 text-white hover:bg-amber-500 transition-colors duration-300 uppercase tracking-widest text-xs font-medium w-full md:w-auto"
           >
             {t.contact.submit}
           </button>

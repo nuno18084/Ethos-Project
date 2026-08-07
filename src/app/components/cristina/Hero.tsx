@@ -26,7 +26,7 @@ export function Hero() {
           className="text-5xl md:text-6xl lg:text-7xl font-serif text-stone-900 leading-tight mb-8"
         >
           {t.hero.titleLine1} <br />
-          <span className="italic text-stone-600">{t.hero.titleLine2}</span>
+          <span className="italic text-amber-600">{t.hero.titleLine2}</span>
         </motion.h1>
 
         <motion.p
@@ -45,7 +45,7 @@ export function Hero() {
         >
           <a
             href="#contact"
-            className="group inline-flex items-center text-sm uppercase tracking-widest text-stone-900 border-b border-stone-900 pb-1 hover:text-stone-600 hover:border-stone-600 transition-all"
+            className="group inline-flex items-center text-sm uppercase tracking-widest text-amber-600 border-b border-amber-600 pb-1 hover:text-amber-500 hover:border-amber-500 transition-all"
           >
             {t.hero.cta}
             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />

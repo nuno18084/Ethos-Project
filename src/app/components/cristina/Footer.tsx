@@ -17,22 +17,22 @@ export function Footer() {
         </div>
 
         <div className="flex space-x-6">
-          <a href="#" className="hover:text-stone-100 transition-colors">
+          <a href="#" className="hover:text-amber-400 transition-colors">
             <Instagram size={20} />
           </a>
-          <a href="#" className="hover:text-stone-100 transition-colors">
+          <a href="#" className="hover:text-amber-400 transition-colors">
             <Linkedin size={20} />
           </a>
-          <a href="#" className="hover:text-stone-100 transition-colors">
+          <a href="#" className="hover:text-amber-400 transition-colors">
             <Twitter size={20} />
           </a>
         </div>
 
         <div className="text-xs text-stone-600 flex space-x-4 uppercase tracking-widest">
-          <a href="#" className="hover:text-stone-400">
+          <a href="#" className="hover:text-amber-400 transition-colors">
             {t.footer.privacy}
           </a>
-          <a href="#" className="hover:text-stone-400">
+          <a href="#" className="hover:text-amber-400 transition-colors">
             {t.footer.terms}
           </a>
         </div>

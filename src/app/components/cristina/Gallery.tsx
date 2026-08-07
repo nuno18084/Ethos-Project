@@ -24,11 +24,12 @@ export function Gallery() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-xs font-bold tracking-[0.2em] uppercase text-stone-400">
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-amber-600">
             {t.gallery.eyebrow}
           </span>
           <h2 className="text-3xl md:text-4xl font-serif text-stone-900 mt-4">
-            {t.gallery.title}
+            {t.gallery.title}{" "}
+            <span className="text-amber-600">{t.gallery.titleAccent}</span>
           </h2>
         </motion.div>
 
