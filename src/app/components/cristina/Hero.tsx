@@ -8,7 +8,7 @@ export function Hero() {
 
   return (
     <section className="relative w-full bg-[#F5F5F0] min-h-[100dvh] md:h-screen md:overflow-hidden">
-      <div className="flex flex-col md:flex-row md:h-full">
+      <div className="flex flex-col min-h-[100dvh] md:min-h-0 md:flex-row md:h-full">
         {/* Text Content */}
         <div className="w-full md:w-1/2 flex flex-col justify-center px-6 pt-36 pb-10 md:px-0 md:py-0 md:pr-12 md:h-full site-align-left z-10 shrink-0">
           <motion.h1
@@ -50,7 +50,7 @@ export function Hero() {
         </div>
 
         {/* Image Content */}
-        <div className="w-full md:w-1/2 h-56 sm:h-64 md:h-full relative shrink-0">
+        <div className="w-full flex-1 min-h-56 sm:min-h-64 md:flex-none md:w-1/2 md:h-full relative">
           <motion.div
             initial={{ opacity: 0, scale: 1.1 }}
             animate={{ opacity: 1, scale: 1 }}
