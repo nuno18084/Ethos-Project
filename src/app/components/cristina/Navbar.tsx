@@ -133,15 +133,15 @@ export function Navbar() {
           isOpen ? "z-[1300]" : "z-50"
         } ${
           showSolidNav
-            ? "bg-white/90 backdrop-blur-md shadow-sm py-4"
-            : "bg-transparent py-6"
+            ? "bg-white/90 backdrop-blur-md shadow-sm py-1.5 md:py-2"
+            : "bg-transparent py-2 md:py-2.5"
         }`}
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center px-6 md:px-0">
           <Link
             to="/"
             onClick={handleLogoClick}
-            className="inline-block shrink-0"
+            className="inline-block shrink-0 leading-none -my-0.5 md:-my-1"
           >
             <img
               src="/logo/Branco.png"
