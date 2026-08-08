@@ -33,16 +33,25 @@ export function Reviews() {
                 index === 1 ? " md:-translate-y-3" : ""
               }`}
             >
-              <span
-                className="text-5xl font-serif text-amber-600/25 leading-none select-none"
-                aria-hidden="true"
-              >
-                &ldquo;
-              </span>
+              <div className="flex-1">
+                <span
+                  className="text-5xl font-serif text-amber-600/25 leading-none select-none"
+                  aria-hidden="true"
+                >
+                  &ldquo;
+                </span>
 
-              <p className="quote-text text-[1.05rem] md:text-lg -mt-3 flex-1">
-                {review.quote}
-              </p>
+                <p className="quote-text text-[1.05rem] md:text-lg -mt-3">
+                  {review.quote}
+                </p>
+
+                <span
+                  className="text-5xl font-serif text-amber-600/25 leading-none select-none block text-right -mt-4"
+                  aria-hidden="true"
+                >
+                  &rdquo;
+                </span>
+              </div>
 
               <footer className="mt-8 pt-6 border-t border-stone-100 flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full bg-amber-50 border border-amber-600/15 flex items-center justify-center shrink-0">
