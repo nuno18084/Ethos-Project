@@ -84,9 +84,15 @@ export function Navbar() {
   const showSolidNav = !isHome || scrolled || isOpen;
   const currentSection = isHome ? activeSection : null;
 
-  const linkClass = isHome
-    ? "text-xs uppercase tracking-widest text-stone-900 hover:text-stone-600 transition-colors"
-    : "text-xs uppercase tracking-widest text-stone-900 hover:text-amber-600 transition-colors";
+  const getDesktopLinkClass = (linkId: string) => {
+    if (currentSection === linkId) {
+      return "text-xs uppercase tracking-widest text-amber-600 transition-colors";
+    }
+
+    return isHome
+      ? "text-xs uppercase tracking-widest text-stone-900 hover:text-stone-600 transition-colors"
+      : "text-xs uppercase tracking-widest text-stone-900 hover:text-amber-600 transition-colors";
+  };
 
   const menuButtonClass = showSolidNav
     ? "text-stone-900 focus:outline-none transition-colors"
@@ -144,7 +150,12 @@ export function Navbar() {
 
           <div className="hidden md:flex items-center space-x-8">
             {links.map((link) => (
-              <a key={link.href} href={link.href} className={linkClass}>
+              <a
+                key={link.href}
+                href={link.href}
+                className={getDesktopLinkClass(link.id)}
+                aria-current={currentSection === link.id ? "true" : undefined}
+              >
                 {link.name}
               </a>
             ))}
