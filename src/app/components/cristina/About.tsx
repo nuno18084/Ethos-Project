@@ -7,7 +7,7 @@ export function About() {
 
   return (
     <section id="about" className="py-20 md:py-36 bg-stone-50 text-stone-900">
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 md:gap-8 lg:gap-10 items-center">
+      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 md:gap-8 lg:gap-10 items-center">
         {/* Left: Image with text overlap */}
         <div className="relative max-w-sm md:max-w-md mx-auto md:mx-0 w-full">
           <motion.div

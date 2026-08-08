@@ -10,7 +10,7 @@ export function Hero() {
     <section className="relative w-full bg-[#F5F5F0] min-h-[100dvh] md:h-screen md:overflow-hidden">
       <div className="flex flex-col md:flex-row md:h-full">
         {/* Text Content */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center px-6 pt-28 pb-10 md:px-0 md:py-0 md:pr-12 md:h-full site-align-left z-10 shrink-0">
+        <div className="w-full md:w-1/2 flex flex-col justify-center px-6 pt-36 pb-10 md:px-0 md:py-0 md:pr-12 md:h-full site-align-left z-10 shrink-0">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
