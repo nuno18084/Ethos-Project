@@ -81,6 +81,9 @@ export function Partners() {
         className="partners-marquee-track relative mt-4 py-6"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        onTouchStart={() => setIsHovered(true)}
+        onTouchEnd={() => setIsHovered(false)}
+        onTouchCancel={() => setIsHovered(false)}
       >
         <div
           className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-stone-100 to-transparent z-10 pointer-events-none"
@@ -100,7 +103,9 @@ export function Partners() {
               <ImageWithFallback
                 src={partner.logo}
                 alt={partner.name}
-                className="h-8 md:h-10 w-auto max-w-[140px] object-contain opacity-50 grayscale hover:opacity-80 hover:grayscale-0 transition-all duration-300"
+                className={`h-8 md:h-10 w-auto max-w-[140px] object-contain transition-all duration-300 opacity-50 grayscale md:hover:opacity-80 md:hover:grayscale-0${
+                  isHovered ? " max-md:grayscale-0 max-md:opacity-80" : ""
+                }`}
               />
             </div>
           ))}

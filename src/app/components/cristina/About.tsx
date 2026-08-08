@@ -1,9 +1,17 @@
 import { motion } from "motion/react";
+import { useState } from "react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { useLanguage } from "../../../i18n/LanguageContext";
 
 export function About() {
   const { t } = useLanguage();
+  const [photoInColor, setPhotoInColor] = useState(false);
+
+  const togglePhotoColor = () => {
+    if (window.matchMedia("(hover: none)").matches) {
+      setPhotoInColor((prev) => !prev);
+    }
+  };
 
   return (
     <section id="about" className="py-20 md:py-36 bg-stone-50 text-stone-900">
@@ -15,12 +23,24 @@ export function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="w-full aspect-[4/5] overflow-hidden"
+            className="w-full aspect-[4/5] overflow-hidden max-md:cursor-pointer"
+            onClick={togglePhotoColor}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                togglePhotoColor();
+              }
+            }}
+            role="button"
+            tabIndex={0}
+            aria-label="Toggle photo color"
           >
             <ImageWithFallback
               src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=1080&auto=format&fit=crop"
               alt="Books and nature"
-              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              className={`w-full h-full object-cover transition-all duration-700 grayscale md:hover:grayscale-0${
+                photoInColor ? " max-md:grayscale-0" : ""
+              }`}
             />
           </motion.div>
           <div className="absolute -bottom-8 -right-6 bg-white p-6 shadow-xl max-w-[220px] hidden md:block">
