@@ -113,6 +113,7 @@ export const translations = {
     contact: {
       eyebrow: "Get in touch",
       title: "Let's talk",
+      formPrompt: "Tell us what's on your mind — we'd love to hear from you.",
       description:
         "Whether you are a leader seeking clarity, or an organisation looking to invest in your people's growth — we are here to listen.",
       location: "Portugal / Remote",
@@ -324,6 +325,7 @@ export const translations = {
     contact: {
       eyebrow: "Entre em contacto",
       title: "Vamos conversar",
+      formPrompt: "Conte-nos o que tem em mente — gostávamos de o ouvir.",
       description:
         "Seja líder à procura de clareza, ou organização que queira investir no crescimento das suas pessoas — estamos aqui para ouvir.",
       location: "Portugal / Remoto",
