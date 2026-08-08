@@ -6,6 +6,16 @@ export type ContactEmailPayload = {
   message: string;
 };
 
+export class EmailJsError extends Error {
+  status?: number;
+
+  constructor(message: string, status?: number) {
+    super(message);
+    this.name = "EmailJsError";
+    this.status = status;
+  }
+}
+
 function getEmailJsConfig() {
   const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
   const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -29,15 +39,20 @@ function getEmailJsConfig() {
 export async function sendContactEmail(payload: ContactEmailPayload) {
   const { serviceId, templateId, publicKey } = getEmailJsConfig();
 
-  await emailjs.send(
-    serviceId,
-    templateId,
-    {
-      from_name: payload.name,
-      from_email: payload.email,
-      reply_to: payload.email,
-      message: payload.message,
-    },
-    publicKey,
-  );
+  emailjs.init({ publicKey });
+
+  try {
+    await emailjs.send(serviceId, templateId, {
+      from_name: payload.name.trim(),
+      from_email: payload.email.trim().toLowerCase(),
+      reply_to: payload.email.trim().toLowerCase(),
+      message: payload.message.trim(),
+    });
+  } catch (error) {
+    const emailJsError = error as { status?: number; text?: string };
+    throw new EmailJsError(
+      emailJsError.text ?? "EmailJS request failed",
+      emailJsError.status,
+    );
+  }
 }

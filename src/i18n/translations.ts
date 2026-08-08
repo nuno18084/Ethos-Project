@@ -131,6 +131,8 @@ export const translations = {
       errorToast: "Something went wrong. Please try again later.",
       configErrorToast:
         "Contact form is not configured yet. Please try again later.",
+      serviceErrorToast:
+        "We couldn't send your message right now. Please email us at cristina.carvalho@ethosprogram.com.",
     },
     footer: {
       rights: "All Rights Reserved.",
@@ -343,6 +345,8 @@ export const translations = {
       errorToast: "Algo correu mal. Por favor, tente novamente mais tarde.",
       configErrorToast:
         "O formulário ainda não está configurado. Por favor, tente mais tarde.",
+      serviceErrorToast:
+        "Não foi possível enviar a mensagem. Por favor escreva para cristina.carvalho@ethosprogram.com.",
     },
     footer: {
       rights: "Todos os Direitos Reservados.",
