@@ -11,18 +11,17 @@ export function Reviews() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-10 md:mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <span className="section-eyebrow">
-            {t.reviews.eyebrow}
-          </span>
-          <h2 className="section-title mt-4">
+          <span className="section-eyebrow">{t.reviews.eyebrow}</span>
+          <h2 className="section-title mt-4 mb-4">
             {t.reviews.title}{" "}
             <span className="text-amber-600">{t.reviews.titleAccent}</span>
           </h2>
+          <div className="w-16 h-0.5 bg-amber-600 mx-auto" />
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8 items-stretch">
           {t.reviews.items.map((review, index) => (
             <motion.blockquote
               key={index}
@@ -30,18 +29,33 @@ export function Reviews() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15 }}
-              className="bg-white p-6 md:p-8 border border-stone-200 flex flex-col justify-between space-y-6"
+              className={`group relative bg-white p-7 md:p-9 border border-stone-100 shadow-sm hover:shadow-lg hover:border-amber-600/20 transition-all duration-300 flex flex-col${
+                index === 1 ? " md:-translate-y-3" : ""
+              }`}
             >
-              <p className="quote-text">
-                &ldquo;{review.quote}&rdquo;
+              <span
+                className="text-5xl font-serif text-amber-600/25 leading-none select-none"
+                aria-hidden="true"
+              >
+                &ldquo;
+              </span>
+
+              <p className="quote-text text-[1.05rem] md:text-lg -mt-3 flex-1">
+                {review.quote}
               </p>
-              <footer className="border-t border-stone-100 pt-6">
-                <cite className="not-italic block text-base font-medium text-stone-900">
-                  {review.author}
-                </cite>
-                <span className="meta-text mt-1 block">
-                  {review.role}
-                </span>
+
+              <footer className="mt-8 pt-6 border-t border-stone-100 flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-amber-50 border border-amber-600/15 flex items-center justify-center shrink-0">
+                  <span className="text-sm font-serif text-amber-700">
+                    {review.author.charAt(0)}
+                  </span>
+                </div>
+                <div>
+                  <cite className="not-italic block text-sm font-medium text-stone-900">
+                    {review.author}
+                  </cite>
+                  <span className="meta-text mt-1 block">{review.role}</span>
+                </div>
               </footer>
             </motion.blockquote>
           ))}
