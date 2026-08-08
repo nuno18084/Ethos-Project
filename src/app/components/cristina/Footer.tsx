@@ -36,9 +36,13 @@ export function Footer() {
             <Link
               to="/"
               onClick={handleLogoClick}
-              className="inline-block text-2xl font-serif text-stone-100 tracking-widest uppercase"
+              className="inline-block"
             >
-              ETHOS
+              <img
+                src="/logo/Transparente.png"
+                alt="ETHOS"
+                className="h-14 sm:h-16 md:h-20 w-auto"
+              />
             </Link>
             <p className="meta-text text-stone-500 mt-2">
               © {new Date().getFullYear()} {t.footer.rights}

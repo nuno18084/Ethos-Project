@@ -141,11 +141,13 @@ export function Navbar() {
           <Link
             to="/"
             onClick={handleLogoClick}
-            className={`text-2xl sm:text-3xl font-serif tracking-widest text-stone-900 transition-colors${
-              isHome ? "" : " hover:text-amber-600"
-            }`}
+            className="inline-block shrink-0"
           >
-            ETHOS
+            <img
+              src="/logo/Branco.png"
+              alt="ETHOS"
+              className="h-14 sm:h-16 md:h-20 w-auto brightness-0"
+            />
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
