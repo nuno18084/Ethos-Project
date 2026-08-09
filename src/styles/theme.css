@@ -183,7 +183,18 @@
   }
 }
 
-/* Horizontal padding — tablet uses fixed gutters; wide desktop aligns with max-w-7xl */
+/* Desktop hero alignment — unchanged from original */
+@media (min-width: 768px) {
+  .site-align-left {
+    padding-left: max(0px, calc((100vw - min(100vw, 80rem)) / 2));
+  }
+
+  .site-align-right {
+    padding-right: max(0px, calc((100vw - min(100vw, 80rem)) / 2));
+  }
+}
+
+/* Tablet only — overrides desktop rules above within this range */
 @media (min-width: 768px) and (max-width: 1279px) {
   nav .max-w-7xl.mx-auto.flex {
     padding-left: 1.5rem;
@@ -203,24 +214,16 @@
   }
 }
 
-@media (min-width: 1280px) {
-  nav .max-w-7xl.mx-auto.flex {
-    padding-left: max(1.5rem, calc((100vw - min(100vw, 80rem)) / 2));
-    padding-right: max(1.5rem, calc((100vw - min(100vw, 80rem)) / 2));
-  }
-
-  .site-align-left {
-    padding-left: max(1.5rem, calc((100vw - min(100vw, 80rem)) / 2));
-  }
-
-  .site-align-right {
-    padding-right: max(1.5rem, calc((100vw - min(100vw, 80rem)) / 2));
-  }
-}
-
 @media (max-width: 767px) {
   .site-align-left-mobile {
     padding-left: max(0px, calc((100vw - min(100vw, 80rem)) / 2));
+  }
+}
+
+/* About photo — color on hover, desktop only */
+@media (min-width: 1024px) and (hover: hover) {
+  .about-photo:hover .about-photo__img {
+    filter: grayscale(0);
   }
 }
 

@@ -23,7 +23,7 @@ export function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="w-full aspect-[4/5] overflow-hidden max-md:cursor-pointer"
+            className="about-photo w-full aspect-[4/5] overflow-hidden max-md:cursor-pointer"
             onClick={togglePhotoColor}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
@@ -39,7 +39,7 @@ export function About() {
               src="/images/about-720.jpg"
               webpSrcSet="/images/about-720.webp"
               alt="Books and nature"
-              className={`w-full h-full object-cover transition-all duration-700 grayscale md:hover:grayscale-0${
+              className={`about-photo__img w-full h-full object-cover transition-[filter] duration-700 grayscale${
                 photoInColor ? " max-md:grayscale-0" : ""
               }`}
             />
