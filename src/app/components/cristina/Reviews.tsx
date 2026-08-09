@@ -33,18 +33,18 @@ export function Reviews() {
             >
               <div className="flex-1">
                 <span
-                  className="text-5xl font-serif text-amber-600/25 leading-none select-none"
+                  className="text-4xl md:text-5xl font-serif text-amber-600/25 leading-none select-none"
                   aria-hidden="true"
                 >
                   &ldquo;
                 </span>
 
-                <p className="quote-text text-[1.05rem] md:text-lg -mt-3">
+                <p className="quote-text text-[1.05rem] md:text-lg -mt-2 md:-mt-3">
                   {review.quote}
                 </p>
 
                 <span
-                  className="text-5xl font-serif text-amber-600/25 leading-none select-none block text-right -mt-4"
+                  className="text-4xl md:text-5xl font-serif text-amber-600/25 leading-none select-none block text-right mt-2 md:-mt-4"
                   aria-hidden="true"
                 >
                   &rdquo;
