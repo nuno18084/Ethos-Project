@@ -1,5 +1,5 @@
 export const SITE_NAME = "ETHOS";
-export const DEFAULT_OG_IMAGE = "/logo/Transparente.png";
+export const DEFAULT_OG_IMAGE = "/logo/Transparente-200.png";
 
 export function getSiteUrl() {
   const configured = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "");

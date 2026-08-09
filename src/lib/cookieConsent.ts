@@ -65,11 +65,3 @@ export function acceptAllCookies(): StoredCookieConsent {
 export function rejectOptionalCookies(): StoredCookieConsent {
   return saveConsent(defaultPreferences());
 }
-
-export function acceptsAnalytics(): boolean {
-  return getStoredConsent()?.preferences.analytics ?? false;
-}
-
-export function acceptsMarketing(): boolean {
-  return getStoredConsent()?.preferences.marketing ?? false;
-}

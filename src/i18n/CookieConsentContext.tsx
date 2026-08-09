@@ -12,7 +12,6 @@ import {
   getStoredConsent,
   hasConsentDecision,
   rejectOptionalCookies,
-  type CookiePreferences,
   type StoredCookieConsent,
 } from "../lib/cookieConsent";
 
@@ -23,7 +22,6 @@ type CookieConsentContextType = {
   rejectOptional: () => void;
   openBanner: () => void;
   closeBanner: () => void;
-  preferences: CookiePreferences;
 };
 
 const CookieConsentContext = createContext<CookieConsentContextType | null>(
@@ -70,16 +68,6 @@ export function CookieConsentProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  const preferences = useMemo<CookiePreferences>(
-    () =>
-      consent?.preferences ?? {
-        essential: true,
-        analytics: false,
-        marketing: false,
-      },
-    [consent],
-  );
-
   const value = useMemo(
     () => ({
       consent,
@@ -88,7 +76,6 @@ export function CookieConsentProvider({ children }: { children: ReactNode }) {
       rejectOptional,
       openBanner,
       closeBanner,
-      preferences,
     }),
     [
       consent,
@@ -97,7 +84,6 @@ export function CookieConsentProvider({ children }: { children: ReactNode }) {
       rejectOptional,
       openBanner,
       closeBanner,
-      preferences,
     ],
   );
 

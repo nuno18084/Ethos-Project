@@ -36,10 +36,14 @@ export function Contact() {
       if (error instanceof Error && error.message === "MISSING_CONFIG") {
         toast.error(t.contact.configErrorToast);
       } else if (error instanceof EmailJsError && error.status === 412) {
-        console.error("EmailJS 412:", error.message);
+        if (import.meta.env.DEV) {
+          console.error("EmailJS 412:", error.message);
+        }
         toast.error(t.contact.serviceErrorToast);
       } else {
-        console.error(error);
+        if (import.meta.env.DEV) {
+          console.error(error);
+        }
         toast.error(t.contact.errorToast);
       }
     } finally {

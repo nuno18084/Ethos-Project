@@ -48,7 +48,7 @@ export function HomePage() {
           "@type": "Organization",
           name: "ETHOS",
           url: getAbsoluteUrl("/"),
-          logo: getAbsoluteUrl("/logo/Transparente.png"),
+          logo: getAbsoluteUrl("/logo/Transparente-200.png"),
           description: t.seo.home.description,
           email: "cristina.carvalho@ethosprogram.com",
           areaServed: "PT",
