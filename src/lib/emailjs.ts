@@ -1,5 +1,3 @@
-import emailjs from "@emailjs/browser";
-
 export type ContactEmailPayload = {
   name: string;
   email: string;
@@ -38,6 +36,7 @@ function getEmailJsConfig() {
 
 export async function sendContactEmail(payload: ContactEmailPayload) {
   const { serviceId, templateId, publicKey } = getEmailJsConfig();
+  const { default: emailjs } = await import("@emailjs/browser");
 
   emailjs.init({ publicKey });
 

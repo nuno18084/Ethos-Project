@@ -1,15 +1,37 @@
+import { lazy, Suspense } from "react";
 import { Toaster } from "sonner";
 import { PageSeo } from "../components/PageSeo";
 import { useLanguage } from "../i18n/LanguageContext";
 import { getAbsoluteUrl } from "../lib/seo";
 import { Navbar } from "./components/cristina/Navbar";
 import { Hero } from "./components/cristina/Hero";
-import { About } from "./components/cristina/About";
-import { Services } from "./components/cristina/Services";
-import { Reviews } from "./components/cristina/Reviews";
-import { Partners } from "./components/cristina/Partners";
-import { Contact } from "./components/cristina/Contact";
 import { Footer } from "./components/cristina/Footer";
+
+const About = lazy(() =>
+  import("./components/cristina/About").then((module) => ({
+    default: module.About,
+  })),
+);
+const Services = lazy(() =>
+  import("./components/cristina/Services").then((module) => ({
+    default: module.Services,
+  })),
+);
+const Reviews = lazy(() =>
+  import("./components/cristina/Reviews").then((module) => ({
+    default: module.Reviews,
+  })),
+);
+const Partners = lazy(() =>
+  import("./components/cristina/Partners").then((module) => ({
+    default: module.Partners,
+  })),
+);
+const Contact = lazy(() =>
+  import("./components/cristina/Contact").then((module) => ({
+    default: module.Contact,
+  })),
+);
 
 export function HomePage() {
   const { language, t } = useLanguage();
@@ -37,11 +59,13 @@ export function HomePage() {
       <Navbar />
       <main>
         <Hero />
-        <About />
-        <Services />
-        <Reviews />
-        <Partners />
-        <Contact />
+        <Suspense fallback={null}>
+          <About />
+          <Services />
+          <Reviews />
+          <Partners />
+          <Contact />
+        </Suspense>
       </main>
       <Footer />
     </div>

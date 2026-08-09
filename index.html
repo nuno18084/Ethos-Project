@@ -21,8 +21,88 @@
     />
     <meta property="og:image" content="/logo/Transparente.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon" type="image/png" href="/logo/Transparente.png" />
-    <link rel="apple-touch-icon" href="/logo/Transparente.png" />
+    <style>
+      html {
+        background: #faf9f6;
+      }
+      body {
+        margin: 0;
+        background: #f5f5f0;
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+      #root {
+        min-height: 100dvh;
+      }
+      @keyframes hero-fade-up {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes hero-scale-in {
+        from {
+          opacity: 0;
+          transform: scale(1.1);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      .hero-fade-up {
+        opacity: 0;
+        animation: hero-fade-up 0.8s ease forwards;
+      }
+      .hero-fade-up--delay-200 {
+        animation-delay: 0.2s;
+      }
+      .hero-fade-up--delay-400 {
+        animation-delay: 0.4s;
+      }
+      .hero-fade-up--delay-600 {
+        animation-delay: 0.6s;
+      }
+      .hero-scale-in {
+        opacity: 0;
+        animation: hero-scale-in 1.2s ease forwards;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .hero-fade-up,
+        .hero-scale-in {
+          opacity: 1;
+          animation: none;
+          transform: none;
+        }
+      }
+    </style>
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      imagesrcset="/images/hero-640.webp 640w, /images/hero-960.webp 960w"
+      imagesizes="(max-width: 768px) 100vw, 50vw"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href="/fonts/playfair-normal-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="icon" type="image/png" href="/logo/favicon-64.png" />
+    <link rel="apple-touch-icon" href="/logo/Transparente-200.png" />
     <title>Ethos</title>
   </head>
   <body>

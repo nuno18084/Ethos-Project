@@ -36,7 +36,8 @@ export function About() {
             aria-label="Toggle photo color"
           >
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=1080&auto=format&fit=crop"
+              src="/images/about-720.jpg"
+              webpSrcSet="/images/about-720.webp"
               alt="Books and nature"
               className={`w-full h-full object-cover transition-all duration-700 grayscale md:hover:grayscale-0${
                 photoInColor ? " max-md:grayscale-0" : ""

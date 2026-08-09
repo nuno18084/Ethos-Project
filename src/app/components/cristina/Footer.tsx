@@ -38,11 +38,16 @@ export function Footer() {
               onClick={handleLogoClick}
               className="inline-block"
             >
-              <img
-                src="/logo/Transparente.png"
-                alt="ETHOS"
-                className="h-14 sm:h-16 md:h-20 w-auto"
-              />
+              <picture>
+                <source srcSet="/logo/Transparente-200.webp" type="image/webp" />
+                <img
+                  src="/logo/Transparente-200.png"
+                  alt="ETHOS"
+                  width={200}
+                  height={200}
+                  className="h-14 sm:h-16 md:h-20 w-auto"
+                />
+              </picture>
             </Link>
             <p className="meta-text text-stone-500 mt-2">
               © {new Date().getFullYear()} {t.footer.rights}

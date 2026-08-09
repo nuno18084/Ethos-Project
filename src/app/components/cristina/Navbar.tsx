@@ -1,10 +1,14 @@
-import { useState, useEffect } from "react";
+import { lazy, Suspense, useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { slide as BurgerMenu } from "react-burger-menu";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "../../../i18n/LanguageContext";
 import { LanguageSelector } from "../../../i18n/LanguageSelector";
-import "../../../styles/burger-menu.css";
+
+const MobileBurgerMenu = lazy(() =>
+  import("./MobileBurgerMenu").then((module) => ({
+    default: module.MobileBurgerMenu,
+  })),
+);
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,6 +61,20 @@ export function Navbar() {
   }, [isHome]);
 
   useEffect(() => {
+    const preloadMenu = () => {
+      void import("./MobileBurgerMenu");
+    };
+
+    if (typeof window.requestIdleCallback === "function") {
+      const id = window.requestIdleCallback(preloadMenu);
+      return () => window.cancelIdleCallback(id);
+    }
+
+    const timeoutId = setTimeout(preloadMenu, 1500);
+    return () => clearTimeout(timeoutId);
+  }, []);
+
+  useEffect(() => {
     if (!isOpen) return;
 
     const htmlStyle = document.documentElement.style;
@@ -100,33 +118,14 @@ export function Navbar() {
 
   return (
     <>
-      <BurgerMenu
-        right
-        isOpen={isOpen}
-        onStateChange={(state) => setIsOpen(state.isOpen)}
-        customBurgerIcon={false}
-        customCrossIcon={<X size={28} strokeWidth={1.5} className="text-stone-800" />}
-        width="100%"
-        menuClassName="ethos-bm-menu"
-        burgerButtonClassName="ethos-bm-burger-hidden"
-        crossButtonClassName="ethos-bm-cross-button"
-        overlayClassName="ethos-bm-overlay"
-        disableAutoFocus
-      >
-        {links.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            onClick={() => setIsOpen(false)}
-            className={`ethos-bm-item${
-              currentSection === link.id ? " ethos-bm-item--active" : ""
-            }`}
-            aria-current={currentSection === link.id ? "true" : undefined}
-          >
-            {link.name}
-          </a>
-        ))}
-      </BurgerMenu>
+      <Suspense fallback={null}>
+        <MobileBurgerMenu
+          isOpen={isOpen}
+          onOpenChange={setIsOpen}
+          links={links}
+          currentSection={currentSection}
+        />
+      </Suspense>
 
       <nav
         className={`fixed top-0 left-0 w-full transition-all duration-300 ${
@@ -143,11 +142,16 @@ export function Navbar() {
             onClick={handleLogoClick}
             className="inline-block shrink-0 leading-none -my-0.5 md:-my-1"
           >
-            <img
-              src="/logo/Branco.png"
-              alt="ETHOS"
-              className="h-14 sm:h-16 md:h-20 w-auto brightness-0"
-            />
+            <picture className="inline-block">
+              <source srcSet="/logo/Branco-200.webp" type="image/webp" />
+              <img
+                src="/logo/Branco-200.png"
+                alt="ETHOS"
+                width={200}
+                height={200}
+                className="h-14 sm:h-16 md:h-20 w-auto brightness-0"
+              />
+            </picture>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">

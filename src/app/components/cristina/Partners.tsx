@@ -11,15 +11,32 @@ export function Partners() {
   const marqueeItems = [...t.partners.items, ...t.partners.items];
 
   const trackRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const offsetRef = useRef(0);
   const velocityRef = useRef(1);
   const targetVelocityRef = useRef(1);
   const halfWidthRef = useRef(0);
+  const isVisibleRef = useRef(false);
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     targetVelocityRef.current = isHovered ? 0 : 1;
   }, [isHovered]);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+      },
+      { rootMargin: "120px" },
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
   useLayoutEffect(() => {
     const track = trackRef.current;
@@ -38,6 +55,8 @@ export function Partners() {
   }, [marqueeItems.length]);
 
   useAnimationFrame((_, delta) => {
+    if (!isVisibleRef.current && !isHovered) return;
+
     const track = trackRef.current;
     const halfWidth = halfWidthRef.current;
     if (!track || halfWidth === 0) return;
@@ -57,7 +76,7 @@ export function Partners() {
   });
 
   return (
-    <section id="partners" className="py-20 md:py-32 bg-stone-100 overflow-hidden">
+    <section id="partners" ref={sectionRef} className="py-20 md:py-32 bg-stone-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
