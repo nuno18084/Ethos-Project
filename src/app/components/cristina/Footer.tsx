@@ -1,9 +1,11 @@
 import { Instagram, Linkedin } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useCookieConsent } from "../../../i18n/CookieConsentContext";
 import { useLanguage } from "../../../i18n/LanguageContext";
 
 export function Footer() {
   const { t } = useLanguage();
+  const { openBanner } = useCookieConsent();
   const location = useLocation();
   const navigate = useNavigate();
   const isHome = location.pathname === "/";
@@ -80,6 +82,13 @@ export function Footer() {
             <Link to="/terms" className={linkClass}>
               {t.footer.terms}
             </Link>
+            <button
+              type="button"
+              onClick={openBanner}
+              className={`${linkClass} bg-transparent border-0 p-0 cursor-pointer font-inherit uppercase tracking-widest text-xs`}
+            >
+              {t.footer.cookies}
+            </button>
           </div>
         </div>
 

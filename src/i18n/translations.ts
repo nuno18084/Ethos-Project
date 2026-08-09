@@ -138,7 +138,24 @@ export const translations = {
       rights: "All Rights Reserved.",
       privacy: "Privacy",
       terms: "Terms",
+      cookies: "Cookies",
       credit: "Website by Nuno Colaço",
+    },
+    cookies: {
+      title: "We value your privacy",
+      description:
+        "We use cookies and local storage to keep the website working and to remember your preferences. You can accept all cookies or only those that are essential. Read more in our",
+      privacyLink: "Privacy Policy",
+      essentialLabel: "Essential",
+      essentialDescription:
+        "Required for basic functionality, such as your language preference and cookie consent choice.",
+      optionalLabel: "Optional",
+      optionalDescription:
+        "Analytics and marketing cookies are not currently used on this website.",
+      acceptAll: "Accept all",
+      rejectOptional: "Essential only",
+      currentChoice:
+        "You can update your choice below. Your current preferences will be replaced.",
     },
     seo: {
       home: {
@@ -168,7 +185,11 @@ export const translations = {
         },
         {
           title: "Information we collect",
-          body: "When you submit the contact form, we collect the information you provide: your name, email address, and message. We do not use analytics or advertising cookies on this website.",
+          body: "When you submit the contact form, we collect the information you provide: your name, email address, and message. We also store your language preference and cookie consent choice locally in your browser.",
+        },
+        {
+          title: "Cookies and local storage",
+          body: "Essential cookies and local storage are used to remember your language preference and your cookie consent choice. These are necessary for the website to function properly.\n\nWe do not currently use analytics or advertising cookies. If this changes in the future, we will only enable optional cookies after you give your consent.\n\nYou can change your cookie preferences at any time using the Cookies link in the footer.",
         },
         {
           title: "How we use your information",
@@ -369,7 +390,24 @@ export const translations = {
       rights: "Todos os Direitos Reservados.",
       privacy: "Privacidade",
       terms: "Termos",
+      cookies: "Cookies",
       credit: "Website por Nuno Colaço",
+    },
+    cookies: {
+      title: "Valorizamos a sua privacidade",
+      description:
+        "Utilizamos cookies e armazenamento local para o website funcionar e recordar as suas preferências. Pode aceitar todos os cookies ou apenas os essenciais. Saiba mais na nossa",
+      privacyLink: "Política de Privacidade",
+      essentialLabel: "Essenciais",
+      essentialDescription:
+        "Necessários para o funcionamento básico, como a preferência de idioma e a escolha de consentimento de cookies.",
+      optionalLabel: "Opcionais",
+      optionalDescription:
+        "Cookies de analítica e marketing não são atualmente utilizados neste website.",
+      acceptAll: "Aceitar todos",
+      rejectOptional: "Apenas essenciais",
+      currentChoice:
+        "Pode atualizar a sua escolha abaixo. As preferências atuais serão substituídas.",
     },
     seo: {
       home: {
@@ -399,7 +437,11 @@ export const translations = {
         },
         {
           title: "Informação que recolhemos",
-          body: "Quando submete o formulário de contacto, recolhemos a informação que nos fornece: nome, endereço de email e mensagem. Não utilizamos cookies de analítica ou publicidade neste website.",
+          body: "Quando submete o formulário de contacto, recolhemos a informação que nos fornece: nome, endereço de email e mensagem. Também guardamos localmente no seu browser a preferência de idioma e a escolha de consentimento de cookies.",
+        },
+        {
+          title: "Cookies e armazenamento local",
+          body: "Utilizamos cookies essenciais e armazenamento local para recordar a preferência de idioma e a escolha de consentimento de cookies. Estes são necessários para o funcionamento adequado do website.\n\nAtualmente não utilizamos cookies de analítica ou publicidade. Se isto mudar no futuro, apenas ativaremos cookies opcionais após o seu consentimento.\n\nPode alterar as preferências de cookies a qualquer momento através da ligação Cookies no rodapé.",
         },
         {
           title: "Como utilizamos a sua informação",

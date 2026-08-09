@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { CookieBanner } from "../components/CookieBanner";
 import { HomePage } from "./HomePage";
 import { ScrollToTop } from "./ScrollToTop";
 
@@ -18,6 +19,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <CookieBanner />
       <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<HomePage />} />
