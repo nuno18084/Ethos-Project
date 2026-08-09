@@ -221,7 +221,7 @@
 }
 
 /* About photo — color on hover, desktop only */
-@media (min-width: 1024px) and (hover: hover) {
+@media (min-width: 1280px) and (hover: hover) {
   .about-photo:hover .about-photo__img {
     filter: grayscale(0);
   }

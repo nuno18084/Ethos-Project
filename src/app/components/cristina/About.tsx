@@ -8,7 +8,7 @@ export function About() {
   const [photoInColor, setPhotoInColor] = useState(false);
 
   const togglePhotoColor = () => {
-    if (window.matchMedia("(hover: none)").matches) {
+    if (window.matchMedia("(max-width: 1279px)").matches) {
       setPhotoInColor((prev) => !prev);
     }
   };
@@ -23,7 +23,7 @@ export function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="about-photo w-full aspect-[4/5] overflow-hidden max-md:cursor-pointer"
+            className="about-photo w-full aspect-[4/5] overflow-hidden max-xl:cursor-pointer"
             onClick={togglePhotoColor}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
@@ -40,7 +40,7 @@ export function About() {
               webpSrcSet="/images/about-720.webp"
               alt="Books and nature"
               className={`about-photo__img w-full h-full object-cover transition-[filter] duration-700 grayscale${
-                photoInColor ? " max-md:grayscale-0" : ""
+                photoInColor ? " max-xl:grayscale-0" : ""
               }`}
             />
           </motion.div>
