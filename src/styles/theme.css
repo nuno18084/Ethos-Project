@@ -183,14 +183,38 @@
   }
 }
 
-/* Aligns with max-w-7xl container (navbar logo edge) — desktop only */
-@media (min-width: 768px) {
+/* Horizontal padding — tablet uses fixed gutters; wide desktop aligns with max-w-7xl */
+@media (min-width: 768px) and (max-width: 1279px) {
+  nav .max-w-7xl.mx-auto.flex {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   .site-align-left {
-    padding-left: max(0px, calc((100vw - min(100vw, 80rem)) / 2));
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 8.5rem;
+    justify-content: flex-start;
+  }
+
+  .site-align-left h1 {
+    font-size: 3.375rem;
+    line-height: 1.2;
+  }
+}
+
+@media (min-width: 1280px) {
+  nav .max-w-7xl.mx-auto.flex {
+    padding-left: max(1.5rem, calc((100vw - min(100vw, 80rem)) / 2));
+    padding-right: max(1.5rem, calc((100vw - min(100vw, 80rem)) / 2));
+  }
+
+  .site-align-left {
+    padding-left: max(1.5rem, calc((100vw - min(100vw, 80rem)) / 2));
   }
 
   .site-align-right {
-    padding-right: max(0px, calc((100vw - min(100vw, 80rem)) / 2));
+    padding-right: max(1.5rem, calc((100vw - min(100vw, 80rem)) / 2));
   }
 }
 
