@@ -140,6 +140,23 @@ export const translations = {
       terms: "Terms",
       credit: "Website by Nuno Colaço",
     },
+    seo: {
+      home: {
+        title: "ETHOS — Coaching & Mentoring for Ethical Leadership",
+        description:
+          "ETHOS is a human-centred leadership programme for leaders and teams. Coaching and mentoring rooted in philosophy and practical business frameworks for ethical decision-making and organisational well-being.",
+      },
+      privacy: {
+        title: "Privacy Policy",
+        description:
+          "Learn how ETHOS collects, uses, and protects personal information when you visit our website or contact us through the contact form.",
+      },
+      terms: {
+        title: "Terms of Use",
+        description:
+          "Read the terms and conditions for using the ETHOS website and learning about our coaching and mentoring programme.",
+      },
+    },
     privacy: {
       title: "Privacy Policy",
       lastUpdated: "Last updated: August 2026",
@@ -353,6 +370,23 @@ export const translations = {
       privacy: "Privacidade",
       terms: "Termos",
       credit: "Website por Nuno Colaço",
+    },
+    seo: {
+      home: {
+        title: "ETHOS — Coaching & Mentoring para Liderança Ética",
+        description:
+          "O ETHOS é um programa de liderança human-centred para líderes e equipas. Coaching e mentoring inspirados na filosofia e em frameworks práticos de negócio para decisão ética e bem-estar organizacional.",
+      },
+      privacy: {
+        title: "Política de Privacidade",
+        description:
+          "Saiba como o ETHOS recolhe, utiliza e protege os dados pessoais quando visita o nosso website ou entra em contacto connosco.",
+      },
+      terms: {
+        title: "Termos de Utilização",
+        description:
+          "Consulte os termos e condições de utilização do website ETHOS e do nosso programa de coaching e mentoring.",
+      },
     },
     privacy: {
       title: "Política de Privacidade",

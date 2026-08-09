@@ -1,15 +1,24 @@
+import { PageSeo } from "../../components/PageSeo";
 import { useLanguage } from "../../i18n/LanguageContext";
 import { LegalPageLayout } from "../components/cristina/LegalPageLayout";
 
 export function TermsPage() {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
   return (
-    <LegalPageLayout
-      title={t.terms.title}
-      lastUpdated={t.terms.lastUpdated}
-      sections={t.terms.sections}
-      backLabel={t.terms.backHome}
-    />
+    <>
+      <PageSeo
+        title={t.seo.terms.title}
+        description={t.seo.terms.description}
+        path="/terms"
+        language={language}
+      />
+      <LegalPageLayout
+        title={t.terms.title}
+        lastUpdated={t.terms.lastUpdated}
+        sections={t.terms.sections}
+        backLabel={t.terms.backHome}
+      />
+    </>
   );
 }
