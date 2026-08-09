@@ -29,9 +29,7 @@ export function Reviews() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15 }}
-              className={`group relative bg-white p-7 md:p-9 border border-stone-100 shadow-sm hover:shadow-lg hover:border-amber-600/20 transition-all duration-300 flex flex-col${
-                index === 1 ? " md:-translate-y-3" : ""
-              }`}
+              className="group relative bg-white p-7 md:p-9 border border-stone-100 shadow-sm hover:shadow-lg hover:border-amber-600/20 transition-all duration-300 flex flex-col"
             >
               <div className="flex-1">
                 <span
