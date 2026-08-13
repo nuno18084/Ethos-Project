@@ -31,8 +31,39 @@ Copy `.env.example` to `.env` and fill in:
 
 Set the same variables in your hosting provider before deploy.
 
-## Deploy
+## Deploy (Firebase Hosting)
 
-Static SPA output in `dist/`. The `public/_redirects` file handles client-side routing on Netlify. For Vercel, add a matching rewrite to `index.html`.
+### First-time setup
 
-Ensure `VITE_SITE_URL` matches your production domain (e.g. `https://ethosprogram.com`).
+1. Install dependencies: `npm install`
+2. Create a project at [Firebase Console](https://console.firebase.google.com/) (or use an existing one)
+3. Log in: `npx firebase login`
+4. Link the project (replace `YOUR_PROJECT_ID` with your Firebase project ID):
+
+```bash
+npx firebase use --add
+```
+
+5. Ensure `.env` is filled in — Vite embeds `VITE_*` variables **at build time**
+
+### Deploy
+
+```bash
+npm run deploy
+```
+
+This runs `npm run build` then uploads `dist/` to Firebase Hosting.
+
+### Custom domain
+
+In Firebase Console → Hosting → Add custom domain, point DNS to Firebase and set:
+
+```env
+VITE_SITE_URL=https://ethosprogram.com
+```
+
+(rebuild and redeploy after changing)
+
+### SPA routing
+
+Client-side routes (`/privacy`, `/terms`) are handled by `firebase.json` rewrites to `index.html`.
