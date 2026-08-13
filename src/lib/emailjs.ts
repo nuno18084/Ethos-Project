@@ -34,6 +34,17 @@ function getEmailJsConfig() {
   return { serviceId, templateId, publicKey };
 }
 
+export function isEmailJsOriginError(error: EmailJsError): boolean {
+  if (error.status === 403) return true;
+
+  const message = error.message.toLowerCase();
+  return (
+    message.includes("origin") ||
+    message.includes("forbidden") ||
+    message.includes("referrer")
+  );
+}
+
 export async function sendContactEmail(payload: ContactEmailPayload) {
   const { serviceId, templateId, publicKey } = getEmailJsConfig();
   const { default: emailjs } = await import("@emailjs/browser");

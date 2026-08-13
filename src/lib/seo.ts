@@ -5,7 +5,7 @@ export function getSiteUrl() {
   const configured = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "");
   if (configured) return configured;
   if (typeof window !== "undefined") return window.location.origin;
-  return "https://ethosprogram.com";
+  return "https://ethos-program.web.app";
 }
 
 export function getAbsoluteUrl(path = "") {

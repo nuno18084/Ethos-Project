@@ -133,6 +133,8 @@ export const translations = {
         "Contact form is not configured yet. Please try again later.",
       serviceErrorToast:
         "We couldn't send your message right now. Please email us at cristina.carvalho@ethosprogram.com.",
+      domainErrorToast:
+        "The contact form is not authorized for this website yet. Please email us directly at cristina.carvalho@ethosprogram.com.",
     },
     footer: {
       rights: "All Rights Reserved.",
@@ -385,6 +387,8 @@ export const translations = {
         "O formulário ainda não está configurado. Por favor, tente mais tarde.",
       serviceErrorToast:
         "Não foi possível enviar a mensagem. Por favor escreva para cristina.carvalho@ethosprogram.com.",
+      domainErrorToast:
+        "O formulário ainda não está autorizado para este website. Por favor escreva directamente para cristina.carvalho@ethosprogram.com.",
     },
     footer: {
       rights: "Todos os Direitos Reservados.",

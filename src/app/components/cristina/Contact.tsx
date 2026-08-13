@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import { motion } from "motion/react";
 import { ArrowRight, Mail, Instagram, MapPin } from "lucide-react";
 import { useLanguage } from "../../../i18n/LanguageContext";
-import { sendContactEmail, EmailJsError } from "../../../lib/emailjs";
+import { sendContactEmail, EmailJsError, isEmailJsOriginError } from "../../../lib/emailjs";
 
 type FormData = {
   name: string;
@@ -35,6 +35,8 @@ export function Contact() {
     } catch (error) {
       if (error instanceof Error && error.message === "MISSING_CONFIG") {
         toast.error(t.contact.configErrorToast);
+      } else if (error instanceof EmailJsError && isEmailJsOriginError(error)) {
+        toast.error(t.contact.domainErrorToast);
       } else if (error instanceof EmailJsError && error.status === 412) {
         if (import.meta.env.DEV) {
           console.error("EmailJS 412:", error.message);
