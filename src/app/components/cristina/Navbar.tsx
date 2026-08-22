@@ -102,14 +102,32 @@ export function Navbar() {
   const showSolidNav = !isHome || scrolled || isOpen;
   const currentSection = isHome ? activeSection : null;
 
+  const navLinks = links.filter((link) => link.id !== "contact");
+  const contactLink = links.find((link) => link.id === "contact");
+
   const getDesktopLinkClass = (linkId: string) => {
     if (currentSection === linkId) {
-      return "text-xs uppercase tracking-widest text-amber-600 transition-colors";
+      return "text-xs uppercase tracking-widest text-amber-600 transition-colors duration-700 ease-in-out";
     }
 
     return isHome
-      ? "text-xs uppercase tracking-widest text-stone-900 hover:text-stone-600 transition-colors"
-      : "text-xs uppercase tracking-widest text-stone-900 hover:text-amber-600 transition-colors";
+      ? "text-xs uppercase tracking-widest text-stone-900 hover:text-stone-600 transition-colors duration-700 ease-in-out"
+      : "text-xs uppercase tracking-widest text-stone-900 hover:text-amber-600 transition-colors duration-700 ease-in-out";
+  };
+
+  const getContactLinkClass = () => {
+    const base =
+      "text-xs uppercase tracking-widest font-medium px-3 py-1.5 border transition-all duration-700 ease-in-out";
+
+    if (showSolidNav) {
+      return `${base} border-amber-600 bg-amber-600 text-white hover:bg-amber-500 hover:border-amber-500`;
+    }
+
+    if (currentSection === "contact") {
+      return `${base} border-transparent bg-transparent text-amber-600`;
+    }
+
+    return `${base} border-transparent bg-transparent text-stone-900 hover:text-stone-600`;
   };
 
   const menuButtonClass = showSolidNav
@@ -153,7 +171,7 @@ export function Navbar() {
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
-            {links.map((link) => (
+            {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -163,6 +181,15 @@ export function Navbar() {
                 {link.name}
               </a>
             ))}
+            {contactLink && (
+              <a
+                href={contactLink.href}
+                className={getContactLinkClass()}
+                aria-current={currentSection === "contact" ? "true" : undefined}
+              >
+                {contactLink.name}
+              </a>
+            )}
             <LanguageSelector />
           </div>
 
