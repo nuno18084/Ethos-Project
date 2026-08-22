@@ -141,17 +141,15 @@ export function Navbar() {
             to="/"
             onClick={handleLogoClick}
             className="inline-block shrink-0 leading-none -my-0.5 md:-my-1"
+            aria-label="ETHOS"
           >
-            <picture className="inline-block">
-              <source srcSet="/logo/Branco-200.webp" type="image/webp" />
-              <img
-                src="/logo/Branco-200.png"
-                alt="ETHOS"
-                width={200}
-                height={200}
-                className="h-14 sm:h-16 md:h-20 w-auto brightness-0"
-              />
-            </picture>
+            <span
+              className={`navbar-logo inline-block h-14 sm:h-16 md:h-20 aspect-square transition-colors duration-700 ease-in-out ${
+                showSolidNav ? "bg-amber-600" : "bg-black"
+              }`}
+              role="img"
+              aria-hidden="true"
+            />
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
