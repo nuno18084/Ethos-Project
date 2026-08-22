@@ -92,18 +92,27 @@ export const translations = {
         {
           quote:
             "ETHOS gave me a space to pause and reflect. I returned to my work with more clarity, purpose, and a renewed sense of balance between professional and personal life.",
+          quotePrefix: undefined,
+          quoteHighlight: undefined,
+          quoteSuffix: undefined,
           author: "Luza ETHOS Participant",
           role: "Technology Sector",
         },
         {
           quote:
             "More than a coaching programme — it is a journey inward. The sessions helped me explore my ethics, inner freedom, and what truly matters in my leadership.",
+          quotePrefix: undefined,
+          quoteHighlight: undefined,
+          quoteSuffix: undefined,
           author: "Team Leader",
           role: "Corporate Environment",
         },
         {
           quote:
             "Small, powerful transformations. No buzzwords — just genuine growth from the inside out, with practical frameworks I could apply immediately.",
+          quotePrefix: undefined,
+          quoteHighlight: undefined,
+          quoteSuffix: undefined,
           author: "Senior Manager",
           role: "International Company",
         },
@@ -346,26 +355,35 @@ export const translations = {
     },
     reviews: {
       eyebrow: "Testemunhos",
-      title: "Vozes de",
-      titleAccent: "transformação",
+      title: "Quem experimentou conta",
+      titleAccent: "O que fica",
       items: [
         {
-          quote:
-            "O ETHOS deu-me um espaço para pausar e refletir. Regressei ao trabalho com mais clareza, propósito e um sentido renovado de equilíbrio entre vida profissional e pessoal.",
-          author: "Participante Luza ETHOS",
-          role: "Sector Tecnológico",
+          quote: undefined,
+          quotePrefix: "Aprendi que ",
+          quoteHighlight: "ninguém nasce virtuoso.",
+          quoteSuffix:
+            " As qualidades humanas desenvolvem-se em nós através da prática. É um músculo que se trabalha como qualquer outro, dia sobre dia",
+          author: "Maria",
+          role: "Diretora de Marketing · Área de eventos globais",
         },
         {
-          quote:
-            "Mais do que um programa de coaching — é uma jornada interior. As sessões ajudaram-me a explorar a minha ética, liberdade interior e o que realmente importa na minha liderança.",
-          author: "Team Leader",
-          role: "Ambiente Corporativo",
+          quote: undefined,
+          quotePrefix: "Aprendi que viemos para ",
+          quoteHighlight: "sermos humanos.",
+          quoteSuffix:
+            " Para sairmos maiores do que entrámos e sermos sempre fator de soma.",
+          author: "João",
+          role: "Diretor de Operações · Empresa Pública",
         },
         {
-          quote:
-            "Pequenas transformações poderosas. Sem buzzwords — apenas crescimento genuíno de dentro para fora, com frameworks práticos que pude aplicar de imediato.",
-          author: "Senior Manager",
-          role: "Empresa Internacional",
+          quote: undefined,
+          quotePrefix: "Aprendi que ",
+          quoteHighlight: "a Felicidade será sempre uma escolha:",
+          quoteSuffix:
+            " Escolher agir com integridade, com compromisso e responsabilidade, independentemente das circunstâncias",
+          author: "Eduardo",
+          role: "Team Leader · Multinacional Tecnológica",
         },
       ],
     },
