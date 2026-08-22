@@ -13,12 +13,15 @@ export const translations = {
       // eyebrow: "Coaching & Mentoring for Ethics and Well-Being",
       titleLine1: "A space to pause,",
       titleLine2: "reflect, and realign.",
+      titlePrefix: undefined,
+      titleRotatingWords: undefined,
       description:
         "A human-centred leadership programme for leaders and teams. Rooted in classical philosophy and practical business frameworks, it supports ethical decision-making, strategic clarity, and organisational well-being.",
+      descriptionHighlight: undefined,
       cta: "Start the conversation",
     },
     about: {
-      quote: "No buzzwords, just small, powerful transformations.",
+      quote: "What if the best decisions started before the decision?",
       eyebrow: "About ETHOS",
       title: "A conscious pause to return with",
       titleAccent: "clarity and purpose.",
@@ -265,14 +268,18 @@ export const translations = {
     },
     hero: {
       // eyebrow: "Coaching & Mentoring para Ética e Bem-Estar",
-      titleLine1: "Um espaço para pausar,",
-      titleLine2: "refletir e realinhar.",
+      titleLine1: "Filosofia aplicada às Organizações",
+      titleLine2: "",
+      titlePrefix: "A coragem de:",
+      titleRotatingWords: ["Parar.", "Virar do avesso.", "E somar."],
       description:
-        "Um programa de liderança human-centred para líderes e equipas. Inspirado na filosofia clássica e em frameworks práticos de negócio, apoia a tomada de decisão ética, a clareza estratégica e o bem-estar organizacional.",
+        "Um programa para elevar o Capital Ético das organizações através da Filosofia Clássica. ETHOS é um programa sobre Humanização, onde falamos do ser humano por trás das competências. As competências importam, mas são as qualidades humanas que influenciam diretamente a qualidade das decisões.",
+      descriptionHighlight:
+        "Melhores decisões. Melhor execução. Melhores organizações.",
       cta: "Iniciar a conversa",
     },
     about: {
-      quote: "Sem buzzwords, apenas pequenas transformações poderosas.",
+      quote: "E se as melhores decisões começassem antes da decisão?",
       eyebrow: "Sobre o ETHOS",
       title: "Uma pausa consciente para regressar com",
       titleAccent: "clareza e propósito.",

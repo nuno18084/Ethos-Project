@@ -1,9 +1,18 @@
+import { lazy, Suspense } from "react";
 import { ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { useLanguage } from "../../../i18n/LanguageContext";
 
+const HeroRotatingTitle = lazy(() =>
+  import("./HeroRotatingTitle").then((module) => ({
+    default: module.HeroRotatingTitle,
+  })),
+);
+
 export function Hero() {
   const { t, language } = useLanguage();
+  const hasRotatingTitle =
+    Boolean(t.hero.titlePrefix) && Boolean(t.hero.titleRotatingWords?.length);
 
   return (
     <section className="relative w-full bg-[#F5F5F0] min-h-[100dvh] md:h-screen md:overflow-hidden">
@@ -11,15 +20,41 @@ export function Hero() {
         <div className="w-full md:w-1/2 flex flex-col justify-center px-6 pt-36 pb-10 md:py-0 md:pl-0 md:pr-12 md:h-full site-align-left z-10 shrink-0">
           <h1 className="hero-fade-up hero-fade-up--delay-200 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-stone-900 leading-tight mb-6 md:mb-8">
             {t.hero.titleLine1} <br />
-            <span
-              className={`italic text-amber-600${language === "pt" ? " md:whitespace-nowrap" : ""}`}
-            >
-              {t.hero.titleLine2}
-            </span>
+            {hasRotatingTitle ? (
+              <Suspense
+                fallback={
+                  <span className="italic text-amber-600 block">
+                    <span className="block not-italic text-stone-900">
+                      {t.hero.titlePrefix}
+                    </span>
+                    <span className="mt-1 block">{t.hero.titleRotatingWords![0]}</span>
+                  </span>
+                }
+              >
+                <HeroRotatingTitle
+                  prefix={t.hero.titlePrefix!}
+                  words={t.hero.titleRotatingWords!}
+                />
+              </Suspense>
+            ) : (
+              <span
+                className={`italic text-amber-600${language === "pt" ? " md:whitespace-nowrap" : ""}`}
+              >
+                {t.hero.titleLine2}
+              </span>
+            )}
           </h1>
 
           <p className="hero-fade-up hero-fade-up--delay-400 text-sm text-stone-600 mb-8 md:mb-10 max-w-md leading-relaxed">
             {t.hero.description}
+            {t.hero.descriptionHighlight && (
+              <>
+                {" "}
+                <span className="font-bold text-stone-900">
+                  {t.hero.descriptionHighlight}
+                </span>
+              </>
+            )}
           </p>
 
           <div className="hero-fade-up hero-fade-up--delay-600">
