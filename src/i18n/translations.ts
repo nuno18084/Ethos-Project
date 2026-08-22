@@ -281,13 +281,12 @@ export const translations = {
     about: {
       quote: "E se as melhores decisões começassem antes da decisão?",
       eyebrow: "Sobre o ETHOS",
-      title: "Uma pausa consciente para regressar com",
-      titleAccent: "clareza e propósito.",
+      title: "AS ORGANIZAÇÕES EVOLUEM QUANDO OS SERES HUMANOS EVOLUEM.",
+      titleAccent:
+        "E a Filosofia continua a ser um dos caminhos mais fortes para esta evolução.",
       paragraph1:
-        "O ETHOS é um convite a recuar — um tempo estratégico para ganhar clareza e regressar com um sentido renovado de propósito e foco. Foi desenhado para empresas que querem alinhar performance com valores, cultura e visão de longo prazo.",
-      paragraph2Prefix:
-        "Para além de um programa, o ETHOS é uma jornada de desenvolvimento humano. Reforça a resiliência, liberta a liberdade interior e eleva a cultura organizacional — ajudando as pessoas a ",
-      paragraph2Highlight: "crescer de dentro para fora.",
+        "A cultura organizacional não aparece numa linha do balanço. Mas pode explicar uma boa parte dos seus resultados. No ETHOS, trazemos as grandes questões humanas para a realidade das organizações. Porque é nas escolhas e na relação com os outros que as qualidades humanas ganham expressão.",
+      paragraph2Prefix: "",
       cta: "Saber mais",
     },
     services: {
