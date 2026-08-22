@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section className="relative w-full bg-[#F5F5F0] min-h-[100dvh] md:h-screen md:overflow-hidden">
       <div className="flex flex-col min-h-[100dvh] md:min-h-0 md:flex-row md:h-full">
-        <div className="w-full md:w-1/2 flex flex-col justify-center px-6 pt-36 pb-10 md:px-0 md:py-0 md:pr-12 md:h-full site-align-left z-10 shrink-0">
+        <div className="w-full md:w-1/2 flex flex-col justify-center px-6 pt-36 pb-10 md:py-0 md:pl-0 md:pr-12 md:h-full site-align-left z-10 shrink-0">
           <h1 className="hero-fade-up hero-fade-up--delay-200 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-stone-900 leading-tight mb-6 md:mb-8">
             {t.hero.titleLine1} <br />
             <span

@@ -183,27 +183,20 @@
   }
 }
 
-/* Desktop hero alignment — unchanged from original */
+/* Hero / navbar alignment — matches max-w-7xl + px-6 used elsewhere */
 @media (min-width: 768px) {
   .site-align-left {
-    padding-left: max(0px, calc((100vw - min(100vw, 80rem)) / 2));
+    padding-left: max(1.5rem, calc((100vw - min(100vw, 80rem)) / 2 + 1.5rem));
   }
 
   .site-align-right {
-    padding-right: max(0px, calc((100vw - min(100vw, 80rem)) / 2));
+    padding-right: max(1.5rem, calc((100vw - min(100vw, 80rem)) / 2 + 1.5rem));
   }
 }
 
-/* Tablet only — overrides desktop rules above within this range */
+/* Tablet only — hero spacing & type tweaks */
 @media (min-width: 768px) and (max-width: 1279px) {
-  nav .max-w-7xl.mx-auto.flex {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
   .site-align-left {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
     padding-top: 8.5rem;
     justify-content: flex-start;
   }

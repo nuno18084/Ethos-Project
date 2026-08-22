@@ -136,7 +136,7 @@ export function Navbar() {
             : "bg-transparent py-2 md:py-2.5"
         }`}
       >
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-6 md:px-0">
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-6">
           <Link
             to="/"
             onClick={handleLogoClick}
