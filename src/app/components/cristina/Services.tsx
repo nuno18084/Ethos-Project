@@ -129,23 +129,54 @@ export function Services() {
                 {selected.title}
               </h3>
 
-              <p className="section-body mb-4 md:mb-8 text-[0.9375rem] md:text-base">
+              <p
+                className={`section-body text-[0.9375rem] md:text-base ${selected.details2Highlight || selected.details2 ? "mb-4" : "mb-4 md:mb-8"}`}
+              >
                 {selected.details}
               </p>
 
-              <ul className="space-y-2 md:space-y-3 mb-6 md:mb-10">
-                {selected.highlights.map((highlight) => (
-                  <li
-                    key={highlight}
-                    className="flex items-start gap-3 section-body text-[0.9375rem] md:text-base"
-                  >
-                    <span className="mt-1.5 md:mt-2 w-1.5 h-1.5 rounded-full bg-amber-600 shrink-0" />
-                    {highlight}
-                  </li>
-                ))}
-              </ul>
+              {(selected.details2Highlight || selected.details2) && (
+                <div className="section-body mb-4 md:mb-8 text-[0.9375rem] md:text-base space-y-3">
+                  {selected.details2Suffix !== undefined &&
+                  selected.details2Highlight &&
+                  selected.details2 ? (
+                    <p>
+                      {selected.details2}
+                      <span className="font-bold text-stone-900">
+                        {selected.details2Highlight}
+                      </span>
+                      {selected.details2Suffix}
+                    </p>
+                  ) : (
+                    <>
+                      {selected.details2Highlight && (
+                        <p className="font-bold text-stone-900">
+                          {selected.details2Highlight}
+                        </p>
+                      )}
+                      {selected.details2 && <p>{selected.details2}</p>}
+                    </>
+                  )}
+                </div>
+              )}
 
-              <div className="text-center md:text-left">
+              {Array.isArray(selected.highlights) && selected.highlights.length > 0 && (
+                <ul className="space-y-2 md:space-y-3 mb-6 md:mb-10">
+                  {selected.highlights.map((highlight) => (
+                    <li
+                      key={highlight}
+                      className="flex items-start gap-3 section-body text-[0.9375rem] md:text-base"
+                    >
+                      <span className="mt-1.5 md:mt-2 w-1.5 h-1.5 rounded-full bg-amber-600 shrink-0" />
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              <div
+                className={`text-center md:text-left${Array.isArray(selected.highlights) && selected.highlights.length > 0 ? "" : " mt-2"}`}
+              >
                 <a
                   href="#contact"
                   onClick={closeModal}

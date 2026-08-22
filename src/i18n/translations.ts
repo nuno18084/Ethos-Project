@@ -43,6 +43,9 @@ export const translations = {
             "Personalised support for leaders and teams. A guided space to explore ethics, inner freedom, and the balance between work and life.",
           details:
             "Through one-on-one and team sessions, ETHOS creates a conscious pause — a strategic space to reflect, gain clarity, and return with renewed purpose. Each journey is tailored to the individual or team, combining timeless philosophical principles with practical business application.",
+          details2: undefined,
+          details2Highlight: undefined,
+          details2Suffix: undefined,
           highlights: [
             "Individual mentoring for leaders",
             "Team coaching sessions",
@@ -55,6 +58,9 @@ export const translations = {
             "Building human-centred organisations through ethical leadership, critical thinking, and cultural transformation inspired by classical philosophy.",
           details:
             "ETHOS supports organisations that want to align performance with values and long-term vision. We work on cultural transformation from the inside out — strengthening ethical leadership, critical thinking, and a human-centred way of working.",
+          details2: undefined,
+          details2Highlight: undefined,
+          details2Suffix: undefined,
           highlights: [
             "Cultural transformation programmes",
             "Ethical leadership development",
@@ -67,6 +73,9 @@ export const translations = {
             "Strategic clarity and purpose-driven execution for executives. Aligning inner values with business performance, communication, and team culture.",
           details:
             "For executives navigating complexity, ETHOS offers a steady, informed approach to strategic decision-making. We help align inner values with outer expression — connecting purpose, communication, and team culture to business performance.",
+          details2: undefined,
+          details2Highlight: undefined,
+          details2Suffix: undefined,
           highlights: [
             "Executive strategic clarity",
             "Purpose-driven execution",
@@ -287,6 +296,7 @@ export const translations = {
       paragraph1:
         "A cultura organizacional não aparece numa linha do balanço. Mas pode explicar uma boa parte dos seus resultados. No ETHOS, trazemos as grandes questões humanas para a realidade das organizações. Porque é nas escolhas e na relação com os outros que as qualidades humanas ganham expressão.",
       paragraph2Prefix: "",
+      paragraph2Highlight: undefined,
       cta: "Saber mais",
     },
     services: {
@@ -295,40 +305,42 @@ export const translations = {
       modalCta: "Iniciar a conversa",
       items: [
         {
-          title: "Coaching & Mentoring",
+          title: "PROGRAMA ETHOS",
           description:
-            "Acompanhamento personalizado para líderes e equipas. Um espaço guiado para explorar a ética, a liberdade interior e o equilíbrio entre trabalho e vida.",
+            "Dois módulos com cinco sessões one-to-one cada, que aplicam a Filosofia Clássica a questões humanas fundamentais, com impacto direto na vida das organizações.",
           details:
-            "Através de sessões individuais e em equipa, o ETHOS cria uma pausa consciente — um espaço estratégico para refletir, ganhar clareza e regressar com propósito renovado. Cada jornada é adaptada à pessoa ou equipa, combinando princípios filosóficos intemporais com aplicação prática de negócio.",
+            "Ao longo do programa, vamos falar no paradoxo entre Disciplina e Liberdade Interior, da Estrutura Interior na Mudança, a Palavra como Força Criadora, Ética da Imperfeição, Heróis e Código de Honra, Atenção, entre muitos outros.",
+          details2Highlight:
+            "Dois módulos. Cinco sessões cada. 50 min por sessão one-to-one.",
+          details2:
+            "Os dois módulos podem viver de forma independente, mas são dois movimentos da mesma viagem:",
+          details2Suffix: undefined,
           highlights: [
-            "Mentoring individual para líderes",
-            "Sessões de coaching em equipa",
-            "Ética, resiliência e bem-estar",
+            "O primeiro constrói o ser humano.",
+            "O segundo transforma a forma como o ser humano habita o mundo.",
           ],
         },
         {
-          title: "Liderança & Cultura",
+          title: "ETHOS EM DIÁLOGO",
           description:
-            "Construir organizações human-centred através de liderança ética, pensamento crítico e transformação cultural inspirada na filosofia clássica.",
+            "Para organizações que querem trabalhar uma questão em particular. A Filosofia Clássica oferece o ponto de partida e abre novas formas de pensar, enquanto a realidade da organização dá sentido e aplicação prática ao processo.",
           details:
             "O ETHOS apoia organizações que querem alinhar performance com valores e visão de longo prazo. Trabalhamos a transformação cultural de dentro para fora — reforçando liderança ética, pensamento crítico e uma forma human-centred de trabalhar.",
-          highlights: [
-            "Programas de transformação cultural",
-            "Desenvolvimento de liderança ética",
-            "Frameworks inspirados na filosofia",
-          ],
+          details2: undefined,
+          details2Highlight: undefined,
+          details2Suffix: undefined,
+          highlights: [],
         },
         {
-          title: "Consultoria Estratégica",
+          title: "ETHOS ONE-TO-ONE",
           description:
             "Clareza estratégica e execução orientada por propósito para executivos. Alinhar valores interiores com performance, comunicação e cultura de equipa.",
           details:
-            "Para executivos que navegam a complexidade, o ETHOS oferece uma abordagem estável e informada à tomada de decisão estratégica. Ajudamos a alinhar valores interiores com expressão exterior — ligando propósito, comunicação e cultura de equipa à performance de negócio.",
-          highlights: [
-            "Clareza estratégica para executivos",
-            "Execução orientada por propósito",
-            "Alinhamento de comunicação e cultura",
-          ],
+            "Uma experiência individual para quem tem a coragem de parar, virar do avesso e olhar para a própria vida através da Filosofia.",
+          details2: "Também disponível em formato ",
+          details2Highlight: "voucher",
+          details2Suffix: ".",
+          highlights: [],
         },
       ],
     },
