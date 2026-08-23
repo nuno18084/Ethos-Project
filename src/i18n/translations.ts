@@ -417,7 +417,7 @@ export const translations = {
         " E todos os dias tomamos milhares de decisões, das mais simples às mais estratégicas. É aqui que entra o ",
       descriptionBrandHighlight: "ETHOS",
       descriptionSuffix:
-        ". Porque algumas das melhores decisões começam por uma conversa",
+        ". Porque algumas das melhores decisões começam por uma conversa.",
       location: "Portugal / Remoto",
       name: "Nome",
       email: "Email",

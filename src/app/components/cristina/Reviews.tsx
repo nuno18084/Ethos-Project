@@ -44,7 +44,7 @@ export function Reviews() {
                   {review.quoteHighlight ? (
                     <>
                       {review.quotePrefix}
-                      <span className="font-bold text-stone-900">
+                      <span className="font-bold not-italic text-stone-900">
                         {review.quoteHighlight}
                       </span>
                       {review.quoteSuffix}
@@ -72,7 +72,18 @@ export function Reviews() {
                   <cite className="not-italic block text-sm font-medium text-stone-900">
                     {review.author}
                   </cite>
-                  <span className="meta-text mt-1 block">{review.role}</span>
+                  {review.role.includes(" · ") ? (
+                    <>
+                      <span className="meta-text mt-1 block">
+                        {review.role.split(" · ")[0]} ·
+                      </span>
+                      <span className="meta-text block">
+                        {review.role.split(" · ")[1]}
+                      </span>
+                    </>
+                  ) : (
+                    <span className="meta-text mt-1 block">{review.role}</span>
+                  )}
                 </div>
               </footer>
             </motion.blockquote>

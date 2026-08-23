@@ -168,7 +168,7 @@ export function Services() {
                       className="flex items-start gap-3 section-body text-[0.9375rem] md:text-base"
                     >
                       <span className="mt-1.5 md:mt-2 w-1.5 h-1.5 rounded-full bg-amber-600 shrink-0" />
-                      {highlight}
+                      <span className="font-bold text-stone-900">{highlight}</span>
                     </li>
                   ))}
                 </ul>
