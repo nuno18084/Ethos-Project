@@ -1,6 +1,7 @@
 import { motion, useAnimationFrame } from "motion/react";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useLanguage } from "../../../i18n/LanguageContext";
+import { SHOW_PARTNERS } from "../../../lib/featureFlags";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 
 const MARQUEE_DURATION_MS = 35_000;
@@ -76,7 +77,11 @@ export function Partners() {
   });
 
   return (
-    <section id="partners" ref={sectionRef} className="py-20 md:py-32 bg-stone-100 overflow-hidden">
+    <section
+      id="partners"
+      ref={sectionRef}
+      className={`py-20 md:py-32 bg-stone-100 overflow-hidden${SHOW_PARTNERS ? "" : " hidden"}`}
+    >
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

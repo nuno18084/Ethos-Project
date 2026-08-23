@@ -2,6 +2,7 @@ import { Instagram, Linkedin } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useCookieConsent } from "../../../i18n/CookieConsentContext";
 import { useLanguage } from "../../../i18n/LanguageContext";
+import { SHOW_PARTNERS } from "../../../lib/featureFlags";
 
 export function Footer() {
   const { t } = useLanguage();
@@ -24,7 +25,7 @@ export function Footer() {
     { name: t.nav.about, href: "/#about" },
     { name: t.nav.services, href: "/#services" },
     { name: t.nav.reviews, href: "/#reviews" },
-    { name: t.nav.partners, href: "/#partners" },
+    ...(SHOW_PARTNERS ? [{ name: t.nav.partners, href: "/#partners" }] : []),
     { name: t.nav.contact, href: "/#contact" },
   ];
 

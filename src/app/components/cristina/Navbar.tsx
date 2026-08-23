@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "../../../i18n/LanguageContext";
 import { LanguageSelector } from "../../../i18n/LanguageSelector";
+import { SHOW_PARTNERS } from "../../../lib/featureFlags";
 
 const MobileBurgerMenu = lazy(() =>
   import("./MobileBurgerMenu").then((module) => ({
@@ -34,7 +35,9 @@ export function Navbar() {
   useEffect(() => {
     if (!isHome) return;
 
-    const sectionIds = ["about", "services", "reviews", "partners", "contact"];
+    const sectionIds = ["about", "services", "reviews", "contact"].concat(
+      SHOW_PARTNERS ? (["partners"] as const) : [],
+    );
 
     const updateActiveSection = () => {
       const offset = 120;
@@ -95,7 +98,9 @@ export function Navbar() {
     { name: t.nav.about, href: "/#about", id: "about" },
     { name: t.nav.services, href: "/#services", id: "services" },
     { name: t.nav.reviews, href: "/#reviews", id: "reviews" },
-    { name: t.nav.partners, href: "/#partners", id: "partners" },
+    ...(SHOW_PARTNERS
+      ? [{ name: t.nav.partners, href: "/#partners", id: "partners" as const }]
+      : []),
     { name: t.nav.contact, href: "/#contact", id: "contact" },
   ];
 
