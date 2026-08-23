@@ -72,7 +72,8 @@ export function About() {
             transition={{ delay: 0.2 }}
             className="section-title"
           >
-            {t.about.title}{" "}
+            {t.about.title}
+            <br />
             <span className="text-amber-600">{t.about.titleAccent}</span>
           </motion.h2>
 
