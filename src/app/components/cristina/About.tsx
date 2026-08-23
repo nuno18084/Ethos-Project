@@ -38,7 +38,7 @@ export function About() {
             <ImageWithFallback
               src="/images/about-720.jpg"
               webpSrcSet="/images/about-720.webp"
-              alt="Books and nature"
+              alt="Classical marble columns with Ionic capitals"
               className={`about-photo__img w-full h-full object-cover transition-[filter] duration-700 grayscale${
                 photoInColor ? " max-xl:grayscale-0" : ""
               }`}

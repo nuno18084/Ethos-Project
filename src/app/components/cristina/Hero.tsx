@@ -75,12 +75,12 @@ export function Hero() {
               srcSet="/images/hero-640.jpg 640w, /images/hero-960.jpg 960w"
               webpSrcSet="/images/hero-640.webp 640w, /images/hero-960.webp 960w"
               sizes="(max-width: 768px) 100vw, 50vw"
-              alt="Bright modern workspace with natural light"
+              alt="Classical marble columns in a bright architectural space"
               className="w-full h-full object-cover"
               loading="eager"
               fetchPriority="high"
               width={960}
-              height={640}
+              height={858}
             />
             <div
               className="absolute inset-x-0 top-0 h-20 md:h-32 pointer-events-none bg-gradient-to-b from-[#F5F5F0] via-[#F5F5F0]/55 to-transparent"
