@@ -65,7 +65,22 @@ export function Contact() {
           <span className="section-eyebrow">{t.contact.eyebrow}</span>
           <h2 className="section-title mt-4 mb-6">{t.contact.title}</h2>
           <div className="w-12 h-0.5 bg-amber-600 mb-8" />
-          <p className="section-lead max-w-md">{t.contact.description}</p>
+          <p className="section-lead max-w-md">
+            {t.contact.descriptionHighlight ? (
+              <>
+                <span className="font-bold text-stone-900">
+                  {t.contact.descriptionHighlight}
+                </span>
+                {t.contact.descriptionBody}
+                <span className="font-bold text-stone-900">
+                  {t.contact.descriptionBrandHighlight}
+                </span>
+                {t.contact.descriptionSuffix}
+              </>
+            ) : (
+              t.contact.description
+            )}
+          </p>
 
           <div className="hidden lg:block space-y-5 border-t border-stone-100 pt-10 mt-10">
             <a
@@ -103,7 +118,9 @@ export function Contact() {
           onSubmit={handleSubmit(onSubmit)}
           className="order-2 lg:col-start-2 lg:row-start-1 lg:row-span-2 space-y-8 lg:border-l lg:border-stone-100 lg:pl-20"
         >
-          <p className="font-serif text-xl md:text-2xl text-stone-900 leading-snug">
+          <p
+            className={`font-serif text-xl md:text-2xl text-stone-900 leading-snug${t.contact.formPromptBold ? " font-bold" : ""}`}
+          >
             {t.contact.formPrompt}
           </p>
 

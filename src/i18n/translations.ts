@@ -135,8 +135,13 @@ export const translations = {
       eyebrow: "Get in touch",
       title: "Let's talk",
       formPrompt: "Tell us what's on your mind — we'd love to hear from you.",
+      formPromptBold: undefined,
       description:
         "Whether you are a leader seeking clarity, or an organisation looking to invest in your people's growth — we are here to listen.",
+      descriptionHighlight: undefined,
+      descriptionBody: undefined,
+      descriptionBrandHighlight: undefined,
+      descriptionSuffix: undefined,
       location: "Portugal / Remote",
       name: "Name",
       email: "Email",
@@ -403,9 +408,16 @@ export const translations = {
     contact: {
       eyebrow: "Entre em contacto",
       title: "Vamos conversar",
-      formPrompt: "Conte-nos o que tem em mente — gostávamos de o ouvir.",
-      description:
-        "Seja líder à procura de clareza, ou organização que queira investir no crescimento das suas pessoas — estamos aqui para ouvir.",
+      formPrompt: "Saiba o que é o ETHOS ou conte-me o que tem em mente.",
+      formPromptBold: true,
+      description: undefined,
+      descriptionHighlight:
+        "A qualidade das decisões depende da qualidade das pessoas.",
+      descriptionBody:
+        " E todos os dias tomamos milhares de decisões, das mais simples às mais estratégicas. É aqui que entra o ",
+      descriptionBrandHighlight: "ETHOS",
+      descriptionSuffix:
+        ". Porque algumas das melhores decisões começam por uma conversa",
       location: "Portugal / Remoto",
       name: "Nome",
       email: "Email",
