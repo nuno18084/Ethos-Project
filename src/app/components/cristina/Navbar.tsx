@@ -122,18 +122,18 @@ export function Navbar() {
   };
 
   const getContactLinkClass = () => {
-    if (showSolidNav) {
-      return "inline-flex items-center text-xs uppercase tracking-widest font-medium px-3 py-1 border border-amber-600 bg-amber-600 text-white transition-all duration-700 ease-in-out hover:bg-amber-500 hover:border-amber-500";
-    }
-
     const base =
-      "nav-link text-xs uppercase tracking-widest font-medium transition-colors duration-300 ease-in-out hover:text-amber-600";
+      "nav-contact text-xs uppercase tracking-widest font-medium px-3 py-1 border";
+
+    if (showSolidNav) {
+      return `${base} border-amber-600 bg-amber-600 text-white hover:bg-amber-500 hover:border-amber-500`;
+    }
 
     if (currentSection === "contact") {
-      return `${base} nav-link--active text-amber-600`;
+      return `${base} nav-contact--ghost nav-contact--active border-transparent bg-transparent text-amber-600`;
     }
 
-    return `${base} text-stone-900`;
+    return `${base} nav-contact--ghost border-transparent bg-transparent text-stone-900 hover:text-amber-600`;
   };
 
   const menuButtonClass = showSolidNav
