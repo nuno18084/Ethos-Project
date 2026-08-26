@@ -30,14 +30,14 @@ export function Hero() {
               t.hero.descriptionHighlights.length > 0 && (
                 <div className="space-y-0.5">
                   {t.hero.descriptionHighlights.map((line) => (
-                    <p key={line} className="font-bold text-stone-500">
+                    <p key={line} className="font-bold text-stone-900">
                       {line}
                     </p>
                   ))}
                 </div>
               )}
             {!t.hero.descriptionHighlights?.length && t.hero.descriptionHighlight && (
-              <p className="font-bold text-stone-500">{t.hero.descriptionHighlight}</p>
+              <p className="font-bold text-stone-900">{t.hero.descriptionHighlight}</p>
             )}
           </div>
 
