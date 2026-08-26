@@ -19,7 +19,6 @@ export function Reviews() {
             <br />
             <span className="text-amber-600">{t.reviews.titleAccent}</span>
           </h2>
-          <div className="w-16 h-0.5 bg-amber-600 mx-auto" />
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6 md:gap-8 items-stretch">
