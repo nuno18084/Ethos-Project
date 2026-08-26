@@ -151,6 +151,7 @@ export const translations = {
       descriptionBody: undefined,
       descriptionBrandHighlight: undefined,
       descriptionSuffix: undefined,
+      descriptionContinued: undefined,
       location: "Portugal / Remote",
       name: "Name",
       email: "Email",
@@ -431,16 +432,17 @@ export const translations = {
     contact: {
       eyebrow: "Entre em contacto",
       title: "Vamos conversar",
-      formPrompt: "Saiba o que é o ETHOS ou conte-me o que tem em mente.",
+      formPrompt: "Quer saber mais sobre o ETHOS ou contar-me o que tem em mente?",
       formPromptBold: true,
       description: undefined,
       descriptionHighlight:
-        "A qualidade das decisões depende da qualidade das pessoas.",
+        "Antes de cada decisão, há alguém que decide.",
       descriptionBody:
-        " E todos os dias tomamos milhares de decisões, das mais simples às mais estratégicas. É aqui que entra o ",
-      descriptionBrandHighlight: "ETHOS",
-      descriptionSuffix:
-        ". Porque algumas das melhores decisões começam por uma conversa.",
+        "E quantas decisões tomamos todos os dias, das mais simples às mais estratégicas?",
+      descriptionBrandHighlight: undefined,
+      descriptionSuffix: undefined,
+      descriptionContinued:
+        "É aqui que entra o ETHOS. Porque algumas das melhores decisões começam por uma conversa.",
       location: "Portugal / Remoto",
       name: "Nome",
       email: "Email",

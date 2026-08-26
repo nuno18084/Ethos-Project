@@ -65,27 +65,41 @@ export function Contact() {
           <span className="section-eyebrow">{t.contact.eyebrow}</span>
           <h2 className="section-title mt-4 mb-6">{t.contact.title}</h2>
           <div className="w-12 h-0.5 bg-amber-600 mb-8" />
-          <p className="section-lead max-w-md">
+          <div className="section-lead max-w-md space-y-4">
             {t.contact.descriptionHighlight ? (
               <>
-                <span className="font-bold text-stone-900">
-                  {t.contact.descriptionHighlight}
-                </span>
-                {t.contact.descriptionBody}
-                <span className="font-bold text-stone-900">
-                  {t.contact.descriptionBrandHighlight}
-                </span>
-                {t.contact.descriptionSuffix}
+                <p>
+                  <span className="font-bold text-stone-900">
+                    {t.contact.descriptionHighlight}
+                  </span>
+                  {t.contact.descriptionBody && (
+                    <>
+                      <br />
+                      {t.contact.descriptionBody.trimStart()}
+                    </>
+                  )}
+                  {!t.contact.descriptionContinued && (
+                    <>
+                      <span className="font-bold text-stone-900">
+                        {t.contact.descriptionBrandHighlight}
+                      </span>
+                      {t.contact.descriptionSuffix}
+                    </>
+                  )}
+                </p>
+                {t.contact.descriptionContinued && (
+                  <p>{t.contact.descriptionContinued}</p>
+                )}
               </>
             ) : (
-              t.contact.description
+              <p>{t.contact.description}</p>
             )}
-          </p>
+          </div>
 
-          <div className="hidden lg:block space-y-5 border-t border-stone-100 pt-10 mt-10">
+          <div className="hidden lg:block space-y-2 border-t border-stone-100 pt-10 mt-10">
             <a
               href="mailto:cristina.carvalho@ethosprogram.com"
-              className="flex items-center gap-3 section-body hover:text-amber-600 transition-colors group"
+              className="flex items-center gap-3 section-body leading-snug hover:text-amber-600 transition-colors group"
             >
               <Mail className="w-4 h-4 text-amber-600 shrink-0" />
               <span className="break-all border-b border-transparent group-hover:border-amber-600/40 transition-colors">
@@ -96,14 +110,14 @@ export function Contact() {
               href="https://www.instagram.com/cristinavc_ethos/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 section-body hover:text-amber-600 transition-colors group"
+              className="flex items-center gap-3 section-body leading-snug hover:text-amber-600 transition-colors group"
             >
               <Instagram className="w-4 h-4 text-amber-600 shrink-0" />
               <span className="border-b border-transparent group-hover:border-amber-600/40 transition-colors">
                 @cristinavc_ethos
               </span>
             </a>
-            <div className="flex items-center gap-3 section-body">
+            <div className="flex items-center gap-3 section-body leading-snug">
               <MapPin className="w-4 h-4 text-amber-600 shrink-0" />
               <span>{t.contact.location}</span>
             </div>
@@ -211,11 +225,11 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="order-3 lg:hidden space-y-5 border-t border-stone-100 pt-10"
+          className="order-3 lg:hidden space-y-2 border-t border-stone-100 pt-10"
         >
           <a
             href="mailto:cristina.carvalho@ethosprogram.com"
-            className="flex items-center gap-3 section-body hover:text-amber-600 transition-colors"
+            className="flex items-center gap-3 section-body leading-snug hover:text-amber-600 transition-colors"
           >
             <Mail className="w-4 h-4 text-amber-600 shrink-0" />
             <span className="break-all">cristina.carvalho@ethosprogram.com</span>
@@ -224,12 +238,12 @@ export function Contact() {
             href="https://www.instagram.com/cristinavc_ethos/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 section-body hover:text-amber-600 transition-colors"
+            className="flex items-center gap-3 section-body leading-snug hover:text-amber-600 transition-colors"
           >
             <Instagram className="w-4 h-4 text-amber-600 shrink-0" />
             <span>@cristinavc_ethos</span>
           </a>
-          <div className="flex items-center gap-3 section-body">
+          <div className="flex items-center gap-3 section-body leading-snug">
             <MapPin className="w-4 h-4 text-amber-600 shrink-0" />
             <span>{t.contact.location}</span>
           </div>
