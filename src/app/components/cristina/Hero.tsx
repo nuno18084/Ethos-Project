@@ -80,7 +80,7 @@ export function Hero() {
               loading="eager"
               fetchPriority="high"
               width={960}
-              height={858}
+              height={639}
             />
             <div
               className="absolute inset-x-0 top-0 h-20 md:h-32 pointer-events-none bg-gradient-to-b from-[#F5F5F0] via-[#F5F5F0]/55 to-transparent"
