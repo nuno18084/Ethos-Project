@@ -18,6 +18,8 @@ export const translations = {
       titleRotatingWords: undefined,
       description:
         "A human-centred leadership programme for leaders and teams. Rooted in classical philosophy and practical business frameworks, it supports ethical decision-making, strategic clarity, and organisational well-being.",
+      descriptionContinued: undefined,
+      descriptionHighlights: undefined,
       descriptionHighlight: undefined,
       cta: "Start the conversation",
     },
@@ -298,9 +300,15 @@ export const translations = {
       titlePrefix: undefined,
       titleRotatingWords: undefined,
       description:
-        "Um programa para elevar o Capital Ético das organizações através da Filosofia Clássica. ETHOS é um programa sobre Humanização, onde falamos do ser humano por trás das competências. As competências importam, mas são as qualidades humanas que influenciam diretamente a qualidade das decisões.",
-      descriptionHighlight:
-        "Melhores decisões. Melhor execução. Melhores organizações.",
+        "Um programa para elevar o Capital Ético das organizações através da Filosofia Clássica.",
+      descriptionContinued:
+        "ETHOS é um programa sobre Humanização, onde falamos do ser humano por trás das competências. As competências importam, mas são as qualidades humanas que influenciam diretamente a qualidade das decisões.",
+      descriptionHighlights: [
+        "Melhores decisões.",
+        "Melhor execução.",
+        "Melhores organizações.",
+      ],
+      descriptionHighlight: undefined,
       cta: "Iniciar a conversa",
     },
     about: {

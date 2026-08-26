@@ -23,17 +23,23 @@ export function Hero() {
             </span>
           </h1>
 
-          <p className="hero-fade-up hero-fade-up--delay-400 text-sm text-stone-600 mb-8 md:mb-10 max-w-md leading-relaxed">
-            {t.hero.description}
-            {t.hero.descriptionHighlight && (
-              <>
-                {" "}
-                <span className="font-bold text-stone-900">
-                  {t.hero.descriptionHighlight}
-                </span>
-              </>
+          <div className="hero-fade-up hero-fade-up--delay-400 text-sm text-stone-600 mb-8 md:mb-10 max-w-md leading-relaxed space-y-4">
+            <p>{t.hero.description}</p>
+            {t.hero.descriptionContinued && <p>{t.hero.descriptionContinued}</p>}
+            {t.hero.descriptionHighlights &&
+              t.hero.descriptionHighlights.length > 0 && (
+                <div className="space-y-0.5">
+                  {t.hero.descriptionHighlights.map((line) => (
+                    <p key={line} className="font-bold text-stone-500">
+                      {line}
+                    </p>
+                  ))}
+                </div>
+              )}
+            {!t.hero.descriptionHighlights?.length && t.hero.descriptionHighlight && (
+              <p className="font-bold text-stone-500">{t.hero.descriptionHighlight}</p>
             )}
-          </p>
+          </div>
 
           <div className="hero-fade-up hero-fade-up--delay-600">
             <a
