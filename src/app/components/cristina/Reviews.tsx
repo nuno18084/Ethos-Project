@@ -32,7 +32,7 @@ export function Reviews() {
               transition={{ delay: index * 0.15 }}
               className="group relative bg-white p-6 md:p-8 border border-stone-100 shadow-sm hover:shadow-lg hover:border-amber-600/20 transition-all duration-300 flex flex-col"
             >
-              <div className="flex-1 mb-6 md:mb-8">
+              <div className="flex-1 mb-12 md:mb-14">
                 <p className="quote-text text-[1.05rem] md:text-lg leading-relaxed">
                   <span className="review-quote-mark review-quote-mark--open">&ldquo;</span>
                   {review.quoteHighlight ? (
