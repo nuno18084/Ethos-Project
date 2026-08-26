@@ -23,7 +23,7 @@ export function Hero() {
             </span>
           </h1>
 
-          <div className="hero-fade-up hero-fade-up--delay-400 text-sm text-stone-600 mb-8 md:mb-10 max-w-md leading-relaxed space-y-4">
+          <div className="hero-fade-up hero-fade-up--delay-400 text-[0.9375rem] md:text-base text-stone-600 mb-8 md:mb-10 max-w-md leading-relaxed space-y-4">
             <p>{t.hero.description}</p>
             {t.hero.descriptionContinued && <p>{t.hero.descriptionContinued}</p>}
             {t.hero.descriptionHighlights &&
