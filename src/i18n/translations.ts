@@ -318,8 +318,9 @@ export const translations = {
       titleAccent:
         "E a Filosofia continua a ser um dos caminhos mais fortes para esta evolução.",
       paragraph1:
-        "A cultura organizacional não aparece numa linha do balanço. Mas pode explicar uma boa parte dos seus resultados. No ETHOS, trazemos as grandes questões humanas para a realidade das organizações. Porque é nas escolhas e na relação com os outros que as qualidades humanas ganham expressão.",
-      paragraph2Prefix: "",
+        "A cultura organizacional não aparece numa linha do balanço. Mas pode explicar uma boa parte dos seus resultados.",
+      paragraph2Prefix:
+        "No ETHOS, trazemos as grandes questões humanas para a realidade das organizações. Porque é nas escolhas e na relação com os outros que as qualidades humanas ganham expressão.",
       paragraph2Highlight: undefined,
       cta: "Saber mais",
     },

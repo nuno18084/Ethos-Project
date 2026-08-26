@@ -15,7 +15,7 @@ export function About() {
 
   return (
     <section id="about" className="py-20 md:py-36 bg-stone-50 text-stone-900">
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 md:gap-8 lg:gap-10 items-center">
+      <div className="max-w-6xl lg:max-w-7xl mx-auto px-6 grid md:grid-cols-[47fr_53fr] gap-16 md:gap-8 lg:gap-10 items-center">
         {/* Left: Image with text overlap */}
         <div className="relative max-w-sm md:max-w-md mx-auto md:mx-0 w-full">
           <motion.div
@@ -74,7 +74,7 @@ export function About() {
           >
             {t.about.title}
             <br />
-            <span className="text-amber-600">{t.about.titleAccent}</span>
+            <span className="text-amber-600 text-[0.82em]">{t.about.titleAccent}</span>
           </motion.h2>
 
           <motion.p
