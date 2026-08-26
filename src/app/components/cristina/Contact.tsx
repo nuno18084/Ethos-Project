@@ -78,14 +78,6 @@ export function Contact() {
                       {t.contact.descriptionBody.trimStart()}
                     </>
                   )}
-                  {!t.contact.descriptionContinued && (
-                    <>
-                      <span className="font-bold text-stone-900">
-                        {t.contact.descriptionBrandHighlight}
-                      </span>
-                      {t.contact.descriptionSuffix}
-                    </>
-                  )}
                 </p>
                 {t.contact.descriptionContinued && (
                   <p>{t.contact.descriptionContinued}</p>

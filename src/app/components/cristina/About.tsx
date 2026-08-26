@@ -87,7 +87,7 @@ export function About() {
             {t.about.paragraph1}
           </motion.p>
 
-          {(t.about.paragraph2Prefix || t.about.paragraph2Highlight) && (
+          {t.about.paragraph2Prefix && (
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -96,11 +96,11 @@ export function About() {
               className="section-body"
             >
               {t.about.paragraph2Prefix}
-              {t.about.paragraph2Highlight && (
+              {t.about.paragraph2Highlight ? (
                 <span className="text-amber-600 font-medium">
                   {t.about.paragraph2Highlight}
                 </span>
-              )}
+              ) : null}
             </motion.p>
           )}
 
