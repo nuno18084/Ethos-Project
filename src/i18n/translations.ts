@@ -96,6 +96,7 @@ export const translations = {
           quote:
             "ETHOS gave me a space to pause and reflect. I returned to my work with more clarity, purpose, and a renewed sense of balance between professional and personal life.",
           quotePrefix: undefined,
+          quoteLead: undefined,
           quoteHighlight: undefined,
           quoteSuffix: undefined,
           author: "Luza ETHOS Participant",
@@ -105,6 +106,7 @@ export const translations = {
           quote:
             "More than a coaching programme — it is a journey inward. The sessions helped me explore my ethics, inner freedom, and what truly matters in my leadership.",
           quotePrefix: undefined,
+          quoteLead: undefined,
           quoteHighlight: undefined,
           quoteSuffix: undefined,
           author: "Team Leader",
@@ -114,6 +116,7 @@ export const translations = {
           quote:
             "Small, powerful transformations. No buzzwords — just genuine growth from the inside out, with practical frameworks I could apply immediately.",
           quotePrefix: undefined,
+          quoteLead: undefined,
           quoteHighlight: undefined,
           quoteSuffix: undefined,
           author: "Senior Manager",
@@ -376,7 +379,8 @@ export const translations = {
       items: [
         {
           quote: undefined,
-          quotePrefix: "Aprendi que ",
+          quotePrefix: "Aprendi que",
+          quoteLead: undefined,
           quoteHighlight: "ninguém nasce virtuoso.",
           quoteSuffix:
             " As qualidades humanas desenvolvem-se em nós através da prática. É um músculo que se trabalha como qualquer outro, dia sobre dia",
@@ -385,7 +389,8 @@ export const translations = {
         },
         {
           quote: undefined,
-          quotePrefix: "Aprendi que viemos para ",
+          quotePrefix: "Aprendi que",
+          quoteLead: "viemos para ",
           quoteHighlight: "sermos humanos.",
           quoteSuffix:
             " Para sairmos maiores do que entrámos e sermos sempre fator de soma.",
@@ -394,7 +399,8 @@ export const translations = {
         },
         {
           quote: undefined,
-          quotePrefix: "Aprendi que ",
+          quotePrefix: "Aprendi que",
+          quoteLead: undefined,
           quoteHighlight: "a Felicidade será sempre uma escolha:",
           quoteSuffix:
             " Escolher agir com integridade, com compromisso e responsabilidade, independentemente das circunstâncias",

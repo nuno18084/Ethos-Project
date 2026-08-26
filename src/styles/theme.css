@@ -351,3 +351,28 @@
     @apply text-xs uppercase tracking-widest text-stone-500;
   }
 }
+
+.review-quote-mark {
+  display: inline-block;
+  font-family: inherit;
+  font-style: normal;
+  line-height: 0;
+  color: rgb(217 119 6 / 0.25);
+  font-size: 2.25rem;
+}
+
+.review-quote-mark--open {
+  vertical-align: -0.32em;
+  margin-right: 0.125rem;
+}
+
+.review-quote-mark--close {
+  vertical-align: -0.18em;
+  margin-left: 0.125rem;
+}
+
+@media (min-width: 768px) {
+  .review-quote-mark {
+    font-size: 2.75rem;
+  }
+}
