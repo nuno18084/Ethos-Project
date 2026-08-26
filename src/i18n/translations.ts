@@ -99,6 +99,7 @@ export const translations = {
           quoteLead: undefined,
           quoteHighlight: undefined,
           quoteSuffix: undefined,
+          quoteBreakAfterHighlight: undefined,
           author: "Luza ETHOS Participant",
           role: "Technology Sector",
         },
@@ -109,6 +110,7 @@ export const translations = {
           quoteLead: undefined,
           quoteHighlight: undefined,
           quoteSuffix: undefined,
+          quoteBreakAfterHighlight: undefined,
           author: "Team Leader",
           role: "Corporate Environment",
         },
@@ -119,6 +121,7 @@ export const translations = {
           quoteLead: undefined,
           quoteHighlight: undefined,
           quoteSuffix: undefined,
+          quoteBreakAfterHighlight: undefined,
           author: "Senior Manager",
           role: "International Company",
         },
@@ -384,6 +387,7 @@ export const translations = {
           quoteHighlight: "ninguém nasce virtuoso.",
           quoteSuffix:
             " As qualidades humanas desenvolvem-se em nós através da prática. É um músculo que se trabalha como qualquer outro, dia sobre dia",
+          quoteBreakAfterHighlight: true,
           author: "Maria",
           role: "Diretora de Marketing · Área de eventos globais",
         },
@@ -394,6 +398,7 @@ export const translations = {
           quoteHighlight: "sermos humanos.",
           quoteSuffix:
             " Para sairmos maiores do que entrámos e sermos sempre fator de soma.",
+          quoteBreakAfterHighlight: true,
           author: "João",
           role: "Diretor de Operações · Empresa Pública",
         },
@@ -404,6 +409,7 @@ export const translations = {
           quoteHighlight: "a Felicidade será sempre uma escolha:",
           quoteSuffix:
             " Escolher agir com integridade, com compromisso e responsabilidade, independentemente das circunstâncias",
+          quoteBreakAfterHighlight: undefined,
           author: "Eduardo",
           role: "Team Leader · Multinacional Tecnológica",
         },

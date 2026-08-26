@@ -43,6 +43,9 @@ export function Reviews() {
                       <span className="font-bold not-italic text-stone-900">
                         {review.quoteHighlight}
                       </span>
+                      {review.quoteBreakAfterHighlight && review.quoteSuffix && (
+                        <br />
+                      )}
                       {review.quoteSuffix}
                     </>
                   ) : (
@@ -64,15 +67,17 @@ export function Reviews() {
                   </cite>
                   {review.role.includes(" · ") ? (
                     <>
-                      <span className="meta-text mt-1 block">
-                        {review.role.split(" · ")[0]} ·
+                      <span className="mt-1 block text-xs tracking-widest text-stone-900 italic">
+                        {review.role.split(" · ")[0]}
                       </span>
-                      <span className="meta-text block">
+                      <span className="block text-xs tracking-widest text-stone-900">
                         {review.role.split(" · ")[1]}
                       </span>
                     </>
                   ) : (
-                    <span className="meta-text mt-1 block">{review.role}</span>
+                    <span className="mt-1 block text-xs tracking-widest text-stone-900">
+                      {review.role}
+                    </span>
                   )}
                 </div>
               </footer>
