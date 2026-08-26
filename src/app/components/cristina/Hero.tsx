@@ -1,48 +1,26 @@
-import { lazy, Suspense } from "react";
 import { ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { useLanguage } from "../../../i18n/LanguageContext";
 
-const HeroRotatingTitle = lazy(() =>
-  import("./HeroRotatingTitle").then((module) => ({
-    default: module.HeroRotatingTitle,
-  })),
-);
-
 export function Hero() {
-  const { t, language } = useLanguage();
-  const hasRotatingTitle =
-    Boolean(t.hero.titlePrefix) && Boolean(t.hero.titleRotatingWords?.length);
+  const { t } = useLanguage();
 
   return (
     <section className="relative w-full bg-[#F5F5F0] min-h-[100dvh] md:h-screen md:overflow-hidden">
       <div className="flex flex-col min-h-[100dvh] md:min-h-0 md:flex-row md:h-full">
         <div className="w-full md:w-1/2 flex flex-col justify-center px-6 pt-36 pb-10 md:py-0 md:pl-0 md:pr-12 md:h-full site-align-left z-10 shrink-0">
-          <h1 className="hero-fade-up hero-fade-up--delay-200 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-stone-900 leading-tight mb-6 md:mb-8">
-            {t.hero.titleLine1} <br />
-            {hasRotatingTitle ? (
-              <Suspense
-                fallback={
-                  <span className="italic text-amber-600 block">
-                    <span className="block not-italic text-stone-900">
-                      {t.hero.titlePrefix}
-                    </span>
-                    <span className="mt-1 block">{t.hero.titleRotatingWords![0]}</span>
-                  </span>
-                }
-              >
-                <HeroRotatingTitle
-                  prefix={t.hero.titlePrefix!}
-                  words={t.hero.titleRotatingWords!}
-                />
-              </Suspense>
-            ) : (
-              <span
-                className={`italic text-amber-600${language === "pt" ? " md:whitespace-nowrap" : ""}`}
-              >
-                {t.hero.titleLine2}
+          <h1 className="hero-fade-up hero-fade-up--delay-200 font-serif text-stone-900 leading-[1.1] mb-6 md:mb-8">
+            <span className="block text-xl sm:text-2xl md:text-4xl lg:text-5xl whitespace-nowrap">
+              {t.hero.titleLine1}
+            </span>
+            {t.hero.titleLine1Line2 && (
+              <span className="block text-xl sm:text-2xl md:text-4xl lg:text-5xl whitespace-nowrap">
+                {t.hero.titleLine1Line2}
               </span>
             )}
+            <span className="block mt-2 md:mt-3 italic text-amber-600 text-lg sm:text-xl md:text-2xl lg:text-3xl">
+              {t.hero.titleLine2}
+            </span>
           </h1>
 
           <p className="hero-fade-up hero-fade-up--delay-400 text-sm text-stone-600 mb-8 md:mb-10 max-w-md leading-relaxed">

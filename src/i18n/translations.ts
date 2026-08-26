@@ -12,6 +12,7 @@ export const translations = {
     hero: {
       // eyebrow: "Coaching & Mentoring for Ethics and Well-Being",
       titleLine1: "A space to pause,",
+      titleLine1Line2: undefined,
       titleLine2: "reflect, and realign.",
       titlePrefix: undefined,
       titleRotatingWords: undefined,
@@ -291,10 +292,11 @@ export const translations = {
     },
     hero: {
       // eyebrow: "Coaching & Mentoring para Ética e Bem-Estar",
-      titleLine1: "Filosofia aplicada às Organizações",
-      titleLine2: "",
-      titlePrefix: "A coragem de",
-      titleRotatingWords: ["Parar.", "Virar do avesso.", "E somar."],
+      titleLine1: "FILOSOFIA APLICADA ÀS",
+      titleLine1Line2: "ORGANIZAÇÕES",
+      titleLine2: "A coragem de parar.",
+      titlePrefix: undefined,
+      titleRotatingWords: undefined,
       description:
         "Um programa para elevar o Capital Ético das organizações através da Filosofia Clássica. ETHOS é um programa sobre Humanização, onde falamos do ser humano por trás das competências. As competências importam, mas são as qualidades humanas que influenciam diretamente a qualidade das decisões.",
       descriptionHighlight:
