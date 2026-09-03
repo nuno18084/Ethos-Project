@@ -357,7 +357,7 @@ export const translations = {
           description:
             "Para organizações que querem trabalhar uma questão em particular. A Filosofia Clássica oferece o ponto de partida e abre novas formas de pensar, enquanto a realidade da organização dá sentido e aplicação prática ao processo.",
           details:
-            "O ETHOS apoia organizações que querem alinhar performance com valores e visão de longo prazo. Trabalhamos a transformação cultural de dentro para fora — reforçando liderança ética, pensamento crítico e uma forma human-centred de trabalhar.",
+            "É um ETHOS à medida, alinhado aos valores da organização, e que promove o pensamento crítico, a liderança ética e uma transformação cultural consistente,\nde dentro para fora.",
           details2: undefined,
           details2Highlight: undefined,
           details2Suffix: undefined,
