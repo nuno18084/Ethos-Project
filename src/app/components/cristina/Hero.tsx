@@ -28,9 +28,9 @@ export function Hero() {
             {t.hero.descriptionContinued && <p>{t.hero.descriptionContinued}</p>}
             {t.hero.descriptionHighlights &&
               t.hero.descriptionHighlights.length > 0 && (
-                <div className="space-y-0.5">
+                <div className="space-y-0 leading-tight">
                   {t.hero.descriptionHighlights.map((line) => (
-                    <p key={line} className="font-bold text-stone-900">
+                    <p key={line} className="font-bold text-stone-900 leading-tight">
                       {line}
                     </p>
                   ))}
