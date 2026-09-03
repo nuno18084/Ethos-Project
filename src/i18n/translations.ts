@@ -366,12 +366,13 @@ export const translations = {
         {
           title: "ETHOS ONE-TO-ONE",
           description:
-            "Clareza estratégica e execução orientada por propósito para executivos. Alinhar valores interiores com performance, comunicação e cultura de equipa.",
+            "Clareza e propósito para executivos e particulares. Um percurso individual de reflexão filosófica orientado para o alinhamento de valores, performance e liderança.",
           details:
             "Uma experiência individual para quem tem a coragem de parar, virar do avesso e olhar para a própria vida através da Filosofia.",
-          details2: "Também disponível em formato ",
-          details2Highlight: "voucher",
-          details2Suffix: ".",
+          details2:
+            "Também disponível como um convite ao pensamento crítico, para oferecer a quem valoriza.",
+          details2Highlight: undefined,
+          details2Suffix: undefined,
           highlights: [],
         },
       ],

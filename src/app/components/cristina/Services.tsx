@@ -130,7 +130,13 @@ export function Services() {
               </h3>
 
               <p
-                className={`section-body text-[0.9375rem] md:text-base whitespace-pre-line ${selected.details2Highlight || selected.details2 ? "mb-4" : "mb-4 md:mb-8"}`}
+                className={`section-body text-[0.9375rem] md:text-base whitespace-pre-line ${
+                  selected.details2 && !selected.details2Highlight
+                    ? "mb-1"
+                    : selected.details2Highlight || selected.details2
+                      ? "mb-4"
+                      : "mb-4 md:mb-8"
+                }`}
               >
                 {selected.details}
               </p>
