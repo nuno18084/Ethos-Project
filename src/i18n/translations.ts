@@ -30,14 +30,15 @@ export const translations = {
     },
     about: {
       quote: "What if the best decisions started before the decision?",
-      eyebrow: "About ETHOS",
-      title: "A conscious pause to return with",
-      titleAccent: "clarity and purpose.",
+      eyebrow: "ABOUT ETHOS",
+      title: "ORGANIZATIONS EVOLVE WHEN HUMAN BEINGS EVOLVE.",
+      titleAccent:
+        "And Philosophy remains one of the most powerful paths toward this evolution.",
       paragraph1:
-        "ETHOS is an invitation to step back — a strategic time to gain clarity and return with a renewed sense of purpose and focus. It is designed for companies that want to align performance with values, culture, and long-term vision.",
+        "Organizational culture does not appear on a balance sheet line, yet it can account for a significant portion of its performance.",
       paragraph2Prefix:
-        "Beyond a programme, ETHOS is a human development journey. It strengthens resilience, unlocks inner freedom, and elevates organisational culture — helping people ",
-      paragraph2Highlight: "grow from the inside out.",
+        "At ETHOS, we bring humanity’s greatest questions into the daily reality of organizations. Because it is through choices and relationships with others that human qualities truly find their expression.",
+      paragraph2Highlight: undefined,
       cta: "Learn more",
     },
     services: {
