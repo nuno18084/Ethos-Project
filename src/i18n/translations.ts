@@ -11,15 +11,20 @@ export const translations = {
     },
     hero: {
       // eyebrow: "Coaching & Mentoring for Ethics and Well-Being",
-      titleLine1: "A space to pause,",
-      titleLine1Line2: undefined,
-      titleLine2: "reflect, and realign.",
+      titleLine1: "APPLIED PHILOSOPHY FOR",
+      titleLine1Line2: "ORGANIZATIONS",
+      titleLine2: "The Courage to Pause.",
       titlePrefix: undefined,
       titleRotatingWords: undefined,
       description:
-        "A human-centred leadership programme for leaders and teams. Rooted in classical philosophy and practical business frameworks, it supports ethical decision-making, strategic clarity, and organisational well-being.",
-      descriptionContinued: undefined,
-      descriptionHighlights: undefined,
+        "A program to elevate the Ethical Capital of organizations through Classical Philosophy.",
+      descriptionContinued:
+        "ETHOS is a program focused on Humanization, where we address the human being behind the skills. Skills matter, but it is human qualities that directly shape Decision Quality.",
+      descriptionHighlights: [
+        "Better decisions.",
+        "Better execution.",
+        "Better organizations.",
+      ],
       descriptionHighlight: undefined,
       cta: "Start the conversation",
     },
