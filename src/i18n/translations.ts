@@ -47,49 +47,43 @@ export const translations = {
       modalCta: "Start the conversation",
       items: [
         {
-          title: "Coaching & Mentoring",
+          title: "ETHOS PROGRAM",
           description:
-            "Personalised support for leaders and teams. A guided space to explore ethics, inner freedom, and the balance between work and life.",
+            "Two modules featuring five one-to-one sessions each, applying Classical Philosophy to fundamental human questions, with a direct impact on organizational life.",
           details:
-            "Through one-on-one and team sessions, ETHOS creates a conscious pause — a strategic space to reflect, gain clarity, and return with renewed purpose. Each journey is tailored to the individual or team, combining timeless philosophical principles with practical business application.",
-          details2: undefined,
-          details2Highlight: undefined,
+            "Throughout the program, we explore the paradox between Discipline and Inner Freedom, Inner Structure through Change, the Power of Words as a Creative Force, the Ethics of Imperfection, Heroes and Codes of Honor, Attention, and much more.",
+          details2Highlight:
+            "Two modules. Five sessions each. 50-minute one-to-one sessions.",
+          details2:
+            "The two modules can stand independently, yet they represent two movements of the same journey:",
           details2Suffix: undefined,
           highlights: [
-            "Individual mentoring for leaders",
-            "Team coaching sessions",
-            "Ethics, resilience & well-being",
+            "The first builds the human being.",
+            "The second transforms how that human being engages with the world.",
           ],
         },
         {
-          title: "Leadership & Culture",
+          title: "ETHOS IN DIALOGUE",
           description:
-            "Building human-centred organisations through ethical leadership, critical thinking, and cultural transformation inspired by classical philosophy.",
+            "For organizations seeking to address a specific challenge. Classical Philosophy serves as the starting point, opening new ways of thinking, while the organization's reality grounds the process with practical application.",
           details:
-            "ETHOS supports organisations that want to align performance with values and long-term vision. We work on cultural transformation from the inside out — strengthening ethical leadership, critical thinking, and a human-centred way of working.",
+            "A tailored ETHOS aligned with the organization’s values, fostering critical thinking, ethical leadership, and a consistent cultural transformation from the inside out.",
           details2: undefined,
           details2Highlight: undefined,
           details2Suffix: undefined,
-          highlights: [
-            "Cultural transformation programmes",
-            "Ethical leadership development",
-            "Philosophy-inspired frameworks",
-          ],
+          highlights: [],
         },
         {
-          title: "Strategic Advisory",
+          title: "ETHOS ONE-TO-ONE",
           description:
-            "Strategic clarity and purpose-driven execution for executives. Aligning inner values with business performance, communication, and team culture.",
+            "Clarity and purpose for executives and private clients. An individual journey of philosophical reflection oriented toward aligning values, performance, and leadership.",
           details:
-            "For executives navigating complexity, ETHOS offers a steady, informed approach to strategic decision-making. We help align inner values with outer expression — connecting purpose, communication, and team culture to business performance.",
-          details2: undefined,
+            "An individual experience for those with the courage to pause, turn inward, and look their own lives through Philosophy.",
+          details2:
+            "Also available as an invitation to critical thinking, to offer to those who value it.",
           details2Highlight: undefined,
           details2Suffix: undefined,
-          highlights: [
-            "Executive strategic clarity",
-            "Purpose-driven execution",
-            "Communication & culture alignment",
-          ],
+          highlights: [],
         },
       ],
     },
