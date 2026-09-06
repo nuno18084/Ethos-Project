@@ -28,7 +28,7 @@ export function LegalPageLayout({
         <div className="max-w-3xl mx-auto px-6">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 section-body hover:text-amber-600 transition-colors mb-8"
+            className="inline-flex items-center gap-2 section-body hover:text-ethos transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             {backLabel}

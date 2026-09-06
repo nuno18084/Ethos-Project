@@ -55,7 +55,7 @@ export function Reviews() {
           <h2 className="section-title mt-4 mb-4">
             {t.reviews.title}
             <br />
-            <span className="text-amber-600">{t.reviews.titleAccent}</span>
+            <span className="text-ethos">{t.reviews.titleAccent}</span>
           </h2>
         </motion.div>
 
@@ -67,7 +67,7 @@ export function Reviews() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15 }}
-              className="group relative bg-white p-6 md:p-8 border border-stone-100 shadow-sm hover:shadow-lg hover:border-amber-600/20 transition-all duration-300 flex flex-col"
+              className="group relative bg-white p-6 md:p-8 border border-stone-100 shadow-sm hover:shadow-lg hover:border-ethos/20 transition-all duration-300 flex flex-col"
             >
               <div className="flex-1 mb-12 md:mb-14">
                 <p className="quote-text text-[1.05rem] md:text-lg leading-relaxed">
@@ -99,8 +99,8 @@ export function Reviews() {
               </div>
 
               <footer className="mt-auto pt-5 border-t border-stone-100 flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-amber-50 border border-amber-600/15 flex items-center justify-center shrink-0">
-                  <span className="text-sm font-serif text-amber-700">
+                <div className="w-10 h-10 rounded-full bg-amber-50 border border-ethos/15 flex items-center justify-center shrink-0">
+                  <span className="text-sm font-serif text-ethos">
                     {review.author.charAt(0)}
                   </span>
                 </div>

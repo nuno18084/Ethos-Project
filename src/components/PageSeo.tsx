@@ -70,7 +70,7 @@ export function PageSeo({
     upsertMeta("description", description);
     upsertMeta("robots", noIndex ? "noindex, nofollow" : "index, follow");
     upsertMeta("author", "ETHOS");
-    upsertMeta("theme-color", "#d97706");
+    upsertMeta("theme-color", "#b45309");
     upsertLink("canonical", pageUrl);
 
     upsertMeta("og:title", fullTitle, "property");

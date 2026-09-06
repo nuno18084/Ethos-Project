@@ -13,7 +13,7 @@ type FormData = {
 };
 
 const fieldClass =
-  "w-full border-0 border-b border-stone-300 py-3 text-base text-stone-900 placeholder-stone-400 focus:outline-none focus:border-amber-600 transition-colors bg-transparent disabled:opacity-50";
+  "w-full border-0 border-b border-stone-300 py-3 text-base text-stone-900 placeholder-stone-400 focus:outline-none focus:border-ethos transition-colors bg-transparent disabled:opacity-50";
 
 export function Contact() {
   const { t } = useLanguage();
@@ -64,7 +64,7 @@ export function Contact() {
         >
           <span className="section-eyebrow">{t.contact.eyebrow}</span>
           <h2 className="section-title mt-4 mb-6">{t.contact.title}</h2>
-          <div className="w-12 h-0.5 bg-amber-600 mb-8" />
+          <div className="w-12 h-0.5 bg-ethos mb-8" />
           <div className="section-lead max-w-md space-y-4">
             <p>
               <span className="font-bold text-stone-900">
@@ -79,10 +79,10 @@ export function Contact() {
           <div className="hidden lg:block space-y-2 border-t border-stone-100 pt-10 mt-10">
             <a
               href="mailto:cristina.carvalho@ethosprogram.com"
-              className="flex items-center gap-3 section-body leading-snug hover:text-amber-600 transition-colors group"
+              className="flex items-center gap-3 section-body leading-snug hover:text-ethos transition-colors group"
             >
-              <Mail className="w-4 h-4 text-amber-600 shrink-0" />
-              <span className="break-all border-b border-transparent group-hover:border-amber-600/40 transition-colors">
+              <Mail className="w-4 h-4 text-ethos shrink-0" />
+              <span className="break-all border-b border-transparent group-hover:border-ethos/40 transition-colors">
                 cristina.carvalho@ethosprogram.com
               </span>
             </a>
@@ -90,15 +90,15 @@ export function Contact() {
               href="https://www.instagram.com/cristinavc_ethos/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 section-body leading-snug hover:text-amber-600 transition-colors group"
+              className="flex items-center gap-3 section-body leading-snug hover:text-ethos transition-colors group"
             >
-              <Instagram className="w-4 h-4 text-amber-600 shrink-0" />
-              <span className="border-b border-transparent group-hover:border-amber-600/40 transition-colors">
+              <Instagram className="w-4 h-4 text-ethos shrink-0" />
+              <span className="border-b border-transparent group-hover:border-ethos/40 transition-colors">
                 @cristinavc_ethos
               </span>
             </a>
             <div className="flex items-center gap-3 section-body leading-snug">
-              <MapPin className="w-4 h-4 text-amber-600 shrink-0" />
+              <MapPin className="w-4 h-4 text-ethos shrink-0" />
               <span>{t.contact.location}</span>
             </div>
           </div>
@@ -191,7 +191,7 @@ export function Contact() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="group flex w-full sm:w-auto items-center justify-center gap-2 px-12 py-4 bg-amber-600 text-white hover:bg-amber-500 transition-colors duration-300 btn-label disabled:opacity-50 disabled:cursor-not-allowed"
+            className="group flex w-full sm:w-auto items-center justify-center gap-2 px-12 py-4 bg-ethos text-white hover:bg-ethos-hover transition-colors duration-300 btn-label disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? t.contact.sending : t.contact.submit}
             {!isSubmitting && (
@@ -209,22 +209,22 @@ export function Contact() {
         >
           <a
             href="mailto:cristina.carvalho@ethosprogram.com"
-            className="flex items-center gap-3 section-body leading-snug hover:text-amber-600 transition-colors"
+            className="flex items-center gap-3 section-body leading-snug hover:text-ethos transition-colors"
           >
-            <Mail className="w-4 h-4 text-amber-600 shrink-0" />
+            <Mail className="w-4 h-4 text-ethos shrink-0" />
             <span className="break-all">cristina.carvalho@ethosprogram.com</span>
           </a>
           <a
             href="https://www.instagram.com/cristinavc_ethos/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 section-body leading-snug hover:text-amber-600 transition-colors"
+            className="flex items-center gap-3 section-body leading-snug hover:text-ethos transition-colors"
           >
-            <Instagram className="w-4 h-4 text-amber-600 shrink-0" />
+            <Instagram className="w-4 h-4 text-ethos shrink-0" />
             <span>@cristinavc_ethos</span>
           </a>
           <div className="flex items-center gap-3 section-body leading-snug">
-            <MapPin className="w-4 h-4 text-amber-600 shrink-0" />
+            <MapPin className="w-4 h-4 text-ethos shrink-0" />
             <span>{t.contact.location}</span>
           </div>
         </motion.div>

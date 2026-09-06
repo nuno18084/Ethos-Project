@@ -58,5 +58,5 @@
 
 .ethos-bm-item:hover,
 .ethos-bm-item--active {
-  color: rgb(217 119 6);
+  color: var(--ethos-amber);
 }

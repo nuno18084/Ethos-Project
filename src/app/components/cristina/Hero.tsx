@@ -18,7 +18,7 @@ export function Hero() {
                 {t.hero.titleLine1Line2}
               </span>
             )}
-            <span className="block mt-2 md:mt-3 italic text-amber-600 text-lg sm:text-xl md:text-2xl lg:text-3xl">
+            <span className="block mt-2 md:mt-3 italic text-ethos text-lg sm:text-xl md:text-2xl lg:text-3xl">
               {t.hero.titleLine2}
             </span>
           </h1>
@@ -44,7 +44,7 @@ export function Hero() {
           <div className="hero-fade-up hero-fade-up--delay-600">
             <a
               href="#contact"
-              className="group inline-flex items-center px-8 py-3 border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white uppercase tracking-widest text-xs font-medium transition-colors duration-300"
+              className="group inline-flex items-center px-8 py-3 border border-ethos text-ethos hover:bg-ethos hover:text-white uppercase tracking-widest text-xs font-medium transition-colors duration-300"
             >
               {t.hero.cta}
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />

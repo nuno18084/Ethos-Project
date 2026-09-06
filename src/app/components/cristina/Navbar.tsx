@@ -112,10 +112,10 @@ export function Navbar() {
 
   const getDesktopLinkClass = (linkId: string) => {
     const base =
-      "nav-link text-xs uppercase tracking-widest transition-colors duration-300 ease-in-out hover:text-amber-600";
+      "nav-link text-xs uppercase tracking-widest transition-colors duration-300 ease-in-out hover:text-ethos";
 
     if (currentSection === linkId) {
-      return `${base} nav-link--active text-amber-600`;
+      return `${base} nav-link--active text-ethos`;
     }
 
     return `${base} text-stone-900`;
@@ -126,19 +126,19 @@ export function Navbar() {
       "nav-contact text-xs uppercase tracking-widest font-medium px-3 py-1 border";
 
     if (showSolidNav) {
-      return `${base} border-amber-600 bg-amber-600 text-white hover:bg-amber-500 hover:border-amber-500`;
+      return `${base} border-ethos bg-ethos text-white hover:bg-ethos-hover hover:border-ethos-hover`;
     }
 
     if (currentSection === "contact") {
-      return `${base} nav-contact--ghost nav-contact--active border-transparent bg-transparent text-amber-600`;
+      return `${base} nav-contact--ghost nav-contact--active border-transparent bg-transparent text-ethos`;
     }
 
-    return `${base} nav-contact--ghost border-transparent bg-transparent text-stone-900 hover:text-amber-600`;
+    return `${base} nav-contact--ghost border-transparent bg-transparent text-stone-900 hover:text-ethos`;
   };
 
   const menuButtonClass = showSolidNav
     ? "text-stone-900 focus:outline-none transition-colors"
-    : "text-amber-600 hover:text-amber-500 focus:outline-none transition-colors";
+    : "text-ethos hover:text-ethos-hover focus:outline-none transition-colors";
 
   return (
     <>
@@ -169,7 +169,7 @@ export function Navbar() {
           >
             <span
               className={`navbar-logo inline-block h-14 sm:h-16 md:h-20 aspect-square transition-colors duration-700 ease-in-out ${
-                showSolidNav ? "bg-amber-600" : "bg-black"
+                showSolidNav ? "bg-ethos" : "bg-black"
               }`}
               role="img"
               aria-hidden="true"

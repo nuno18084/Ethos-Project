@@ -29,7 +29,7 @@ export function Footer() {
     { name: t.nav.contact, href: "/#contact" },
   ];
 
-  const linkClass = "hover:text-amber-600 transition-colors";
+  const linkClass = "hover:text-ethos transition-colors";
 
   return (
     <footer className="bg-stone-900 text-stone-400 py-10 md:py-12">
@@ -52,14 +52,14 @@ export function Footer() {
                 />
               </picture>
             </Link>
-            <p className="meta-text text-stone-500 mt-2">
+            <p className="meta-text text-stone-400 mt-2">
               © {new Date().getFullYear()} {t.footer.rights}
             </p>
             <a
               href="https://www.linkedin.com/in/nuno-cola%C3%A7o-836163174/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[10px] normal-case tracking-normal text-stone-500 hover:text-amber-600 transition-colors mt-1 inline-block"
+              className="text-[10px] normal-case tracking-normal text-stone-400 hover:text-ethos transition-colors mt-1 inline-block"
             >
               {t.footer.credit}
             </a>
@@ -67,7 +67,7 @@ export function Footer() {
 
           <nav
             aria-label="Footer navigation"
-            className="meta-text text-stone-600 flex flex-wrap justify-center gap-x-4 gap-y-2"
+            className="meta-text text-stone-400 flex flex-wrap justify-center gap-x-4 gap-y-2"
           >
             {links.map((link) => (
               <a key={link.href} href={link.href} className={linkClass}>
@@ -76,7 +76,7 @@ export function Footer() {
             ))}
           </nav>
 
-          <div className="meta-text text-stone-600 flex justify-center md:justify-end gap-x-4">
+          <div className="meta-text text-stone-400 flex justify-center md:justify-end gap-x-4">
             <Link to="/privacy" className={linkClass}>
               {t.footer.privacy}
             </Link>
@@ -99,7 +99,7 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="hover:text-amber-600 transition-colors"
+            className="hover:text-ethos transition-colors"
           >
             <Instagram size={20} />
           </a>
@@ -108,7 +108,7 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="hover:text-amber-600 transition-colors"
+            className="hover:text-ethos transition-colors"
           >
             <Linkedin size={20} />
           </a>

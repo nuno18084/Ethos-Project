@@ -1,6 +1,8 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --ethos-amber: #b45309;
+  --ethos-amber-hover: #92400e;
   --font-size: 16px;
   --background: #ffffff;
   --foreground: oklch(0.145 0 0);
@@ -79,6 +81,8 @@
 }
 
 @theme inline {
+  --color-ethos: #b45309;
+  --color-ethos-hover: #92400e;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -244,7 +248,7 @@
   bottom: -0.45rem;
   width: 100%;
   height: 2px;
-  background-color: #d97706;
+  background-color: var(--ethos-amber);
   transform: scaleX(0);
   transform-origin: left center;
   opacity: 0;
@@ -260,7 +264,7 @@
 }
 
 .nav-contact--active {
-  color: #d97706;
+  color: var(--ethos-amber);
 }
 
 .nav-link {
@@ -269,7 +273,7 @@
 }
 
 .nav-link--active {
-  color: #d97706;
+  color: var(--ethos-amber);
 }
 
 .nav-link::after {
@@ -279,7 +283,7 @@
   bottom: -0.45rem;
   width: 100%;
   height: 2px;
-  background-color: #d97706;
+  background-color: var(--ethos-amber);
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform 0.35s ease;
@@ -312,7 +316,7 @@
 
 @layer components {
   .section-eyebrow {
-    @apply text-xs font-bold tracking-[0.2em] uppercase text-amber-600;
+    @apply text-xs font-bold tracking-[0.2em] uppercase text-ethos;
   }
 
   .section-title {
@@ -357,7 +361,7 @@
   font-family: inherit;
   font-style: normal;
   line-height: 0;
-  color: rgb(217 119 6 / 0.4);
+  color: color-mix(in srgb, var(--ethos-amber) 40%, transparent);
   font-size: 2.25rem;
 }
 

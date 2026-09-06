@@ -37,11 +37,11 @@ export function LanguageSelector() {
       <button
         onClick={() => setOpen((prev) => !prev)}
         className={`flex items-center gap-1.5 text-xs uppercase tracking-widest text-stone-900 transition-colors ${
-          isHome ? "hover:text-stone-600" : "hover:text-amber-600"
+          isHome ? "hover:text-stone-600" : "hover:text-ethos"
         }`}
         aria-haspopup="listbox"
         aria-expanded={open}
-        aria-label="Select language"
+        aria-label={`Select language ${current.code.toUpperCase()}`}
       >
         {current.code.toUpperCase()}
         <ChevronDown

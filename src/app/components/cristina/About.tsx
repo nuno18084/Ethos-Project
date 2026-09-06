@@ -74,7 +74,7 @@ export function About() {
           >
             {t.about.title}
             <br />
-            <span className="text-amber-600 text-[0.82em]">{t.about.titleAccent}</span>
+            <span className="text-ethos text-[0.82em]">{t.about.titleAccent}</span>
           </motion.h2>
 
           <motion.p
@@ -97,7 +97,7 @@ export function About() {
             >
               {t.about.paragraph2Prefix}
               {t.about.paragraph2Highlight ? (
-                <span className="text-amber-600 font-medium">
+                <span className="text-ethos font-medium">
                   {t.about.paragraph2Highlight}
                 </span>
               ) : null}
@@ -112,7 +112,7 @@ export function About() {
           >
             <a
               href="#contact"
-              className="inline-block px-8 py-3 border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white transition-colors duration-300 btn-label"
+              className="inline-block px-8 py-3 border border-ethos text-ethos hover:bg-ethos hover:text-white transition-colors duration-300 btn-label"
             >
               {t.about.cta}
             </a>

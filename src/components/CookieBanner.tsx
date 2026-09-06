@@ -32,7 +32,7 @@ export function CookieBanner() {
           {t.cookies.description}{" "}
           <Link
             to="/privacy"
-            className="text-amber-600 hover:text-amber-700 underline underline-offset-2"
+            className="text-ethos hover:text-ethos-hover underline underline-offset-2"
             onClick={closeBanner}
           >
             {t.cookies.privacyLink}
@@ -63,14 +63,14 @@ export function CookieBanner() {
           <button
             type="button"
             onClick={acceptAll}
-            className="btn-label px-6 py-3 bg-amber-600 text-white hover:bg-amber-700 transition-colors"
+            className="btn-label px-6 py-3 bg-ethos text-white hover:bg-ethos-hover transition-colors"
           >
             {t.cookies.acceptAll}
           </button>
           <button
             type="button"
             onClick={rejectOptional}
-            className="btn-label px-6 py-3 border border-stone-300 text-stone-700 hover:border-amber-600 hover:text-amber-600 transition-colors"
+            className="btn-label px-6 py-3 border border-stone-300 text-stone-700 hover:border-ethos hover:text-ethos transition-colors"
           >
             {t.cookies.rejectOptional}
           </button>

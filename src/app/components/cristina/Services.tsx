@@ -4,9 +4,9 @@ import { Compass, Heart, Lightbulb, X } from "lucide-react";
 import { useLanguage } from "../../../i18n/LanguageContext";
 
 const icons = [
-  <Compass className="w-8 h-8 text-amber-600" />,
-  <Heart className="w-8 h-8 text-amber-600" />,
-  <Lightbulb className="w-8 h-8 text-amber-600" />,
+  <Compass className="w-8 h-8 text-ethos" />,
+  <Heart className="w-8 h-8 text-ethos" />,
+  <Lightbulb className="w-8 h-8 text-ethos" />,
 ];
 
 export function Services() {
@@ -51,7 +51,7 @@ export function Services() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="w-16 h-0.5 bg-amber-600 mx-auto"
+              className="w-16 h-0.5 bg-ethos mx-auto"
             />
           </div>
 
@@ -65,7 +65,7 @@ export function Services() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
                 onClick={() => setSelectedIndex(index)}
-                className="group p-6 md:p-8 border border-stone-200 bg-white hover:shadow-lg hover:border-amber-600/20 transition-all duration-300 flex flex-col items-center text-center space-y-4 md:space-y-6 cursor-pointer text-left w-full"
+                className="group p-6 md:p-8 border border-stone-200 bg-white hover:shadow-lg hover:border-ethos/20 transition-all duration-300 flex flex-col items-center text-center space-y-4 md:space-y-6 cursor-pointer text-left w-full"
               >
                 <div className="p-4 bg-amber-50 rounded-full group-hover:bg-amber-100 transition-colors">
                   {icons[index]}
@@ -76,7 +76,7 @@ export function Services() {
                 <p className="card-body w-full text-center">
                   {service.description}
                 </p>
-                <span className="meta-text group-hover:text-amber-600 transition-colors border-b border-transparent group-hover:border-amber-600 pb-1">
+                <span className="meta-text group-hover:text-ethos transition-colors border-b border-transparent group-hover:border-ethos pb-1">
                   {t.services.learnMore}
                 </span>
               </motion.button>
@@ -118,7 +118,7 @@ export function Services() {
 
               <div className="p-2.5 md:p-5 bg-amber-50 rounded-full w-fit mb-3 md:mb-8">
                 {cloneElement(icons[selectedIndex], {
-                  className: "w-6 h-6 md:w-8 md:h-8 text-amber-600",
+                  className: "w-6 h-6 md:w-8 md:h-8 text-ethos",
                 })}
               </div>
 
@@ -173,7 +173,7 @@ export function Services() {
                       key={highlight}
                       className="flex items-start gap-3 section-body text-[0.9375rem] md:text-base"
                     >
-                      <span className="mt-1.5 md:mt-2 w-1.5 h-1.5 rounded-full bg-amber-600 shrink-0" />
+                      <span className="mt-1.5 md:mt-2 w-1.5 h-1.5 rounded-full bg-ethos shrink-0" />
                       <span className="font-bold text-stone-900">{highlight}</span>
                     </li>
                   ))}
@@ -186,7 +186,7 @@ export function Services() {
                 <a
                   href="#contact"
                   onClick={closeModal}
-                  className="inline-block px-8 pt-3 pb-4 md:px-10 md:py-4 bg-amber-600 text-white hover:bg-amber-500 transition-colors duration-300 btn-label"
+                  className="inline-block px-8 pt-3 pb-4 md:px-10 md:py-4 bg-ethos text-white hover:bg-ethos-hover transition-colors duration-300 btn-label"
                 >
                   {t.services.modalCta}
                 </a>
