@@ -199,9 +199,9 @@ export const translations = {
     },
     seo: {
       home: {
-        title: "ETHOS — Coaching & Mentoring for Ethical Leadership",
+        title: "ETHOS — Applied Philosophy for Organizations",
         description:
-          "ETHOS is a human-centred leadership programme for leaders and teams. Coaching and mentoring rooted in philosophy and practical business frameworks for ethical decision-making and organisational well-being.",
+          "A program to elevate the Ethical Capital of organizations through Classical Philosophy. Applied philosophy for better decisions, better execution, and better organizations.",
       },
       privacy: {
         title: "Privacy Policy",
@@ -491,9 +491,9 @@ export const translations = {
     },
     seo: {
       home: {
-        title: "ETHOS — Coaching & Mentoring para Liderança Ética",
+        title: "ETHOS — Filosofia Aplicada às Organizações",
         description:
-          "O ETHOS é um programa de liderança human-centred para líderes e equipas. Coaching e mentoring inspirados na filosofia e em frameworks práticos de negócio para decisão ética e bem-estar organizacional.",
+          "Um programa para elevar o Capital Ético das organizações através da Filosofia Clássica. Filosofia aplicada para melhores decisões, melhor execução e melhores organizações.",
       },
       privacy: {
         title: "Política de Privacidade",
