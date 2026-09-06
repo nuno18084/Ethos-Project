@@ -143,15 +143,17 @@ export const translations = {
     contact: {
       eyebrow: "Get in touch",
       title: "Let's talk",
-      formPrompt: "Tell us what's on your mind — we'd love to hear from you.",
-      formPromptBold: undefined,
-      description:
-        "Whether you are a leader seeking clarity, or an organisation looking to invest in your people's growth — we are here to listen.",
-      descriptionHighlight: undefined,
-      descriptionBody: undefined,
+      formPrompt: "Discover how ETHOS can serve your organization, or share what you have in mind.",
+      formPromptBold: true,
+      description: undefined,
+      descriptionHighlight:
+        "Before every decision, there is someone who decides.",
+      descriptionBody:
+        "And how many decisions do we make each day—from the simplest to the most strategic?",
       descriptionBrandHighlight: undefined,
       descriptionSuffix: undefined,
-      descriptionContinued: undefined,
+      descriptionContinued:
+        "This is where ETHOS comes in. Because some of the best decisions begin with a conversation.",
       location: "Portugal / Remote",
       name: "Name",
       email: "Email",
