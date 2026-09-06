@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ethos-program.web.app/sitemap.xml
+Sitemap: https://www.ethosprogram.com/sitemap.xml
