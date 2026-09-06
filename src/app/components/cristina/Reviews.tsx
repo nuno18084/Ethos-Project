@@ -1,6 +1,44 @@
 import { motion } from "motion/react";
 import { useLanguage } from "../../../i18n/LanguageContext";
 
+function keepLastWords(text: string, maxLength = 24) {
+  const leadingSpace = /^\s/.test(text) ? " " : "";
+  const value = text.replace(/^\s+|\s+$/g, "");
+  const parts = value.split(/\s+/).filter(Boolean);
+  let keep = 1;
+
+  for (let n = Math.min(4, parts.length); n >= 1; n -= 1) {
+    if (parts.slice(-n).join(" ").length <= maxLength) {
+      keep = n;
+      break;
+    }
+  }
+
+  const head =
+    parts.length > keep
+      ? `${leadingSpace}${parts.slice(0, -keep).join(" ")} `
+      : leadingSpace;
+  const tail = parts.slice(-keep).join(" ");
+
+  return { head, tail };
+}
+
+function withClosingQuote(text: string) {
+  const { head, tail } = keepLastWords(text);
+
+  return (
+    <>
+      {head}
+      <span className="review-quote-close-group">
+        {tail}
+        <span className="review-quote-mark review-quote-mark--close">
+          &rdquo;
+        </span>
+      </span>
+    </>
+  );
+}
+
 export function Reviews() {
   const { t } = useLanguage();
 
@@ -40,17 +78,29 @@ export function Reviews() {
                       <br />
                       {review.quoteLead}
                       <span className="font-bold not-italic text-stone-900">
-                        {review.quoteHighlight}
+                        {(() => {
+                          const { head, tail } = keepLastWords(
+                            review.quoteHighlight,
+                            18,
+                          );
+                          return (
+                            <>
+                              {head}
+                              <span className="review-quote-close-group">
+                                {tail}
+                              </span>
+                            </>
+                          );
+                        })()}
                       </span>
                       {review.quoteBreakAfterHighlight && review.quoteSuffix && (
                         <br />
                       )}
-                      {review.quoteSuffix}
+                      {withClosingQuote(review.quoteSuffix ?? "")}
                     </>
                   ) : (
-                    review.quote
+                    withClosingQuote(review.quote ?? "")
                   )}
-                  <span className="review-quote-mark review-quote-mark--close">&rdquo;</span>
                 </p>
               </div>
 

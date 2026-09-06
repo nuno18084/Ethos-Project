@@ -366,6 +366,10 @@
   margin-right: 0.125rem;
 }
 
+.review-quote-close-group {
+  white-space: nowrap;
+}
+
 .review-quote-mark--close {
   vertical-align: -0.18em;
   margin-left: 0.125rem;
