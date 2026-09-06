@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import type { Language } from "../i18n/translations";
 import {
   DEFAULT_OG_IMAGE,
+  DEFAULT_OG_IMAGE_HEIGHT,
+  DEFAULT_OG_IMAGE_WIDTH,
   SITE_NAME,
   getAbsoluteUrl,
 } from "../lib/seo";
@@ -77,6 +79,9 @@ export function PageSeo({
     upsertMeta("og:url", pageUrl, "property");
     upsertMeta("og:site_name", SITE_NAME, "property");
     upsertMeta("og:image", ogImage, "property");
+    upsertMeta("og:image:width", DEFAULT_OG_IMAGE_WIDTH, "property");
+    upsertMeta("og:image:height", DEFAULT_OG_IMAGE_HEIGHT, "property");
+    upsertMeta("og:image:type", "image/png", "property");
     upsertMeta("og:locale", locale, "property");
     upsertMeta("og:locale:alternate", alternateLocale, "property");
 
