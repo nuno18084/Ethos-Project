@@ -72,35 +72,29 @@ export function Reviews() {
               <div className="flex-1 mb-12 md:mb-14">
                 <p className="quote-text text-[1.05rem] md:text-lg leading-relaxed">
                   <span className="review-quote-mark review-quote-mark--open">&ldquo;</span>
-                  {review.quoteHighlight ? (
-                    <>
-                      {review.quotePrefix}
-                      <br />
-                      {review.quoteLead}
-                      <span className="font-bold not-italic text-stone-900">
-                        {(() => {
-                          const { head, tail } = keepLastWords(
-                            review.quoteHighlight,
-                            18,
-                          );
-                          return (
-                            <>
-                              {head}
-                              <span className="review-quote-close-group">
-                                {tail}
-                              </span>
-                            </>
-                          );
-                        })()}
-                      </span>
-                      {review.quoteBreakAfterHighlight && review.quoteSuffix && (
-                        <br />
-                      )}
-                      {withClosingQuote(review.quoteSuffix ?? "")}
-                    </>
-                  ) : (
-                    withClosingQuote(review.quote ?? "")
+                  {review.quotePrefix}
+                  <br />
+                  {review.quoteLead}
+                  <span className="font-bold not-italic text-stone-900">
+                    {(() => {
+                      const { head, tail } = keepLastWords(
+                        review.quoteHighlight ?? "",
+                        18,
+                      );
+                      return (
+                        <>
+                          {head}
+                          <span className="review-quote-close-group">
+                            {tail}
+                          </span>
+                        </>
+                      );
+                    })()}
+                  </span>
+                  {review.quoteBreakAfterHighlight && review.quoteSuffix && (
+                    <br />
                   )}
+                  {withClosingQuote(review.quoteSuffix ?? "")}
                 </p>
               </div>
 

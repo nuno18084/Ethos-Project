@@ -66,26 +66,14 @@ export function Contact() {
           <h2 className="section-title mt-4 mb-6">{t.contact.title}</h2>
           <div className="w-12 h-0.5 bg-amber-600 mb-8" />
           <div className="section-lead max-w-md space-y-4">
-            {t.contact.descriptionHighlight ? (
-              <>
-                <p>
-                  <span className="font-bold text-stone-900">
-                    {t.contact.descriptionHighlight}
-                  </span>
-                  {t.contact.descriptionBody && (
-                    <>
-                      <br />
-                      {t.contact.descriptionBody.trimStart()}
-                    </>
-                  )}
-                </p>
-                {t.contact.descriptionContinued && (
-                  <p>{t.contact.descriptionContinued}</p>
-                )}
-              </>
-            ) : (
-              <p>{t.contact.description}</p>
-            )}
+            <p>
+              <span className="font-bold text-stone-900">
+                {t.contact.descriptionHighlight}
+              </span>
+              <br />
+              {t.contact.descriptionBody.trimStart()}
+            </p>
+            <p>{t.contact.descriptionContinued}</p>
           </div>
 
           <div className="hidden lg:block space-y-2 border-t border-stone-100 pt-10 mt-10">
