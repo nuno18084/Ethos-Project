@@ -27,7 +27,7 @@ Copy `.env.example` to `.env` and fill in:
 | `VITE_EMAILJS_SERVICE_ID` | EmailJS service ID |
 | `VITE_EMAILJS_TEMPLATE_ID` | EmailJS template ID |
 | `VITE_EMAILJS_PUBLIC_KEY` | EmailJS public key |
-| `VITE_SITE_URL` | Public site URL (canonical, Open Graph, sitemap) |
+| `VITE_SITE_URL` | Public site URL (`https://www.ethosprogram.com`) |
 
 Set the same variables in your hosting provider before deploy.
 
@@ -54,16 +54,11 @@ npm run deploy
 
 This runs `npm run build` then uploads `dist/` to Firebase Hosting.
 
-### Custom domain (future)
+### Custom domain
 
-Live site: [https://ethos-program.web.app](https://ethos-program.web.app)
+Live site: [https://www.ethosprogram.com](https://www.ethosprogram.com)
 
-When you connect `ethosprogram.com` in Firebase Console → Hosting → Add custom domain:
-
-1. Update `.env`: `VITE_SITE_URL=https://ethosprogram.com`
-2. Update `public/sitemap.xml` and `public/robots.txt` URLs
-3. Add the new domain in EmailJS Security settings
-4. Run `npm run deploy`
+`ethosprogram.com` (no www) and `ethos-program.web.app` redirect to `www`. In Firebase Console → Hosting → Custom domains, set the apex to **Redirect** to `www.ethosprogram.com`.
 
 ### SPA routing
 
@@ -77,12 +72,11 @@ Vite embeds `VITE_*` variables **during `npm run build`**. The `.env` file is no
 2. In [EmailJS → Account → Security](https://dashboard.emailjs.com/admin/account/security), add your live origin under **Allowed referrers / domains**:
 
 ```
+https://www.ethosprogram.com
+https://ethosprogram.com
 https://ethos-program.web.app
-https://ethos-program.firebaseapp.com
 http://localhost:5173
 ```
-
-Add `https://ethosprogram.com` and `https://www.ethosprogram.com` when the custom domain goes live.
 
 3. If using Gmail via EmailJS, reconnect the service and enable “Send email on your behalf” (fixes HTTP 412 errors)
 
