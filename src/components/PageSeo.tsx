@@ -64,7 +64,7 @@ export function PageSeo({
     const locale = language === "pt" ? "pt_PT" : "en_US";
     const alternateLocale = language === "pt" ? "en_US" : "pt_PT";
 
-    document.title = "Ethos";
+    document.title = fullTitle;
     document.documentElement.lang = language;
 
     upsertMeta("description", description);

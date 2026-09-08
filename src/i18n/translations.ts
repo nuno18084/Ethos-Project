@@ -201,7 +201,7 @@ export const translations = {
       home: {
         title: "ETHOS — Applied Philosophy for Organizations",
         description:
-          "A program to elevate the Ethical Capital of organizations through Classical Philosophy. Applied philosophy for better decisions, better execution, and better organizations.",
+          "Applied philosophy for organizations. ETHOS elevates ethical capital through classical philosophy — better decisions, better execution, better organizations.",
       },
       privacy: {
         title: "Privacy Policy",
@@ -493,7 +493,7 @@ export const translations = {
       home: {
         title: "ETHOS — Filosofia Aplicada às Organizações",
         description:
-          "Um programa para elevar o Capital Ético das organizações através da Filosofia Clássica. Filosofia aplicada para melhores decisões, melhor execução e melhores organizações.",
+          "Filosofia aplicada às organizações. O ETHOS eleva o capital ético através da Filosofia Clássica — melhores decisões, melhor execução, melhores organizações.",
       },
       privacy: {
         title: "Política de Privacidade",
