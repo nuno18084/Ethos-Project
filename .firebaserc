@@ -1,5 +1,18 @@
 {
   "projects": {
     "default": "ethos-program"
-  }
+  },
+  "targets": {
+    "ethos-program": {
+      "hosting": {
+        "dev": [
+          "ethos-program-dev"
+        ],
+        "prod": [
+          "ethos-program"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
