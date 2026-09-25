@@ -12,6 +12,11 @@ const About = lazy(() =>
     default: module.About,
   })),
 );
+const Founder = lazy(() =>
+  import("./components/cristina/Founder").then((module) => ({
+    default: module.Founder,
+  })),
+);
 const Services = lazy(() =>
   import("./components/cristina/Services").then((module) => ({
     default: module.Services,
@@ -52,6 +57,12 @@ export function HomePage() {
           description: t.seo.home.description,
           email: "cristina.carvalho@ethosprogram.com",
           areaServed: "PT",
+          founder: {
+            "@type": "Person",
+            name: "Cristina Vidal de Carvalho",
+            jobTitle: t.founder.role,
+            url: getAbsoluteUrl("/#founder"),
+          },
           sameAs: ["https://www.instagram.com/cristinavc_ethos/"],
         }}
       />
@@ -61,6 +72,7 @@ export function HomePage() {
         <Hero />
         <Suspense fallback={null}>
           <About />
+          <Founder />
           <Services />
           <Reviews />
           <Partners />

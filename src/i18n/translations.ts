@@ -4,6 +4,8 @@ export const translations = {
   en: {
     nav: {
       about: "About",
+      aboutEthos: "About ETHOS",
+      aboutFounder: "Who is behind ETHOS",
       services: "Services",
       reviews: "Reviews",
       partners: "Partners",
@@ -40,6 +42,24 @@ export const translations = {
         "At ETHOS, we bring humanity’s greatest questions into the daily reality of organizations. Because it is through choices and relationships with others that human qualities truly find their expression.",
       paragraph2Highlight: undefined,
       cta: "Learn more",
+    },
+    founder: {
+      eyebrow: "Who is behind ETHOS",
+      name: "Cristina Vidal de Carvalho",
+      role: "Founder of ETHOS",
+      paragraphs: [
+        "Before bringing Philosophy into organizations, I lived inside them for years.",
+        "I spent much of my professional life in Communications and Marketing, at companies such as Cisco, Microsoft, and SonaeCom. I know from the inside the pace, the demands, and the complexity of organizations.",
+        "A few years ago, Lusa Tecnologias challenged me to create a program that would help elevate its Ethical Capital. That was the starting point for ETHOS.",
+        "I had already been studying Philosophy for several years, and I turned to Classical Philosophy for another way of looking at what organizations so often try to develop through skills: the human being behind those skills.",
+      ],
+      highlight: "That is how ETHOS was born — Applied Philosophy for Organizations.",
+      closing:
+        "The program was developed, applied in a business setting, and successively refined through that experience. Today, ETHOS remains faithful to the same conviction: organizations evolve when human beings evolve.",
+      cta: "Shall we talk about ETHOS?",
+      showMore: "Show more",
+      showLess: "Show less",
+      photoAlt: "Portrait of Cristina Vidal de Carvalho, founder of ETHOS",
     },
     services: {
       title: "What ETHOS offers",
@@ -296,6 +316,8 @@ export const translations = {
   pt: {
     nav: {
       about: "Sobre",
+      aboutEthos: "Sobre o ETHOS",
+      aboutFounder: "Quem está por trás",
       services: "Serviços",
       reviews: "Testemunhos",
       partners: "Parceiros",
@@ -332,6 +354,24 @@ export const translations = {
         "No ETHOS, trazemos as grandes questões humanas para a realidade das organizações. Porque é nas escolhas e na relação com os outros que as qualidades humanas ganham expressão.",
       paragraph2Highlight: undefined,
       cta: "Saber mais",
+    },
+    founder: {
+      eyebrow: "Quem está por trás do ETHOS",
+      name: "Cristina Vidal de Carvalho",
+      role: "Fundadora do ETHOS",
+      paragraphs: [
+        "Antes de levar a Filosofia para as organizações, vivi durante anos dentro delas.",
+        "Passei grande parte da minha vida profissional nas áreas de Comunicação e Marketing, em empresas como a Cisco, a Microsoft e a SonaeCom. Conheço por dentro o ritmo, a exigência e a complexidade das organizações.",
+        "Há alguns anos, a Lusa Tecnologias desafiou-me a criar um programa que contribuísse para elevar o seu Capital Ético. Foi este o ponto de partida para o ETHOS.",
+        "Eu já estudava Filosofia há vários anos e fui buscar à Filosofia Clássica uma outra forma de olhar para o que, nas organizações, tantas vezes procuramos desenvolver através de competências: o ser humano por trás dessas competências.",
+      ],
+      highlight: "Foi assim que nasceu o ETHOS — Filosofia Aplicada às Organizações.",
+      closing:
+        "O programa foi desenvolvido, aplicado em contexto empresarial e sucessivamente aperfeiçoado a partir dessa experiência. Hoje, o ETHOS mantém-se fiel à mesma convicção: as organizações evoluem quando os seres humanos evoluem.",
+      cta: "Vamos conversar sobre o ETHOS?",
+      showMore: "Mostrar mais",
+      showLess: "Mostrar menos",
+      photoAlt: "Retrato de Cristina Vidal de Carvalho, fundadora do ETHOS",
     },
     services: {
       title: "O que o ETHOS oferece",

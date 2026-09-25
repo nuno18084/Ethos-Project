@@ -22,7 +22,8 @@ export function Footer() {
   };
 
   const links = [
-    { name: t.nav.about, href: "/#about" },
+    { name: t.nav.aboutEthos, href: "/#about" },
+    { name: t.nav.aboutFounder, href: "/#founder" },
     { name: t.nav.services, href: "/#services" },
     { name: t.nav.reviews, href: "/#reviews" },
     ...(SHOW_PARTNERS ? [{ name: t.nav.partners, href: "/#partners" }] : []),
