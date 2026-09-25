@@ -15,9 +15,31 @@ export function About() {
 
   return (
     <section id="about" className="py-20 md:py-36 bg-stone-50 text-stone-900">
-      <div className="max-w-6xl lg:max-w-7xl mx-auto px-6 grid md:grid-cols-[47fr_53fr] gap-16 md:gap-8 lg:gap-10 items-center">
-        {/* Left: Image with text overlap */}
-        <div className="relative max-w-sm md:max-w-md mx-auto md:mx-0 w-full">
+      <div className="max-w-6xl lg:max-w-7xl mx-auto px-6 grid md:grid-cols-[47fr_53fr] gap-10 md:gap-8 lg:gap-10 items-center">
+        <div className="order-1 md:order-2 md:col-start-2 space-y-6">
+          <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="section-eyebrow"
+          >
+            {t.about.eyebrow}
+          </motion.span>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="section-title"
+          >
+            {t.about.title}
+            <br />
+            <span className="text-ethos text-[0.82em]">{t.about.titleAccent}</span>
+          </motion.h2>
+        </div>
+
+        <div className="relative max-w-sm md:max-w-md mx-auto md:mx-0 w-full order-2 md:order-1 md:row-span-2 md:col-start-1">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -54,29 +76,7 @@ export function About() {
           </p>
         </div>
 
-        {/* Right: Text Content */}
-        <div className="space-y-6">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="section-eyebrow"
-          >
-            {t.about.eyebrow}
-          </motion.span>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="section-title"
-          >
-            {t.about.title}
-            <br />
-            <span className="text-ethos text-[0.82em]">{t.about.titleAccent}</span>
-          </motion.h2>
-
+        <div className="order-3 md:col-start-2 space-y-6">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

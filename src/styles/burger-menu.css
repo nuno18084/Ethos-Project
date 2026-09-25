@@ -60,3 +60,29 @@
 .ethos-bm-item--active {
   color: var(--ethos-amber);
 }
+
+.ethos-bm-about-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: 0;
+  padding: 0.85rem 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.ethos-bm-about-chevron {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.ethos-bm-about-chevron.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.ethos-bm-subitem {
+  padding-left: 0.85rem;
+  font-size: 1.2rem;
+}
