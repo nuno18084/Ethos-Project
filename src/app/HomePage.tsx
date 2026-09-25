@@ -42,7 +42,7 @@ export function HomePage() {
   const { language, t } = useLanguage();
 
   return (
-    <div className="bg-[#FAF9F6] min-h-screen font-sans overflow-x-hidden">
+    <div className="bg-[#FAF9F6] min-h-screen font-sans max-md:overflow-x-hidden">
       <PageSeo
         title={t.seo.home.title}
         description={t.seo.home.description}

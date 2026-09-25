@@ -187,7 +187,7 @@ export function Navbar() {
       </Suspense>
 
       <nav
-        className={`fixed top-0 left-0 w-full transition-all duration-300 ${
+        className={`fixed top-0 inset-x-0 w-full max-w-[100vw] transition-all duration-300 ${
           isOpen ? "z-[1300]" : "z-50"
         } ${
           showSolidNav
