@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
@@ -19,8 +19,8 @@ export function Founder() {
 
   return (
     <section id="founder" className="py-20 md:py-36 bg-[#FAF9F6] text-stone-900">
-      <div className="max-w-6xl lg:max-w-7xl mx-auto px-6 grid md:grid-cols-[53fr_47fr] gap-16 md:gap-10 lg:gap-14 items-start">
-        <div className="space-y-6 md:order-1">
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-[53fr_47fr] gap-12 md:gap-10 lg:gap-14 items-start">
+        <div className="space-y-6 order-2 md:order-1">
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -112,29 +112,31 @@ export function Founder() {
           >
             <a
               href="#contact"
-              className="inline-block px-8 py-3 border border-ethos text-ethos hover:bg-ethos hover:text-white transition-colors duration-300 btn-label"
+              className="group inline-flex items-center justify-center gap-2 px-10 py-4 bg-ethos text-white hover:bg-ethos-hover transition-colors duration-300 btn-label"
             >
               {t.founder.cta}
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative max-w-sm md:max-w-md mx-auto md:mx-0 md:justify-self-end w-full md:order-2 md:sticky md:top-28"
-        >
-          <div className="w-full aspect-[4/5] overflow-hidden">
-            <ImageWithFallback
-              src="/images/cristina-720.jpg"
-              webpSrcSet="/images/cristina-720.webp"
-              alt={t.founder.photoAlt}
-              className="w-full h-full object-cover object-[center_15%]"
-            />
-          </div>
-        </motion.div>
+        <div className="w-full max-w-sm md:max-w-md mx-auto md:mx-0 md:justify-self-end order-1 md:order-2 md:sticky md:top-28 md:self-start">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="w-full aspect-[4/5] overflow-hidden">
+              <ImageWithFallback
+                src="/images/cristina-720.jpg"
+                webpSrcSet="/images/cristina-720.webp"
+                alt={t.founder.photoAlt}
+                className="w-full h-full object-cover object-[center_15%]"
+              />
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
