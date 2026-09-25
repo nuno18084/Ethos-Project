@@ -181,7 +181,9 @@ export function Navbar() {
         <MobileBurgerMenu
           isOpen={isOpen}
           onOpenChange={setIsOpen}
-          links={links}
+          aboutLabel={t.nav.about}
+          aboutLinks={aboutLinks}
+          links={desktopLinks.concat(contactLink ? [contactLink] : [])}
           currentSection={currentSection}
         />
       </Suspense>
