@@ -4,6 +4,7 @@ ETHOS is a program to elevate the Ethical Capital of organizations through Class
 
 - [Home](https://www.ethosprogram.com/): Applied philosophy for better decisions, better execution, and better organizations.
 - [About](https://www.ethosprogram.com/#about): Organizations evolve when human beings evolve.
+- [Founder](https://www.ethosprogram.com/#founder): Cristina Vidal de Carvalho, founder of ETHOS.
 - [Services](https://www.ethosprogram.com/#services): ETHOS Program, ETHOS in Dialogue, and ETHOS One-to-One.
 - [Reviews](https://www.ethosprogram.com/#reviews): What people are saying.
 - [Contact](https://www.ethosprogram.com/#contact): Start a conversation with ETHOS.
@@ -18,6 +19,7 @@ O ETHOS é um programa para elevar o Capital Ético das organizações através 
 
 - [Início](https://www.ethosprogram.com/): Filosofia aplicada para melhores decisões, melhor execução e melhores organizações.
 - [Sobre](https://www.ethosprogram.com/#about): As organizações evoluem quando os seres humanos evoluem.
+- [Fundadora](https://www.ethosprogram.com/#founder): Cristina Vidal de Carvalho, fundadora do ETHOS.
 - [Serviços](https://www.ethosprogram.com/#services): Programa ETHOS, ETHOS em Diálogo e ETHOS One-to-One.
 - [Testemunhos](https://www.ethosprogram.com/#reviews): Quem experimentou conta.
 - [Contacto](https://www.ethosprogram.com/#contact): Iniciar a conversa.

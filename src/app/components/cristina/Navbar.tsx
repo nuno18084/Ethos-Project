@@ -1,6 +1,6 @@
-import { lazy, Suspense, useState, useEffect } from "react";
+import { lazy, Suspense, useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { useLanguage } from "../../../i18n/LanguageContext";
 import { LanguageSelector } from "../../../i18n/LanguageSelector";
 import { SHOW_PARTNERS } from "../../../lib/featureFlags";
@@ -15,6 +15,8 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const aboutMenuRef = useRef<HTMLDivElement>(null);
   const { t } = useLanguage();
   const location = useLocation();
   const navigate = useNavigate();
@@ -35,7 +37,7 @@ export function Navbar() {
   useEffect(() => {
     if (!isHome) return;
 
-    const sectionIds = ["about", "services", "reviews", "contact"].concat(
+    const sectionIds = ["about", "founder", "services", "reviews", "contact"].concat(
       SHOW_PARTNERS ? (["partners"] as const) : [],
     );
 
@@ -94,8 +96,37 @@ export function Navbar() {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    if (!aboutOpen) return;
+
+    const handlePointerDown = (event: MouseEvent) => {
+      if (
+        aboutMenuRef.current &&
+        !aboutMenuRef.current.contains(event.target as Node)
+      ) {
+        setAboutOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setAboutOpen(false);
+    };
+
+    document.addEventListener("mousedown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [aboutOpen]);
+
+  const aboutLinks = [
+    { name: t.nav.aboutEthos, href: "/#about", id: "about" },
+    { name: t.nav.aboutFounder, href: "/#founder", id: "founder" },
+  ];
+
   const links = [
-    { name: t.nav.about, href: "/#about", id: "about" },
+    ...aboutLinks,
     { name: t.nav.services, href: "/#services", id: "services" },
     { name: t.nav.reviews, href: "/#reviews", id: "reviews" },
     ...(SHOW_PARTNERS
@@ -107,14 +138,18 @@ export function Navbar() {
   const showSolidNav = !isHome || scrolled || isOpen;
   const currentSection = isHome ? activeSection : null;
 
-  const navLinks = links.filter((link) => link.id !== "contact");
+  const desktopLinks = links.filter(
+    (link) => link.id !== "contact" && link.id !== "about" && link.id !== "founder",
+  );
   const contactLink = links.find((link) => link.id === "contact");
+  const isAboutActive =
+    currentSection === "about" || currentSection === "founder";
 
-  const getDesktopLinkClass = (linkId: string) => {
+  const getDesktopLinkClass = (isActive: boolean) => {
     const base =
       "nav-link text-xs uppercase tracking-widest transition-colors duration-300 ease-in-out hover:text-ethos";
 
-    if (currentSection === linkId) {
+    if (isActive) {
       return `${base} nav-link--active text-ethos`;
     }
 
@@ -176,12 +211,64 @@ export function Navbar() {
             />
           </Link>
 
-          <div className="hidden md:flex items-baseline gap-x-8">
-            {navLinks.map((link) => (
+          <div className="hidden md:flex items-center gap-x-8">
+            <div
+              ref={aboutMenuRef}
+              className="relative flex items-center gap-1"
+              onMouseEnter={() => setAboutOpen(true)}
+              onMouseLeave={() => setAboutOpen(false)}
+            >
+              <a
+                href="/#about"
+                className={getDesktopLinkClass(isAboutActive || aboutOpen)}
+                aria-haspopup="true"
+                aria-expanded={aboutOpen}
+                aria-current={isAboutActive ? "true" : undefined}
+                onClick={() => setAboutOpen(false)}
+              >
+                {t.nav.about}
+              </a>
+              <ChevronDown
+                size={12}
+                strokeWidth={1.75}
+                className={`shrink-0 transition-transform duration-200 ${
+                  isAboutActive || aboutOpen ? "text-ethos" : "text-stone-900"
+                } ${aboutOpen ? "rotate-180" : ""}`}
+                aria-hidden="true"
+              />
+              <div
+                className={`absolute left-0 top-full z-50 min-w-[15.5rem] pt-3 transition-all duration-200 ${
+                  aboutOpen
+                    ? "visible opacity-100 translate-y-0"
+                    : "invisible opacity-0 -translate-y-1 pointer-events-none"
+                }`}
+              >
+                <div className="bg-white/95 backdrop-blur-md border border-stone-200/80 py-2">
+                  {aboutLinks.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setAboutOpen(false)}
+                      className={`block px-4 py-2.5 text-xs uppercase tracking-widest transition-colors ${
+                        currentSection === link.id
+                          ? "text-ethos"
+                          : "text-stone-900 hover:text-ethos"
+                      }`}
+                      aria-current={
+                        currentSection === link.id ? "true" : undefined
+                      }
+                    >
+                      {link.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+            {desktopLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className={getDesktopLinkClass(link.id)}
+                className={getDesktopLinkClass(currentSection === link.id)}
                 aria-current={currentSection === link.id ? "true" : undefined}
               >
                 {link.name}
