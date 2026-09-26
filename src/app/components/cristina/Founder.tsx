@@ -5,6 +5,30 @@ import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { useLanguage } from "../../../i18n/LanguageContext";
 
 const COLLAPSED_EXTRA_HEIGHT = 168;
+const LUSA_NAME = "Lusa Tecnologias";
+const LUSA_URL = "https://www.luzatec.pt/en/";
+
+function withLusaLink(text: string) {
+  const parts = text.split(LUSA_NAME);
+  if (parts.length === 1) return text;
+
+  return parts.flatMap((part, index) =>
+    index === 0
+      ? [part]
+      : [
+          <a
+            key={`lusa-${index}`}
+            href={LUSA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-ethos hover:opacity-70 transition-opacity"
+          >
+            {LUSA_NAME}
+          </a>,
+          part,
+        ],
+  );
+}
 
 export function Founder() {
   const { language, t } = useLanguage();
@@ -88,7 +112,7 @@ export function Founder() {
                 <div className="space-y-6 pt-6">
                   {extraParagraphs.map((paragraph) => (
                     <p key={paragraph} className="section-body">
-                      {paragraph}
+                      {withLusaLink(paragraph)}
                     </p>
                   ))}
                   <p className="section-body text-ethos font-medium">
