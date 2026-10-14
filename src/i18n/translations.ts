@@ -50,10 +50,11 @@ export const translations = {
       paragraphs: [
         "Before bringing Philosophy into organizations, I spent years working within them.",
         "I spent much of my professional life in Communications and Marketing at companies such as Cisco, Microsoft, and SonaeCom. I know from the inside the pace, demands, and complexity of organizations.",
-        "Lusa Tecnologias challenged me to create a program that would help elevate its Ethical Capital. That challenge became the starting point for ETHOS.",
+        "Luza Tecnologias challenged me to create a program that would help elevate its Ethical Capital. That challenge became the starting point for ETHOS.",
         "I had already been studying Philosophy for several years, and I turned to Classical Philosophy for another way of looking at what organizations so often seek to develop through skills: the human being behind those skills.",
       ],
-      highlight: "That is how ETHOS was born — Applied Philosophy for Organizations.",
+      highlight:
+        "That is how ETHOS was born — Applied Philosophy for Organizations.",
       closing:
         "The program was developed and applied in a business setting, and continuously refined through that experience. Today, ETHOS remains true to the same conviction: organizations evolve when human beings evolve.",
       cta: "Shall we talk about ETHOS?",
@@ -163,7 +164,8 @@ export const translations = {
     contact: {
       eyebrow: "Get in touch",
       title: "Let's talk",
-      formPrompt: "Discover how ETHOS can serve your organization, or share what you have in mind.",
+      formPrompt:
+        "Discover how ETHOS can serve your organization, or share what you have in mind.",
       formPromptBold: true,
       description: undefined,
       descriptionHighlight:
@@ -362,10 +364,11 @@ export const translations = {
       paragraphs: [
         "Antes de levar a Filosofia para as organizações, vivi durante anos dentro delas.",
         "Passei grande parte da minha vida profissional nas áreas de Comunicação e Marketing, em empresas como a Cisco, a Microsoft e a SonaeCom. Conheço por dentro o ritmo, a exigência e a complexidade das organizações.",
-        "Há alguns anos, a Lusa Tecnologias desafiou-me a criar um programa que contribuísse para elevar o seu Capital Ético. E este foi o ponto de partida para o ETHOS.",
+        "Há alguns anos, a Luza Tecnologias desafiou-me a criar um programa que contribuísse para elevar o seu Capital Ético. E este foi o ponto de partida para o ETHOS.",
         "Eu já estudava Filosofia há vários anos e fui buscar à Filosofia Clássica uma outra forma de olhar para o que, nas organizações, tantas vezes procuramos desenvolver através de competências: o ser humano por trás dessas competências.",
       ],
-      highlight: "Foi assim que nasceu o ETHOS — Filosofia Aplicada às Organizações.",
+      highlight:
+        "Foi assim que nasceu o ETHOS — Filosofia Aplicada às Organizações.",
       closing:
         "O programa foi desenvolvido, aplicado em contexto empresarial e sucessivamente aperfeiçoado a partir dessa experiência. Hoje, o ETHOS mantém-se fiel à mesma convicção: as organizações evoluem quando os seres humanos evoluem.",
       cta: "Vamos conversar sobre o ETHOS?",
@@ -475,11 +478,11 @@ export const translations = {
     contact: {
       eyebrow: "Entre em contacto",
       title: "Vamos conversar",
-      formPrompt: "Quer saber mais sobre o ETHOS ou contar-me o que tem em mente?",
+      formPrompt:
+        "Quer saber mais sobre o ETHOS ou contar-me o que tem em mente?",
       formPromptBold: true,
       description: undefined,
-      descriptionHighlight:
-        "Antes de cada decisão, há alguém que decide.",
+      descriptionHighlight: "Antes de cada decisão, há alguém que decide.",
       descriptionBody:
         "E quantas decisões tomamos todos os dias, das mais simples às mais estratégicas?",
       descriptionBrandHighlight: undefined,

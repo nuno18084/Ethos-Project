@@ -6,17 +6,24 @@ const required = [
   "VITE_EMAILJS_PUBLIC_KEY",
 ];
 
-if (!existsSync(".env")) {
+const fileEnv = existsSync(".env") ? readFileSync(".env", "utf8") : "";
+
+function getValue(key) {
+  const fromProcess = process.env[key]?.trim();
+  if (fromProcess) return fromProcess;
+
+  const match = fileEnv.match(new RegExp(`^${key}=(.*)$`, "m"));
+  return match?.[1]?.trim() ?? "";
+}
+
+if (!fileEnv && required.every((key) => !process.env[key]?.trim())) {
   console.error("Deploy blocked: .env file not found.");
   console.error("Copy .env.example to .env and add your EmailJS credentials.");
   process.exit(1);
 }
 
-const env = readFileSync(".env", "utf8");
-
 for (const key of required) {
-  const match = env.match(new RegExp(`^${key}=(.*)$`, "m"));
-  const value = match?.[1]?.trim();
+  const value = getValue(key);
 
   if (!value || value.startsWith("your_")) {
     console.error(`Deploy blocked: ${key} is missing or still a placeholder.`);

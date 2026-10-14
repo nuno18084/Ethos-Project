@@ -5,7 +5,7 @@ import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { useLanguage } from "../../../i18n/LanguageContext";
 
 const COLLAPSED_EXTRA_HEIGHT = 168;
-const LUSA_NAME = "Lusa Tecnologias";
+const LUSA_NAME = "Luza Tecnologias";
 const LUSA_URL = "https://www.luzatec.pt/en/";
 
 function withLusaLink(text: string) {
