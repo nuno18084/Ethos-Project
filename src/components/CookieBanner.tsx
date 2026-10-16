@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
-import { useLanguage } from "../i18n/LanguageContext";
+import { useLanguage, useLocalizedHref } from "../i18n/LanguageContext";
 import { useCookieConsent } from "../i18n/CookieConsentContext";
 
 export function CookieBanner() {
   const { t } = useLanguage();
+  const hrefFor = useLocalizedHref();
   const { isBannerOpen, acceptAll, rejectOptional, closeBanner, consent } =
     useCookieConsent();
 
@@ -31,7 +32,7 @@ export function CookieBanner() {
         >
           {t.cookies.description}{" "}
           <Link
-            to="/privacy"
+            to={hrefFor("/privacy")}
             className="text-ethos hover:text-ethos-hover underline underline-offset-2"
             onClick={closeBanner}
           >

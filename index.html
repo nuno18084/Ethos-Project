@@ -20,9 +20,22 @@
         );
       })();
     </script>
+    <script>
+      (function () {
+        var path = location.pathname;
+        if (path === "/pt" || path.indexOf("/pt/") === 0) {
+          document.documentElement.lang = "pt";
+        }
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="canonical" href="https://www.ethosprogram.com/" />
+    <link rel="alternate" hreflang="en" href="https://www.ethosprogram.com/" />
+    <link rel="alternate" hreflang="pt" href="https://www.ethosprogram.com/pt" />
+    <link rel="alternate" hreflang="x-default" href="https://www.ethosprogram.com/" />
     <meta property="og:url" content="https://www.ethosprogram.com/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="pt_PT" />
     <meta
       name="description"
       content="Applied philosophy for organizations. ETHOS elevates ethical capital through classical philosophy — better decisions, better execution, better organizations."

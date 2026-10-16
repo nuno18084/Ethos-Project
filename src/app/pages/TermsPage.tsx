@@ -1,5 +1,6 @@
 import { PageSeo } from "../../components/PageSeo";
 import { useLanguage } from "../../i18n/LanguageContext";
+import { localizePathname } from "../../lib/languagePath";
 import { LegalPageLayout } from "../components/cristina/LegalPageLayout";
 
 export function TermsPage() {
@@ -10,7 +11,7 @@ export function TermsPage() {
       <PageSeo
         title={t.seo.terms.title}
         description={t.seo.terms.description}
-        path="/terms"
+        path={localizePathname("/terms", language)}
         language={language}
       />
       <LegalPageLayout

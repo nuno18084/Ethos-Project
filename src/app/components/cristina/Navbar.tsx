@@ -1,9 +1,10 @@
 import { lazy, Suspense, useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { useLanguage } from "../../../i18n/LanguageContext";
+import { useLanguage, useLocalizedHref } from "../../../i18n/LanguageContext";
 import { LanguageSelector } from "../../../i18n/LanguageSelector";
 import { SHOW_PARTNERS } from "../../../lib/featureFlags";
+import { homePath, isHomePath } from "../../../lib/languagePath";
 
 const MobileBurgerMenu = lazy(() =>
   import("./MobileBurgerMenu").then((module) => ({
@@ -17,10 +18,11 @@ export function Navbar() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [aboutOpen, setAboutOpen] = useState(false);
   const aboutMenuRef = useRef<HTMLDivElement>(null);
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
+  const hrefFor = useLocalizedHref();
   const location = useLocation();
   const navigate = useNavigate();
-  const isHome = location.pathname === "/";
+  const isHome = isHomePath(location.pathname);
 
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     setIsOpen(false);
@@ -29,7 +31,7 @@ export function Navbar() {
 
     e.preventDefault();
     if (location.hash) {
-      navigate("/", { replace: true });
+      navigate(homePath(language), { replace: true });
     }
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
@@ -121,18 +123,18 @@ export function Navbar() {
   }, [aboutOpen]);
 
   const aboutLinks = [
-    { name: t.nav.aboutEthos, href: "/#about", id: "about" },
-    { name: t.nav.aboutFounder, href: "/#founder", id: "founder" },
+    { name: t.nav.aboutEthos, href: hrefFor("/#about"), id: "about" },
+    { name: t.nav.aboutFounder, href: hrefFor("/#founder"), id: "founder" },
   ];
 
   const links = [
     ...aboutLinks,
-    { name: t.nav.services, href: "/#services", id: "services" },
-    { name: t.nav.reviews, href: "/#reviews", id: "reviews" },
+    { name: t.nav.services, href: hrefFor("/#services"), id: "services" },
+    { name: t.nav.reviews, href: hrefFor("/#reviews"), id: "reviews" },
     ...(SHOW_PARTNERS
-      ? [{ name: t.nav.partners, href: "/#partners", id: "partners" as const }]
+      ? [{ name: t.nav.partners, href: hrefFor("/#partners"), id: "partners" as const }]
       : []),
-    { name: t.nav.contact, href: "/#contact", id: "contact" },
+    { name: t.nav.contact, href: hrefFor("/#contact"), id: "contact" },
   ];
 
   const showSolidNav = !isHome || scrolled || isOpen;
@@ -199,7 +201,7 @@ export function Navbar() {
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center px-6">
           <Link
-            to="/"
+            to={homePath(language)}
             onClick={handleLogoClick}
             className="inline-block shrink-0 leading-none -my-0.5 md:-my-1"
             aria-label="ETHOS"
@@ -221,7 +223,7 @@ export function Navbar() {
               onMouseLeave={() => setAboutOpen(false)}
             >
               <a
-                href="/#about"
+                href={hrefFor("/#about")}
                 className={getDesktopLinkClass(isAboutActive || aboutOpen)}
                 aria-haspopup="true"
                 aria-expanded={aboutOpen}

@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { Toaster } from "sonner";
 import { PageSeo } from "../components/PageSeo";
 import { useLanguage } from "../i18n/LanguageContext";
+import { homePath, localizeHref } from "../lib/languagePath";
 import { getAbsoluteUrl } from "../lib/seo";
 import { Navbar } from "./components/cristina/Navbar";
 import { Hero } from "./components/cristina/Hero";
@@ -46,22 +47,23 @@ export function HomePage() {
       <PageSeo
         title={t.seo.home.title}
         description={t.seo.home.description}
-        path="/"
+        path={homePath(language)}
         language={language}
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "ETHOS",
-          url: getAbsoluteUrl("/"),
+          url: getAbsoluteUrl(homePath(language)),
           logo: getAbsoluteUrl("/logo/Transparente-200.png"),
           description: t.seo.home.description,
           email: "cristina.carvalho@ethosprogram.com",
           areaServed: "PT",
+          inLanguage: language === "pt" ? "pt-PT" : "en",
           founder: {
             "@type": "Person",
             name: "Cristina Vidal de Carvalho",
             jobTitle: t.founder.role,
-            url: getAbsoluteUrl("/#founder"),
+            url: getAbsoluteUrl(localizeHref("/#founder", language)),
           },
           sameAs: ["https://www.instagram.com/cristinavc_ethos/"],
         }}

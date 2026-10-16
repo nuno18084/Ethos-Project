@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { ChevronDown, Check } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
 import type { Language } from "./translations";
+import { isHomePath } from "../lib/languagePath";
 
 const languages: { code: Language; label: string }[] = [
   { code: "en", label: "English" },
@@ -13,7 +14,7 @@ export function LanguageSelector() {
   const { language, setLanguage } = useLanguage();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-  const isHome = useLocation().pathname === "/";
+  const isHome = isHomePath(useLocation().pathname);
 
   const current = languages.find((l) => l.code === language)!;
 

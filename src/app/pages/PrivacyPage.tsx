@@ -1,5 +1,6 @@
 import { PageSeo } from "../../components/PageSeo";
 import { useLanguage } from "../../i18n/LanguageContext";
+import { localizePathname } from "../../lib/languagePath";
 import { LegalPageLayout } from "../components/cristina/LegalPageLayout";
 
 export function PrivacyPage() {
@@ -10,7 +11,7 @@ export function PrivacyPage() {
       <PageSeo
         title={t.seo.privacy.title}
         description={t.seo.privacy.description}
-        path="/privacy"
+        path={localizePathname("/privacy", language)}
         language={language}
       />
       <LegalPageLayout
