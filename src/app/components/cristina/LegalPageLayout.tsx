@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import { useLanguage } from "../../../i18n/LanguageContext";
+import { homePath } from "../../../lib/languagePath";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 
@@ -21,13 +23,15 @@ export function LegalPageLayout({
   sections,
   backLabel,
 }: LegalPageLayoutProps) {
+  const { language } = useLanguage();
+
   return (
     <div className="bg-[#FAF9F6] min-h-screen font-sans">
       <Navbar />
       <main className="pt-28 pb-20 md:pt-32 md:pb-24">
         <div className="max-w-3xl mx-auto px-6">
           <Link
-            to="/"
+            to={homePath(language)}
             className="inline-flex items-center gap-2 section-body hover:text-ethos transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import type { Language } from "../i18n/translations";
+import { localizePathname, stripLanguagePrefix } from "../lib/languagePath";
 import {
   DEFAULT_OG_IMAGE,
   DEFAULT_OG_IMAGE_HEIGHT,
@@ -37,12 +38,27 @@ function upsertMeta(
 
 function upsertLink(rel: string, href: string) {
   let element = document.head.querySelector<HTMLLinkElement>(
-    `link[rel="${rel}"]`,
+    `link[rel="${rel}"]:not([hreflang])`,
   );
 
   if (!element) {
     element = document.createElement("link");
     element.setAttribute("rel", rel);
+    document.head.appendChild(element);
+  }
+
+  element.setAttribute("href", href);
+}
+
+function upsertAlternate(hreflang: string, href: string) {
+  let element = document.head.querySelector<HTMLLinkElement>(
+    `link[rel="alternate"][hreflang="${hreflang}"]`,
+  );
+
+  if (!element) {
+    element = document.createElement("link");
+    element.setAttribute("rel", "alternate");
+    element.setAttribute("hreflang", hreflang);
     document.head.appendChild(element);
   }
 
@@ -72,6 +88,14 @@ export function PageSeo({
     upsertMeta("author", "ETHOS");
     upsertMeta("theme-color", "#b45309");
     upsertLink("canonical", pageUrl);
+
+    const unprefixedPath = stripLanguagePrefix(path || "/");
+    upsertAlternate("en", getAbsoluteUrl(localizePathname(unprefixedPath, "en")));
+    upsertAlternate("pt", getAbsoluteUrl(localizePathname(unprefixedPath, "pt")));
+    upsertAlternate(
+      "x-default",
+      getAbsoluteUrl(localizePathname(unprefixedPath, "en")),
+    );
 
     upsertMeta("og:title", fullTitle, "property");
     upsertMeta("og:description", description, "property");

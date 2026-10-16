@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { CookieBanner } from "../components/CookieBanner";
 import { HomePage } from "./HomePage";
 import { ScrollToTop } from "./ScrollToTop";
@@ -17,16 +17,19 @@ const TermsPage = lazy(() =>
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
       <CookieBanner />
       <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/pt" element={<HomePage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/pt/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
+          <Route path="/pt/terms" element={<TermsPage />} />
         </Routes>
       </Suspense>
-    </BrowserRouter>
+    </>
   );
 }

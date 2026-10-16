@@ -1,33 +1,35 @@
 import { Instagram, Linkedin } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useCookieConsent } from "../../../i18n/CookieConsentContext";
-import { useLanguage } from "../../../i18n/LanguageContext";
+import { useLanguage, useLocalizedHref } from "../../../i18n/LanguageContext";
 import { SHOW_PARTNERS } from "../../../lib/featureFlags";
+import { homePath, isHomePath } from "../../../lib/languagePath";
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
+  const hrefFor = useLocalizedHref();
   const { openBanner } = useCookieConsent();
   const location = useLocation();
   const navigate = useNavigate();
-  const isHome = location.pathname === "/";
+  const isHome = isHomePath(location.pathname);
 
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (!isHome) return;
 
     e.preventDefault();
     if (location.hash) {
-      navigate("/", { replace: true });
+      navigate(homePath(language), { replace: true });
     }
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
   const links = [
-    { name: t.nav.aboutEthos, href: "/#about" },
-    { name: t.nav.aboutFounder, href: "/#founder" },
-    { name: t.nav.services, href: "/#services" },
-    { name: t.nav.reviews, href: "/#reviews" },
-    ...(SHOW_PARTNERS ? [{ name: t.nav.partners, href: "/#partners" }] : []),
-    { name: t.nav.contact, href: "/#contact" },
+    { name: t.nav.aboutEthos, href: hrefFor("/#about") },
+    { name: t.nav.aboutFounder, href: hrefFor("/#founder") },
+    { name: t.nav.services, href: hrefFor("/#services") },
+    { name: t.nav.reviews, href: hrefFor("/#reviews") },
+    ...(SHOW_PARTNERS ? [{ name: t.nav.partners, href: hrefFor("/#partners") }] : []),
+    { name: t.nav.contact, href: hrefFor("/#contact") },
   ];
 
   const linkClass = "hover:text-ethos transition-colors";
@@ -38,7 +40,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-8 md:gap-6">
           <div className="text-center md:text-left">
             <Link
-              to="/"
+              to={homePath(language)}
               onClick={handleLogoClick}
               className="inline-block"
             >
@@ -78,10 +80,10 @@ export function Footer() {
           </nav>
 
           <div className="meta-text text-stone-400 flex justify-center md:justify-end gap-x-4">
-            <Link to="/privacy" className={linkClass}>
+            <Link to={hrefFor("/privacy")} className={linkClass}>
               {t.footer.privacy}
             </Link>
-            <Link to="/terms" className={linkClass}>
+            <Link to={hrefFor("/terms")} className={linkClass}>
               {t.footer.terms}
             </Link>
             <button
